@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f3f2ee !important;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  height: 3.8rem;
+  background-color: white;
+  position: sticky;
+  border: 1px solid #e5e7eb;
+}
+input[type="search"] {
+    width: 250px; 
+    transition: width 0.2s; 
+    background-color: rgb(241 245 249);
+    border-radius: 1px;
+    height: 2rem;
+    padding: 1.2rem;
+    border: 0 solid #e5e7eb;
+}
+
+
+input[type="search"]:focus {
+    width: 350px; 
+    background-color: rgb(241 245 249);
+    border-radius: 1px;
+    height: 2rem;
+    padding-left: 0.5rem;
+    border: 0 solid #e5e7eb;
+}
+/* #search {
+  height: 2rem;
+  padding-left: 0.5rem;
+  border: 0 solid #e5e7eb;
+  background-color: rgb(241 245 249);
+  border-radius: 0.5px;
+  width: 200px; */
+  /* transition: width 5s;
+} */
+
+.fa-search{
+    color: aqua;
+}
+.linkdin_image {
+  color: blue;
+}
+.navbar-container1 {
+  display: flex;
+  gap: 0.4rem;
+  margin-left: 110px;
+  justify-content: center;
+  align-items: center;
+}
+.navbar-container2 {
+  display: flex;
+  gap: 1rem;
+  margin-right: 100px;
+}
+.navbar-container3 {
+  display: flex;
+  gap: 1rem;
+}
+.homeNav {
+  text-decoration: none;
+  font-size: small;
+  color: black;
+}
+.navbar-container2-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: -0.4rem;
+}
+.mynetworknav {
+  text-decoration: none;
+  font-size: small;
+  color: black;
+}
+.navbar-container2-mynetwork {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: -0.4rem;
+}
+.jobnav {
+  text-decoration: none;
+  font-size: small;
+  color: black;
+}
+.navbar-container2-jobs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: -0.4rem;
+}
+.messagenav {
+  text-decoration: none;
+  font-size: small;
+  color: black;
+}
+.navbar-container2-messaging {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: -0.4rem;
+}
+.notificationnav {
+  text-decoration: none;
+  font-size: small;
+  color: black;
+}
+.navbar-container2-notification {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: -0.4rem;
+}
+.menav {
+  text-decoration: none;
+  font-size: small;
+  color: black;
+}
+.navbar-container2-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: -0.4rem;
+}
+#search2 {
+  height: 1rem;
+}
+.ember-view {
+  border-radius: 50%;
+}
+.forbusinessnav {
+  text-decoration: none;
+  font-size: small;
+  color: black;
+}
+.navbar-container3-forbusiness {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: -0.4rem;
+}
+.trypremiumnav {
+  font-size: small;
+  min-width: 80px;
+  color: var(--color-brand-accent-1) !important;
+  text-decoration: underline;
+  margin-right: 120px;
+}
+.main-section {
+  background-color: #00000000;
+}
