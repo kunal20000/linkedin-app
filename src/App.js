@@ -11,6 +11,7 @@ import Jobs from "./components/Jobs";
 import TryPremiumForFree from "./components/TryPremiumForFree";
 import Me from "./components/Me";
 import ForBusiness from "./components/ForBusiness";
+import StartPost from "./components/StartPost";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
       <main>
         <Navbar />
         <section className="main-section">
-         <Home/>
+         <StartPost/>
+         {/* <Home/> */}
         </section>
         <Routes>
           <Route to="/" element={<Home/>}/>

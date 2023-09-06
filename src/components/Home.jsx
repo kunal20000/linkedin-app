@@ -17,10 +17,10 @@ const Home = () => {
       if (!resData.ok) {
         throw new Error("Request failed");
       }
-      const {data} = await resData.json();
-      console.log("data", data);
-      setPost(data.slice(0,10));
-      
+      const { data } = await resData.json();
+     
+      setPost(data.slice(0, 10));
+       console.log("data", data);
     } catch (err) {
       // handle error during the fetching request
       console.error();
@@ -31,18 +31,21 @@ const Home = () => {
     fetchDataFromApi();
   }, []);
   return (
-    <>
-      <section>
+   
+      <>
         {post.map((posts) => {
-          const { author, id } = posts;
-          return 
-          <div>
-          <p key={id} style={{color:"black"}}>{author.name}</p>
-          <p> </p>
-          </div>
+          const {author, id} = posts
+          return(
+            <div key={id} className="card-container">
+              <p>{author.name}</p>
+              <p>{author.profileImage}</p>
+              
+            </div>
+          )
+          
         })}
-      </section>
-    </>
+      </>
+    
   );
 };
 

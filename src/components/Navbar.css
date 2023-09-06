@@ -165,7 +165,9 @@ input[type="search"]:focus {
 .ember-view {
   border-radius: 50%;
 }
-
+.active{
+  color: black;
+}
 .forbusinessnav {
   text-decoration: none;
   font-size: smaller;
@@ -181,10 +183,11 @@ input[type="search"]:focus {
   align-items: center;
   margin-left: 1rem;
   gap: -0.4rem;
+  padding: auto;
 }
 .vl{
   border-left: 1px solid hsla(0, 0%, 55%, 0.2);
- 
+  
 }
 
 .trypremiumnav {
