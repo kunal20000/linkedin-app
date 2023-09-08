@@ -12,7 +12,7 @@ body {
   justify-content: space-between;
   height: 3.8rem;
   background-color: white;
-  position: sticky;
+ 
   border: 1px solid #e5e7eb;
 }
 input[type="search"] {
@@ -149,6 +149,17 @@ input[type="search"]:focus {
   font-size: smaller;
   color: rgba(0,0,0,0.6);
 }
+.global-nav__icon{
+  color: rgba(0, 0, 0,0.6);
+  height: 24px;
+  transform: scale(1);
+  transition: transform .2s ease-in-out;
+  width: 24px;
+}
+svg[data-supported-dps="16x16"] {
+  width: 1.6rem;
+  height: 1.6rem;
+}
 .lucide-user-circle2{
   color: rgba(0,0,0,0.6);
 }
@@ -201,4 +212,7 @@ input[type="search"]:focus {
 }
 .main-section {
   background-color: #00000000;
+}
+#logout{
+
 }

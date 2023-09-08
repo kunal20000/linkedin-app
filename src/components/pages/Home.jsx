@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import StartPost from "../startPost/StartPost";
+import '../startPost/StartPost.css'
 
 const Home = () => {
   const [post, setPost] = useState([]);
@@ -33,12 +35,13 @@ const Home = () => {
   return (
    
       <>
+       <StartPost/>
         {post.map((posts) => {
           const {author, id} = posts
           return(
             <div key={id} className="card-container">
               <p>{author.name}</p>
-              <p>{author.profileImage}</p>
+              <img src={author.profileImage} alt="profileImage" />
               
             </div>
           )

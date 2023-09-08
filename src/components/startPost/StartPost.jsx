@@ -1,10 +1,11 @@
-import React from 'react';
-import './StartPost.css'
+import React from "react";
+import "./StartPost.css";
 const StartPost = () => {
   return (
     <>
-      <div className='create-post-container'>
-      <svg
+      <div className="create-post-container">
+        <div style={{ display: " flex", alignItems: "center" }}>
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             width="50"
             height="50"
@@ -20,10 +21,11 @@ const StartPost = () => {
             <circle cx="12" cy="10" r="4"></circle>
             <circle cx="12" cy="12" r="10"></circle>
           </svg>
-        <input type="text" id='createPost' placeholder='Start a post' />
+          <input type="text" id="createPost" placeholder="Start a post" />
+        </div>
       </div>
     </>
   );
-}
+};
 
 export default StartPost;
