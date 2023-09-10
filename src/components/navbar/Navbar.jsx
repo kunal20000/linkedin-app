@@ -10,17 +10,18 @@ import { ReactComponent as MessagingIcon } from "../assets/messaging.svg";
 import { ReactComponent as NotificationIcon } from "../assets/notification.svg";
 import { ReactComponent as MeIcon } from "../assets/me.svg";
 import { ReactComponent as BusinessIcon } from "../assets/business.svg";
+import { ReactComponent as SearchIcon } from "../assets/search.svg";
 
 export const Navbar = () => {
- const [showModal, setShowModal] = useState("");
-  const handleClick= ()=>{
-      showModal(true);
-  }
+
   return (
     <navbar className="navbar-container">
       <section className="navbar-container1">
         <LinkedinIcon />
-        <input type="search" id="search" placeholder="Search" />
+        <div className="header_search">
+          <SearchIcon />
+          <input type="search" id="search" placeholder="Search" />
+        </div>
       </section>
 
       <section className="navbar-container2">
@@ -57,12 +58,12 @@ export const Navbar = () => {
         <div className="navbar-container2-me">
           <MeIcon />
           <div>
-          <NavLink className="menav" to="/me">
-            Me
-          </NavLink>
-          <select name="" id="logout" onClick={handleClick}>
-             <option value=""></option>
-          </select>
+            <NavLink className="menav" to="/me">
+              Me
+            </NavLink>
+            {/* <select name="" id="logout" onClick={handleClick}>
+             <option value="">Login</option>
+          </select> */}
           </div>
         </div>
 
