@@ -1,10 +1,11 @@
 .sidebar{
    
-    flex: 0.5;
+    /* flex: 0.2; */
     flex-direction: column;
     height: 200px;
-    max-width: 200px;
+    max-width: 240px;
     position: sticky;
+    margin-left: -40px;
 }
 
 .sidebar .sidebar_profile{
