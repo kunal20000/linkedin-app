@@ -2,7 +2,7 @@ import React from "react";
 
 const Login = () => {
   return (
-    <>
+    <div>
       <div className="linkedinLogin">
         <svg
           width="102"
@@ -35,7 +35,7 @@ const Login = () => {
       <h5>New to Linedin <a href="">Join Now</a>
       </h5>
 
-    </>
+    </div>
   );
 };
 

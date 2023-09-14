@@ -11,9 +11,9 @@ import { ReactComponent as NotificationIcon } from "../assets/notification.svg";
 import { ReactComponent as MeIcon } from "../assets/me.svg";
 import { ReactComponent as BusinessIcon } from "../assets/business.svg";
 import { ReactComponent as SearchIcon } from "../assets/search.svg";
+import Profile from "./Profile";
 
 export const Navbar = () => {
-
   return (
     <navbar className="navbar-container">
       <section className="navbar-container1">
@@ -57,13 +57,13 @@ export const Navbar = () => {
         </div>
         <div className="navbar-container2-me">
           <MeIcon />
-          <div>
+          <div style={{display:"flex", gap:"0px", alignItems:"center" }}>
             <NavLink className="menav" to="/me">
               Me
+             
             </NavLink>
-            {/* <select name="" id="logout" onClick={handleClick}>
-             <option value="">Login</option>
-          </select> */}
+            <Profile/>
+           
           </div>
         </div>
 

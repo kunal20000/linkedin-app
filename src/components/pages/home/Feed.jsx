@@ -5,7 +5,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import DesignServicesIcon from "@mui/icons-material/DesignServices";
 import ArticleIcon from "@mui/icons-material/Article";
 
-import Home from "./Home";
+// import Home from "./Home";
 const Feed = () => {
   return (
     <div className="feed">
@@ -28,20 +28,27 @@ const Feed = () => {
 
         <div className="feed-option">
           <div className="option">
-            <InsertPhotoIcon style={{color:"#70b5f9" , height:"25px", width:"25px"}} />
+            <InsertPhotoIcon
+              style={{ color: "#70b5f9", height: "25px", width: "25px" }}
+            />
             <span>Media</span>
           </div>
           <div className="option">
-            <DesignServicesIcon style={{color:"#a872e8" , height:"25px", width:"25px"}}/>
+            <DesignServicesIcon
+              style={{ color: "#a872e8", height: "25px", width: "25px" }}
+            />
             <span>Design</span>
           </div>
           <div className="option">
-            <ArticleIcon style={{color:"#e16745" , height:"25px", width:"25px"}}/>
+            <ArticleIcon
+              style={{ color: "#e16745", height: "25px", width: "25px" }}
+            />
             <span>Write Article</span>
           </div>
         </div>
       </div>
-      <Home/>
+      {/* <Home /> */}
+
     </div>
   );
 };

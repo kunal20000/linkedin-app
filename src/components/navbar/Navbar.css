@@ -38,7 +38,7 @@ body {
 }
 
 input[type="search"]:focus {
-  width: 350px;
+  width: 300px;
   background-color: rgb(241 245 249);
   border-radius: 1px;
   height: 2rem;

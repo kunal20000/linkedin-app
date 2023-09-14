@@ -4,7 +4,7 @@
     /* width: 100%; */
     border-radius: 10px;
     margin-bottom: 20px;
-
+   
 }
 .widget-header{
    display: flex;
@@ -18,21 +18,28 @@
 }
 .widget-header svg{
     font-size: 18px;
-
+    cursor: pointer;
 }
 .widget-options{
     margin: 0px;
     padding: 0px;
     padding-left: 15px;
-    list-style: circle;
+    /* list-style: circle; */
 
 }
 .widget-options li{
     margin-bottom: 10px;
+    cursor: pointer;
 }
+.widget-options li:hover{
+    text-decoration: underline;
+}
+
+
 .widget-body{
     margin-top: 10px;
 }
+
 .widget-options h4{
     margin: 0;
     font-weight: normal;
@@ -49,5 +56,5 @@
     background: #fff;
     padding: 10px;
     border-radius: 10px;
-   
+    position: fixed;
 }
