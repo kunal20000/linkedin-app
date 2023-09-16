@@ -1,0 +1,47 @@
+.network-div{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-top: 22px;
+    /* flex: 0.3; */
+    margin-left: 100px;
+    width: 300px;
+    border-radius: 9px;
+}
+
+.manage-div{
+    margin: 10px 15px;
+}
+.manage-div h6{
+    margin-bottom: 20px;
+}
+.manage-div svg{
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.div1 .div2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.maindiv{
+    display: flex;
+    gap: 2rem;
+}
+.invitaionDiv{
+    margin-top: 22px;
+    background-color: #fff;
+    width: 850px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 9px;
+}
+.invitaionDiv h6{
+    margin: 14px 16px;
+    font-weight: 200px;
+    margin-bottom: 16px;
+}
+.invitationDivMain{
+    margin-left: 100px;
+}
+.invitationDivMain h5{
+    font-weight: 500;
+}

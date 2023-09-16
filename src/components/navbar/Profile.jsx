@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import "./Profile.css";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { Navigate, useNavigate } from "react-router-dom";
-// import Login from "../login/Login";
+
 
 const Profile = () => {
   const [showModal, setShowModal] = useState();

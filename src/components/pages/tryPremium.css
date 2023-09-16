@@ -1,5 +1,6 @@
 .trypremiumPage{
-  
+
+   overflow: scroll;
    margin-bottom: 0;
    padding: 2.4rem 0;
    background: #fff;
@@ -17,4 +18,40 @@
 .box{
     background-color: #fff;
     height: 50px;
+}
+.trypremiumPage input[type="range"]{
+    margin: 0 auto;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.premiumBox{
+    margin: auto;
+    margin-top: 2rem;
+    width: 500px;
+    height: 340px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+.premiumBox h3{
+   padding-top: 2.4rem;
+   margin-left: 10px;
+   
+}
+.premiumBox p{
+    margin-left: 20px;
+}
+.premiumBox input{
+    margin-left: 40px;
+   
+}
+.premiumBox span{
+    margin: 0 20px;
+}
+.premiumBox div{
+    margin-bottom: 20px;
+}
+.premiumBox4{
+    margin-left: 410px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
 }

@@ -14,32 +14,31 @@ import Login from "./components/login/Login";
 import SideBar from "./components/pages/home/SideBar";
 import Feed from "./components/pages/home/Feed";
 import Widget from "./components/pages/home/Widget";
+import Signup from "./components/login/Signup";
 
 function App() {
+  const user = null;
   return (
     <>
-      <main>
-        <Navbar />
-
-      
-          {/* <div className="app-body">
-            <SideBar />
-            <Feed />
-            <Widget />
-          </div> */}
-       
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/mynetwork" element={<MyNetwork />} />
-          <Route path="/jobs" element={<Jobs />} />
-          <Route path="/messaging" element={<Messaging />} />
-          <Route path="/notification" element={<Notification />} />
-          <Route path="/me" element={<Me />} />
-          <Route path="/forbusiness" element={<ForBusiness />} />
-          <Route path="/trypremium" element={<TryPremium />} />
-        </Routes>
-      </main>
+      {/* {!user ? (
+        <Login />
+      ) : ( */}
+        <main>
+          <Navbar />
+          <Routes>
+            <Route path="/home" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/mynetwork" element={<MyNetwork />} />
+            <Route path="/jobs" element={<Jobs />} />
+            <Route path="/messaging" element={<Messaging />} />
+            <Route path="/notification" element={<Notification />} />
+            <Route path="/me" element={<Me />} />
+            <Route path="/forbusiness" element={<ForBusiness />} />
+            <Route path="/trypremium" element={<TryPremium />} />
+          </Routes>
+        </main>
+      {/* )} */}
     </>
   );
 }

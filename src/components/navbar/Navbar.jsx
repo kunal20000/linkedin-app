@@ -57,13 +57,16 @@ export const Navbar = () => {
         </div>
         <div className="navbar-container2-me">
           <MeIcon />
-          <div style={{display:"flex", gap:"0px", alignItems:"center" }}>
-            <NavLink className="menav" to="/me">
-              Me
-             
-            </NavLink>
-            <Profile/>
-           
+          <div
+            style={{
+              display: "flex",
+              gap: "0px",
+              alignItems: "center",
+              fontSize: "14px",
+            }}
+          >
+            Me
+            <Profile />
           </div>
         </div>
 

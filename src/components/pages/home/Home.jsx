@@ -45,7 +45,20 @@ const Home = () => {
         <Feed />
 
         {isLoading ? (
-          <span class="loader"></span>
+          <div class="spinner center">
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+          </div>
         ) : (
           post.map((posts) => {
             const { author, channel, id } = posts;
