@@ -17,12 +17,12 @@ import Widget from "./components/pages/home/Widget";
 import Signup from "./components/login/Signup";
 
 function App() {
-  const user = null;
+  const user = "ABC";
   return (
     <>
-      {/* {!user ? (
-        <Login />
-      ) : ( */}
+      {!user ? (
+        <Login /> || <Signup/>
+      ) : (
         <main>
           <Navbar />
           <Routes>
@@ -33,12 +33,11 @@ function App() {
             <Route path="/jobs" element={<Jobs />} />
             <Route path="/messaging" element={<Messaging />} />
             <Route path="/notification" element={<Notification />} />
-            <Route path="/me" element={<Me />} />
             <Route path="/forbusiness" element={<ForBusiness />} />
             <Route path="/trypremium" element={<TryPremium />} />
           </Routes>
         </main>
-      {/* )} */}
+       )} 
     </>
   );
 }

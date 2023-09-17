@@ -1,6 +1,6 @@
 import "./Navbar.css";
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import TryPremium from "../pages/TryPremium";
 import { ReactComponent as LinkedinIcon } from "../assets/linkedin.svg";
 import { ReactComponent as HomeIcon } from "../assets/home.svg";
@@ -12,12 +12,14 @@ import { ReactComponent as MeIcon } from "../assets/me.svg";
 import { ReactComponent as BusinessIcon } from "../assets/business.svg";
 import { ReactComponent as SearchIcon } from "../assets/search.svg";
 import Profile from "./Profile";
-
+import { Navigate } from "react-router-dom";
 export const Navbar = () => {
+  const navigate = useNavigate(null);
+
   return (
     <navbar className="navbar-container">
       <section className="navbar-container1">
-        <LinkedinIcon />
+        <LinkedinIcon onClick={()=> navigate("/home")}/>
         <div className="header_search">
           <SearchIcon />
           <input type="search" id="search" placeholder="Search" />
@@ -27,7 +29,7 @@ export const Navbar = () => {
       <section className="navbar-container2">
         <div className="navbar-container2-home">
           <HomeIcon />
-          <NavLink className="homeNav" to="/">
+          <NavLink className="homeNav" to="/home">
             Home
           </NavLink>
         </div>

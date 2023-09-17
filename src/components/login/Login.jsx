@@ -8,8 +8,6 @@ import { getHeaderWithProjectIDAndBody } from "../utils/config";
 import axios from "axios";
 
 const Login = () => {
- 
-
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate(null);
@@ -21,8 +19,9 @@ const Login = () => {
   });
 
   const signIn = async (userInfo) => {
-    const headerConfig = getHeaderWithProjectIDAndBody();
+    userInfo.appType = "linkedin";
     try {
+      const headerConfig = getHeaderWithProjectIDAndBody();
       const res = await axios.post(
         "https://academics.newtonschool.co/api/v1/user/login",
 
@@ -31,17 +30,13 @@ const Login = () => {
       );
       console.log("res", res);
 
-      if(res.data.token){
+      if (res.data.token) {
         sethasError(false);
         setErrMessage("logged succesfully");
         navigate("/home");
         sessionStorage.setItem("loginStatus", true);
         sessionStorage.setItem("authToken", res.data.token);
-        sessionStorage.setItem(
-          "userInfo",
-          JSON.stringify(res.data.data.name)
-        )
-
+        sessionStorage.setItem("userInfo", JSON.stringify(res.data.data.name));
       }
     } catch (err) {
       sethasError(true);

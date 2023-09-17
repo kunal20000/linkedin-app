@@ -60,6 +60,9 @@ input[type="search"]:focus {
   justify-content: center;
   align-items: center;
 }
+.navbar-container1 svg{
+  cursor: pointer;
+}
 .navbar-container2 {
   display: flex;
   gap: 2rem;

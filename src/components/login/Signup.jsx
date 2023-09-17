@@ -4,12 +4,15 @@ import "./Signup.css";
 import axios from "axios";
 import { getHeaderWithProjectIDAndBody } from "../utils/config";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 const Signup = () => {
   const [userInfo, setUserInfo] = useState({
     name: "",
     email: "",
     password: "",
   });
+  const navigate = useNavigate(null);
   const [errMessage, setErrMessage] = useState("");
   const [hasError, sethasError] = useState(false);
   // const { setIsNotLoggedIn } = useContext(CheckLogInStat);
@@ -34,6 +37,7 @@ const Signup = () => {
         sethasError(false);
         setErrMessage("Account created succesffuly!");
         // setIsNotLoggedIn(true);
+        navigate("/home");
         sessionStorage.setItem("authToken", res.data.token);
         sessionStorage.setItem("userInfo", JSON.stringify(res.data.data.user));
       }
