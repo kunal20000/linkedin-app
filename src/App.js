@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { Navbar } from "./components/navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
@@ -17,27 +17,30 @@ import Widget from "./components/pages/home/Widget";
 import Signup from "./components/login/Signup";
 
 function App() {
-  const user = "ABC";
+  const user = null;
+  const [setLogin, setLoginComponent] = useState(false);
+  const [isSignInPage, setIsSignInPage] = useState(false);
   return (
     <>
-      {!user ? (
-        <Login /> || <Signup/>
-      ) : (
+      {/* {!user ? (
         <main>
-          <Navbar />
-          <Routes>
-            <Route path="/home" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/mynetwork" element={<MyNetwork />} />
-            <Route path="/jobs" element={<Jobs />} />
-            <Route path="/messaging" element={<Messaging />} />
-            <Route path="/notification" element={<Notification />} />
-            <Route path="/forbusiness" element={<ForBusiness />} />
-            <Route path="/trypremium" element={<TryPremium />} />
-          </Routes>
+          {
+            isSignInPage ? (<Login/>):(<Signup/>)
+          }
         </main>
-       )} 
+      ) : ( */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/mynetwork" element={<MyNetwork />} />
+          <Route path="/jobs" element={<Jobs />} />
+          <Route path="/messaging" element={<Messaging />} />
+          <Route path="/notification" element={<Notification />} />
+          {/* <Route path="/forbusiness" element={<ForBusiness />} /> */}
+          <Route path="/trypremium" element={<TryPremium />} />
+        </Routes>
+       {/* )}  */}
     </>
   );
 }

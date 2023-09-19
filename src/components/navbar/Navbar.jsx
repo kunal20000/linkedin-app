@@ -19,7 +19,7 @@ export const Navbar = () => {
   return (
     <navbar className="navbar-container">
       <section className="navbar-container1">
-        <LinkedinIcon onClick={()=> navigate("/home")}/>
+        <LinkedinIcon />
         <div className="header_search">
           <SearchIcon />
           <input type="search" id="search" placeholder="Search" />
@@ -29,7 +29,7 @@ export const Navbar = () => {
       <section className="navbar-container2">
         <div className="navbar-container2-home">
           <HomeIcon />
-          <NavLink className="homeNav" to="/home">
+          <NavLink className="homeNav" to="/">
             Home
           </NavLink>
         </div>
@@ -76,7 +76,7 @@ export const Navbar = () => {
           <div className="vl">
             <div className="navbar-container3-forbusiness">
               <BusinessIcon />
-              <NavLink className="forbusinessnav" to="/forbusiness">
+              <NavLink className="forbusinessnav">
                 For Business
               </NavLink>
             </div>

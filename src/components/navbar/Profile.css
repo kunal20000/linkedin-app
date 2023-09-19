@@ -1,25 +1,38 @@
 .profile {
   
   position: relative;
+ 
 }
+
 .auth-modal {
+  
   margin-top: 0.8rem;
   width: 15rem;
   background-color: #fff;
-  height: 28rem;
+  height: 26rem;
   position: absolute;
   right: 10px;
   border-radius: 10px;
   border: 1px solid #e5e7eb;
+}
+.forSvg {
+  height: 80px;
+  width: 80px;
+  color: rgba(0, 0, 0, 0.9);
 }
 .auth-modal >h4{
   margin-top: 1rem;
   font-size: medium;
   margin-left: 1rem;
 }
+.upper-div-main{
+  display: flex;
+  flex-direction: column;
+}
 .upper-div{
-  margin-top: 1rem;
+  margin-top: 0rem;
   margin-left: 1rem;
+  margin-bottom: -10px;
 }
 .upper-div h4{
   font-size: medium;
@@ -33,6 +46,7 @@
 }
 .lower-div{
   margin-left: 1rem;
+  margin-bottom: -20px;
 
 }
 .lower-div h4{
@@ -46,9 +60,10 @@
   text-decoration: underline;
 }
 .sign-out-btn{
+  margin-top: -0.5rem;
   font-size: 14px;
   border: none;
-  margin-left: 1rem;
+  margin-left: 10px;
   text-decoration: underline;
   background: none;
 }

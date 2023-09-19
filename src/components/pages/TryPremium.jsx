@@ -1,8 +1,10 @@
 import React from "react";
 import "./tryPremium.css";
+import { Navbar } from "../navbar/Navbar";
 const TryPremium = () => {
   return (
-    <>
+    <main>
+      <Navbar/>
       <div className="header trypremiumPage">
         <h4 className="t-24 t-bold header1">
           Achieve your goals faster with Premium.
@@ -37,7 +39,7 @@ const TryPremium = () => {
         </div>
       </main>
      
-    </>
+    </main>
   );
 };
 

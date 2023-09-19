@@ -37,7 +37,7 @@ const Signup = () => {
         sethasError(false);
         setErrMessage("Account created succesffuly!");
         // setIsNotLoggedIn(true);
-        navigate("/home");
+        navigate("/login");
         sessionStorage.setItem("authToken", res.data.token);
         sessionStorage.setItem("userInfo", JSON.stringify(res.data.data.user));
       }
@@ -64,6 +64,7 @@ const Signup = () => {
           <label htmlFor="name">Name</label>
 
           <input
+            id="name"
             className="nameInput"
             type="text"
             name="name"
@@ -74,6 +75,7 @@ const Signup = () => {
           <br />
           <label htmlFor="email">Email</label>
           <input
+            id="email"
             type="email"
             name="email"
             value={userInfo.email}
@@ -83,6 +85,7 @@ const Signup = () => {
           <br />
           <label htmlFor="password">Password</label>
           <input
+            id="password"
             type="password"
             name="password"
             value={userInfo.password}
@@ -97,8 +100,8 @@ const Signup = () => {
           <button className="joinBtn">Agree & Join</button>
           <p className="login">
             Already on LinkedIn?
-            <Link to="/login">
-              <a href="" className="login-Link">
+            <Link to="/login" >
+              <a href="" className="login-Link" >
                 Sign in
               </a>
             </Link>

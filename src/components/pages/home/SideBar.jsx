@@ -4,6 +4,7 @@ import "./sidebar.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const SideBar = () => {
+  // const name = JSON.parse(sessionStorage.getItem("userInfo"));
   return (
     <div className="sidebar">
       <div className="sidebar_profile">
@@ -13,7 +14,7 @@ const SideBar = () => {
         />
         <div className="profile_details">
           <AccountCircleIcon />
-          <h4>Kunal sapate</h4>
+          <h4>kunal sapate</h4>
           <p>
             B.Tech Graduate || JAVA || HTML || CSS || Bootstrap || JavaScript ||
             Github || React || Redux

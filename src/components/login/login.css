@@ -1,11 +1,10 @@
-.login-main{
-    display: flex;
-    flex-direction: column;
+.login-main {
+  display: flex;
+  flex-direction: column;
 }
-.login-main img{
-   width: 500px;
-   height: 500px;
-   
+.login-main img {
+  width: 500px;
+  height: 500px;
 }
 .linkedinLogin {
   display: flex;
@@ -24,6 +23,16 @@
 .loginForm {
   display: flex;
   flex-direction: column;
+}
+.errorMsg {
+  color: rgb(202, 5, 5);
+  font-size: 14px;
+  font-weight: 600;
+}
+.succesfullMsg {
+  color: rgb(2, 146, 2);
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .loginForm h1 {
@@ -132,5 +141,4 @@ form a {
   font-size: 16px;
   font-weight: 600;
   line-height: 1.25;
-   
 }

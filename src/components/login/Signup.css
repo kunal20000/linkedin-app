@@ -73,3 +73,6 @@
   font-size: 14px;
   font-weight: 600;
 }
+input[type="text"], input[type="email"],input[type="password"]{
+  padding: 7px 5px;
+}

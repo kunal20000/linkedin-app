@@ -7,6 +7,7 @@ import Feed from "./Feed";
 import PostBody from "./PostBody";
 import Widget from "./Widget";
 import "./app.css";
+import { Navbar } from "../../navbar/Navbar";
 
 const Home = () => {
   const [post, setPost] = useState([]);
@@ -39,52 +40,55 @@ const Home = () => {
     fetchDataFromApi();
   }, []);
   return (
-    <div className="app-body">
-      <SideBar />
-      <div className="feedPost">
-        <Feed />
+    <main>
+      <Navbar />
+      <div className="app-body">
+        <SideBar />
+        <div className="feedPost">
+          <Feed />
 
-        {isLoading ? (
-          <div class="spinner center">
-            <div class="spinner-blade"></div>
-            <div class="spinner-blade"></div>
-            <div class="spinner-blade"></div>
-            <div class="spinner-blade"></div>
-            <div class="spinner-blade"></div>
-            <div class="spinner-blade"></div>
-            <div class="spinner-blade"></div>
-            <div class="spinner-blade"></div>
-            <div class="spinner-blade"></div>
-            <div class="spinner-blade"></div>
-            <div class="spinner-blade"></div>
-            <div class="spinner-blade"></div>
-          </div>
-        ) : (
-          post.map((posts) => {
-            const { author, channel, id } = posts;
-            return (
-              <div key={id} className="posts">
-                <div className="post-header">
-                  <div className="post-header-left">
-                    <Avatar src={author.profileImage} />
-                    <div className="post-profile-details">
-                      <h3>{author.name}</h3>
-                      <p>{channel.name}</p>
+          {isLoading ? (
+            <div class="spinner center">
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+            </div>
+          ) : (
+            post.map((posts) => {
+              const { author, channel, id } = posts;
+              return (
+                <div key={id} className="posts">
+                  <div className="post-header">
+                    <div className="post-header-left">
+                      <Avatar src={author.profileImage} />
+                      <div className="post-profile-details">
+                        <h3>{author.name}</h3>
+                        <p>{channel.name}</p>
+                      </div>
                     </div>
+                    <MoreHorizIcon />
                   </div>
-                  <MoreHorizIcon />
+                  <div className="post-body">
+                    <p>This is test post, we are learning react</p>
+                  </div>
+                  <PostBody />
                 </div>
-                <div className="post-body">
-                  <p>This is test post, we are learning react</p>
-                </div>
-                <PostBody />
-              </div>
-            );
-          })
-        )}
+              );
+            })
+          )}
+        </div>
+        <Widget />
       </div>
-      <Widget />
-    </div>
+    </main>
   );
 };
 

@@ -47,8 +47,7 @@ const Feed = () => {
           </div>
         </div>
       </div>
-      {/* <Home /> */}
-
+     
     </div>
   );
 };

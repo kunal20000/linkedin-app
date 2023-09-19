@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import "./Profile.css";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { Navigate, useNavigate } from "react-router-dom";
-
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const Profile = () => {
   const [showModal, setShowModal] = useState();
@@ -32,27 +32,46 @@ const Profile = () => {
         <ArrowDropDownIcon />
       </section>
       {showModal && (
-        <section className="auth-modal">
-          <h4>kunal sapate</h4>
-          <hr />
-          <div className="upper-div">
-            <h4>Account</h4>
-            <p>Try Premium for free</p>
-            <p>Setting & Privacy</p>
-            <p>Help</p>
-            <p>Language</p>
+        <div className="auth-modal">
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginLeft: "10px",
+              gap: "0.5rem",
+              marginTop: "1rem",
+            }}
+          >
+            <AccountCircleIcon className="forSvg" />
+            <div style={{display:"flex", flexDirection:"column"}}>
+            <h6>kunal sapate</h6>
+            <p>
+              B.Tech Graduate || JAVA || HTML || CSS || Bootstrap || JavaScript
+              || Github || React || Redux
+            </p>
+            </div>
           </div>
           <hr />
-          <div className="lower-div">
-            <h4>Manage</h4>
-            <p>Post & Activity</p>
-            <p>Job Posting Account</p>
+          <div className="upper-div-main">
+            <div className="upper-div">
+              <h4>Account</h4>
+              <p>Try Premium for free</p>
+              <p>Setting & Privacy</p>
+              <p>Help</p>
+              <p>Language</p>
+            </div>
+            <hr />
+            <div className="lower-div">
+              <h4>Manage</h4>
+              <p>Post & Activity</p>
+              <p>Job Posting Account</p>
+            </div>
+            <hr />
+            <button className="sign-out-btn" onClick={() => navigate("/Login")}>
+              Sign Out
+            </button>
           </div>
-          <hr />
-          <button className="sign-out-btn" onClick={() => navigate("/Login")}>
-            Sign Out
-          </button>
-        </section>
+        </div>
       )}
     </section>
   );

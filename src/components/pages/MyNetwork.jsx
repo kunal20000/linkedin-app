@@ -9,8 +9,11 @@ import EventSeatIcon from "@mui/icons-material/EventSeat";
 import PagesIcon from "@mui/icons-material/Pages";
 import UnsubscribeIcon from "@mui/icons-material/Unsubscribe";
 import TagIcon from "@mui/icons-material/Tag";
+import { Navbar } from "../navbar/Navbar";
 const MyNetwork = () => {
   return (
+    <main>
+      <Navbar/>
     <div className="maindiv">
     <div className="network-div">
       <div className="manage-div">
@@ -56,6 +59,7 @@ const MyNetwork = () => {
         </div>
       </div>
     </div>
+    </main>
   );
 };
 

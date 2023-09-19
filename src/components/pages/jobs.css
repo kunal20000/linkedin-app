@@ -1,0 +1,131 @@
+.main-div {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: row;
+  gap: 1.4rem;
+}
+ul li {
+  margin-top: 18px;
+  text-decoration: none;
+  list-style: none;
+  margin-left: -10px;
+}
+.jobsContent {
+  color: rgba(0, 0, 0, 0.9);
+}
+.main-div-1 {
+  border-radius: 12px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 330px;
+  width: 270px;
+  /* position: relative; */
+ 
+  margin-left: 130px;
+}
+ul li span {
+  margin-left: 8px;
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: 600;
+}
+.postJob {
+  margin-top: 18px;
+  width: 80%;
+  margin-left: 20px;
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.8rem 0.8rem;
+  border: 1px solid #0a66c2;
+  color: #0a66c2;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 167ms;
+  overflow: hidden;
+}
+.jobsContent1 {
+  color: #0a66c2;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.main-div-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.suugestJobSearch {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  height: 100px;
+  width: 550px;
+  border-radius: 12px;
+}
+.suugestJobSearch h6 {
+  margin-top: 20px;
+  margin-left: 20px;
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+input[type="search"] {
+  border-radius: 20px;
+  margin-left: 15px;
+  height: 20px;
+  width: auto;
+  overflow: hidden;
+}
+.recommended{
+    height: 300px;
+    width: 550px;
+    border-radius: 12px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.recommended h5{
+    margin-top: 30px;
+    margin-left: 20px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.9);
+    padding-top: -10px;
+}
+.recommended h4{
+   /* margin-left: 60px; */
+   text-align: center;
+   font-weight: 600;
+   vertical-align: middle;
+   font-size: 22px;
+}
+.recommended p{
+    margin-left: 20px;
+    margin-top: -10px;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 1.42;
+    font-size: 14px;
+   
+}
+.main-div-3{
+    
+}
+.jobSeeker{
+    height: 300px;
+    width: 250px;
+    border-radius: 12px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.jobSeeker h6{
+    margin-top: 20px;
+    margin-left: 20px;
+    font-weight: 500;
+    font-size: 20px;
+}
+.para1{
+    margin-top: -10px;
+    font-size: 12px;
+    margin-left: 18px;
+}
+.para2{
+    font-size: 16px;
+    margin-left: 20px;
+    color: rgba(0, 0, 0, 0.9);
+}

@@ -1,10 +1,13 @@
 import React from "react";
-
+import './messaging.css'
+import { Navbar } from "../navbar/Navbar";
 const Messaging = () => {
   return (
-    <>
-      <h1>Message</h1>
-    </>
+    <main>
+      <Navbar />
+
+      
+    </main>
   );
 };
 

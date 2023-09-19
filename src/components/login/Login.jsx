@@ -33,7 +33,7 @@ const Login = () => {
       if (res.data.token) {
         sethasError(false);
         setErrMessage("logged succesfully");
-        navigate("/home");
+        navigate("/");
         sessionStorage.setItem("loginStatus", true);
         sessionStorage.setItem("authToken", res.data.token);
         sessionStorage.setItem("userInfo", JSON.stringify(res.data.data.name));
@@ -47,6 +47,7 @@ const Login = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserInfo({ ...userInfo, [name]: value });
+    // console.log(userInfo);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -95,20 +96,18 @@ const Login = () => {
               />
             </div>
             <br />
+            {hasError && <p className="errorMsg">{errMessage}!</p>}
+            {!hasError && <p className="succesfullMsg">{errMessage}</p>}
             <a href="">Forgot password?</a>
             <br />
-            <button className="signIn-button" onClick={() => navigate("/home")}>
-              Sign In
-            </button>
-            <hr style={{ width: "30%" }} />
+            <button className="signIn-button">Sign In</button>
+            <hr style={{ width: "70%" }} />
           </form>
 
-          <button
-            className="joinNow-button"
-            onClick={() => navigate("/signup")}
-          >
-            New to Linedin
-          </button>
+          <Link to="/Signup">
+         
+            <button className="joinNow-button">New to Linedin</button>
+          </Link>
         </div>
 
         <img
