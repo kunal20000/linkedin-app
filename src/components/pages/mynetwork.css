@@ -7,7 +7,15 @@
     width: 300px;
     border-radius: 9px;
 }
-
+.forIconColor{
+    color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+.div8 .div7 .div1 .div2 .div3 .div4 .div5 .div6{
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 0;
+}
 .manage-div{
     margin: 10px 15px;
 }

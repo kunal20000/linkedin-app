@@ -19,7 +19,7 @@ const TryPremium = () => {
       </div>
 
       <main className="premiumBox">
-        <h3>Kunal, are you interested in Premium for work or personal use? </h3>
+        <h5>Kunal, are you interested in Premium for work or personal use? </h5>
         <p>We’ll recommend the right plan for you.</p>
         <div className="premiumBox1">
           <input type="checkbox" />
@@ -35,7 +35,7 @@ const TryPremium = () => {
         </div>
         <hr />
         <div className="premiumBox4">
-          <button className="btn btn-outline-primary">Next</button>
+          <button className="btn-next">Next</button>
         </div>
       </main>
      

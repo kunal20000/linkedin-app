@@ -1,7 +1,7 @@
 .notifications-main-div{
     margin-top: 22px;
     display: flex;
-    /* gap: 1rem; */
+    gap: 1rem;
 }
 .noti-1{
     border-radius: 12px;
@@ -9,7 +9,7 @@
     border: 1px solid rgba(0, 0, 0, 0.1);
     height: 100px;
     width: 240px;
-    margin: 0px 120px;
+    margin: 0px 100px;
 }
 .noti-1 h5{
    margin: 0 25px;
@@ -29,20 +29,91 @@
 .noti-1 p:hover{
     text-decoration: underline;
 }
-
+.noti-2{
+   margin-left: -100px;
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
 .content{
     display: flex;
     border-radius: 12px;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    height: 100px;
-    width: 300px;
+    height: 75px;
+    width: 600px;
+}
+.allBtn{
+    width: 60px;
+  
+}
+.postBtn{
+    width: 85px;
+    /* margin-left: -1px; */
+}
+.mentionBtn{
+    width: 80px;
 }
 button{
     margin-top: 20px;
-    height: 20px;
-    width: 70px;
+    height: 30px;
+    width: auto;
     margin-left: 20px;
     border-radius: 30px;
     text-align: center;
+    padding: 2px;
+    padding-right: 3px;
+    padding-left: 3px;
+    cursor: pointer;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: 167ms;
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    font-weight: 600;
+    line-height: 1;
+    display: inline-flex;
+    font-family: inherit;
+    justify-content: center;
+    position: relative;
+   
+  
+   
+}
+button:hover{
+    color: rgb(112, 107, 107);
+}
+.dataNoti{
+    height: 300px;
+    width: 600px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+.noti-3{
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    height: 250px;
+    width: 260px;
+}
+.p1{
+    margin-top: 40px;
+    text-align: center;
+    color: rgba(0,0,0,0.55);
+    font-weight: 450;
+    font-size: 12px;
+}
+.p2{
+    margin: 15px 15px;
+    text-align: center;
+}
+.btn-free{
+   height: 40px;
+   width: 110px;
+   color: blue;
+   border: 1px solid #0a66c2;
+   /* padding-left: 10px;
+   padding-right: 10px; */
 }

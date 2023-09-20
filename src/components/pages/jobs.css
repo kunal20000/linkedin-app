@@ -11,7 +11,7 @@ ul li {
   margin-left: -10px;
 }
 .jobsContent {
-  color: rgba(0, 0, 0, 0.9);
+  color: rgba(0, 0, 0, 0.8);
 }
 .main-div-1 {
   border-radius: 12px;
@@ -42,6 +42,7 @@ ul li span {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 167ms;
   overflow: hidden;
+  height: 50px;
 }
 .jobsContent1 {
   color: #0a66c2;
@@ -109,6 +110,7 @@ input[type="search"] {
 .jobSeeker{
     height: 300px;
     width: 250px;
+    padding-right: 20px;
     border-radius: 12px;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -120,12 +122,13 @@ input[type="search"] {
     font-size: 20px;
 }
 .para1{
-    margin-top: -10px;
+    margin-top: -5px;
     font-size: 12px;
     margin-left: 18px;
+    color: rgba(0, 0, 0, 0.4);
 }
 .para2{
-    font-size: 16px;
+    font-size: 15px;
     margin-left: 20px;
-    color: rgba(0, 0, 0, 0.9);
+    color: rgba(0, 0, 0, 9);
 }

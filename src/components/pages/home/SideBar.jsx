@@ -4,17 +4,17 @@ import "./sidebar.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const SideBar = () => {
-  // const name = JSON.parse(sessionStorage.getItem("userInfo"));
+  const name = JSON.parse(sessionStorage.getItem("userInfo"));
   return (
     <div className="sidebar">
       <div className="sidebar_profile">
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM0ZHBCFab4-LrCVh2z2e2aVJLvKblrAUdj1CWXHrX&s"
+          src="https://media.licdn.com/dms/image/D5616AQFBP6BFA3N_9g/profile-displaybackgroundimage-shrink_200_800/0/1682500067234?e=1700697600&v=beta&t=Z1KIGzn_hiVd55Ugs8ItaMfDbkQ-FV5VoBqBYeA7SUM"
           alt="image"
         />
         <div className="profile_details">
-          <AccountCircleIcon />
-          <h4>kunal sapate</h4>
+          <AccountCircleIcon className="forCirleIcon"/>
+          <h4 className="nameDynamic">{name}</h4>
           <p>
             B.Tech Graduate || JAVA || HTML || CSS || Bootstrap || JavaScript ||
             Github || React || Redux

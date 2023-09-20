@@ -49,7 +49,12 @@ const Jobs = () => {
         <div className="main-div-2">
           <div className="suugestJobSearch">
             <h6>Suggested job searches</h6>
-            <input type="search" /> <input type="search" />
+           
+              <input type="search" />
+            
+            
+              <input type="search" />
+           
           </div>
           <div className="recommended">
             <h5>Recommended for you</h5>
@@ -61,6 +66,9 @@ const Jobs = () => {
           <div className="jobSeeker">
             <h6>Job seeker guidance</h6>
             <p className="para1">Recommended based on your activity</p>
+            <p style={{ textAlign: "center", marginLeft: "14px" }}>
+              I want to improve my resume
+            </p>
             <p className="para2">
               Explore our curated guide of expert-led courses, such as how to
               improve your resume and grow your network, to help you land your

@@ -7,7 +7,9 @@
     position: sticky;
     margin-left: -40px;
 }
-
+.forCirleIcon{
+    color: rgba(0, 0, 0, 0.6);
+}
 .sidebar .sidebar_profile{
    border-bottom: 1px solid #ccc;
    text-align: center;
@@ -17,9 +19,13 @@
    overflow: hidden;
 
 }
+.nameDynamic:hover{
+   text-decoration: underline;
+   cursor: pointer;
+}
 .sidebar .sidebar_profile img{
     width: 100%;
-    height: 50px;
+    /* height: 50px; */
     overflow: hidden;
     margin-bottom: -30px;
 }
@@ -31,7 +37,7 @@
 .profile_details svg{
     height: 50px;
     width: 50px;
-    color: #ccc;
+    /* color: #ccc; */
     margin: 0px auto;
     object-fit: contain;
 }
