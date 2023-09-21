@@ -13,11 +13,12 @@ import { ReactComponent as BusinessIcon } from "../assets/business.svg";
 import { ReactComponent as SearchIcon } from "../assets/search.svg";
 import Profile from "./Profile";
 import { Navigate } from "react-router-dom";
+
 export const Navbar = () => {
   const navigate = useNavigate(null);
 
   return (
-    <navbar className="navbar-container">
+    <header className="navbar-container">
       <section className="navbar-container1">
         <LinkedinIcon />
         <div className="header_search">
@@ -105,6 +106,6 @@ export const Navbar = () => {
           </div>
         </div>
       </section>
-    </navbar>
+    </header>
   );
 };

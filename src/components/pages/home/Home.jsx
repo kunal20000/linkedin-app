@@ -11,7 +11,7 @@ import { Navbar } from "../../navbar/Navbar";
 
 const Home = () => {
   const [post, setPost] = useState([]);
-  const [isLoading, setIsLoading] = useState();
+  const [isLoading, setIsLoading] = useState(false);
   const fetchDataFromApi = async () => {
     try {
       const resData = await fetch(
@@ -27,8 +27,8 @@ const Home = () => {
         throw new Error("Request failed");
       }
       const { data } = await resData.json();
-      setPost(data);
-      // setPost(data.slice(0, 10));
+      // setPost(data);
+      setPost(data.slice(0, 10));
       console.log("data", data);
     } catch (err) {
       // handle error during the fetching request
@@ -48,7 +48,7 @@ const Home = () => {
           <Feed />
 
           {isLoading ? (
-            <div class="spinner center">
+            <div className="spinner center">
               <div class="spinner-blade"></div>
               <div class="spinner-blade"></div>
               <div class="spinner-blade"></div>

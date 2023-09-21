@@ -22,6 +22,7 @@
 .trypremiumPage input[type="range"]{
     margin: 0 auto;
     width: 300px;
+    fill: none;
     background-color: rgba(0, 0, 0, 0.6);
 }
 input[type="checkbox"]{

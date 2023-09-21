@@ -56,7 +56,7 @@ const Profile = () => {
           <div className="upper-div-main">
             <div className="upper-div">
               <h4>Account</h4>
-              <p>Try Premium for free</p>
+              <p onClick={()=>navigate("/trypremium")}>Try Premium for free</p>
               <p>Setting & Privacy</p>
               <p>Help</p>
               <p>Language</p>
@@ -64,7 +64,7 @@ const Profile = () => {
             <hr />
             <div className="lower-div">
               <h4>Manage</h4>
-              <p>Post & Activity</p>
+              <p onClick={()=>navigate("/")}>Post & Activity</p>
               <p>Job Posting Account</p>
             </div>
             <hr />

@@ -52,11 +52,17 @@ const Feed = () => {
                         Post to Anyone
                       </p>
                     </div>
-                    <span class="close">&times;</span>
+                    <span className="close">&times;</span>
                   </div>
-                  <textarea style={{alignItems:"center",border:"none"}} typeof="text" name="" id="" cols="30" rows="10" placeholder="What do you want to talk About">
-
-                  </textarea>
+                  <textarea
+                    style={{ alignItems: "center", border: "none" }}
+                    typeof="text"
+                    name=""
+                    id=""
+                    cols="30"
+                    rows="10"
+                    placeholder="What do you want to talk About"
+                  ></textarea>
                 </div>
               </div>
             )}
