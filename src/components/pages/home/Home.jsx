@@ -71,22 +71,22 @@ const Home = () => {
               <div class="spinner-blade"></div>
             </div>
           ) : (
-            postDataList.map((posts) => {
-              const { author, channel, id } = posts;
+            postDataList.map((posts, index) => {
+              // const { author, channel, id } = posts;
               return (
-                <div key={id} className="posts">
+                <div key={index} className="posts">
                   <div className="post-header">
                     <div className="post-header-left">
-                      <Avatar src={author.profileImage} />
+                      <Avatar src={posts.author.profileImage} />
                       <div className="post-profile-details">
-                        <h3>{author.name}</h3>
-                        <p>{channel.name}</p>
+                        <h3>{posts.author.name}</h3>
+                        <p>{posts.channel.name}</p>
                       </div>
                     </div>
                     <MoreHorizIcon />
                   </div>
                   <div className="post-body">
-                    <img src={channel.image}></img>
+                    <img src={posts.channel.image}></img>
                   </div>
                   <PostBody />
                 </div>
