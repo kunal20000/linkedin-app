@@ -169,7 +169,8 @@
   margin: 0;
   margin-left: 10px;
 }
-.post-body p {
-  font-size: 14px;
+.post-body img {
+  height: 400px;
+  width: 500px;
   padding: 5px 0px;
 }

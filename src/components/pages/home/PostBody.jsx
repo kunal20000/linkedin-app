@@ -1,11 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import "./PostBody.css";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import PostAddIcon from "@mui/icons-material/PostAdd";
 import SendIcon from "@mui/icons-material/Send";
 
+
 const PostBody = () => {
+  const[count, setCount] = useState(0);
+  
   const commentClick = async () => {
     try {
       const resData = await fetch(
@@ -26,8 +29,10 @@ const PostBody = () => {
   return (
     <div className="page-footer">
       <div className="page-footer-option">
+        <div className="forLike" onClick={()=>setCount(count+1)}>
         <ThumbUpOffAltIcon />
-        <span>Like</span>
+        <span>Like {count}</span>
+        </div>
       </div>
       <div className="page-footer-option">
         <ChatBubbleOutlineIcon />

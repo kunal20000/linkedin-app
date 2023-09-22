@@ -8,36 +8,44 @@ import PostBody from "./PostBody";
 import Widget from "./Widget";
 import "./app.css";
 import { Navbar } from "../../navbar/Navbar";
-
+import axios from "axios";
+import { getHeaderWithProjectIDAndBody } from "../../utils/config";
 const Home = () => {
-  const [post, setPost] = useState([]);
+  const [postDataList, setPostData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const fetchDataFromApi = async () => {
+  let [page, setPage] = useState(1);
+  const fetchPostData = async () => {
     try {
-      const resData = await fetch(
-        "https://academics.newtonschool.co/api/v1/linkedin/post",
-        {
-          method: "GET",
-          headers: {
-            projectId: "YOUR_PROJECT_ID",
-          },
-        }
+      const config = getHeaderWithProjectIDAndBody();
+      const res = await axios.get(
+        `https://academics.newtonschool.co/api/v1/linkedin/post?page=${page}&limit=10`,
+        config
       );
-      if (!resData.ok) {
-        throw new Error("Request failed");
-      }
-      const { data } = await resData.json();
-      // setPost(data);
-      setPost(data.slice(0, 10));
-      console.log("data", data);
+
+      const postData = res.data.data;
+      setPostData([...postDataList, ...res.data.data]);
     } catch (err) {
-      // handle error during the fetching request
-      console.error();
+      console.error(err);
+    }
+  };
+  const handleScroll = () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop >=
+      document.documentElement.offsetHeight - 100
+    ) {
+      setPage((prevPage) => prevPage + 1);
     }
   };
 
   useEffect(() => {
-    fetchDataFromApi();
+    fetchPostData();
+  }, [page]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
   return (
     <main>
@@ -63,7 +71,7 @@ const Home = () => {
               <div class="spinner-blade"></div>
             </div>
           ) : (
-            post.map((posts) => {
+            postDataList.map((posts) => {
               const { author, channel, id } = posts;
               return (
                 <div key={id} className="posts">
@@ -78,7 +86,7 @@ const Home = () => {
                     <MoreHorizIcon />
                   </div>
                   <div className="post-body">
-                    <p>This is test post, we are learning react</p>
+                    <img src={channel.image}></img>
                   </div>
                   <PostBody />
                 </div>
