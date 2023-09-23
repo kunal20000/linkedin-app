@@ -72,7 +72,7 @@ const Home = () => {
             </div>
           ) : (
             postDataList.map((posts, index) => {
-              // const { author, channel, id } = posts;
+              
               return (
                 <div key={index} className="posts">
                   <div className="post-header">
