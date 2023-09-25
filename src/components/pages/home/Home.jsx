@@ -14,6 +14,8 @@ const Home = () => {
   const [postDataList, setPostData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   let [page, setPage] = useState(1);
+  const isLoggedIn = sessionStorage.getItem("logInStatus");
+
   const fetchPostData = async () => {
     try {
       const config = getHeaderWithProjectIDAndBody();
@@ -72,7 +74,6 @@ const Home = () => {
             </div>
           ) : (
             postDataList.map((posts, index) => {
-              
               return (
                 <div key={index} className="posts">
                   <div className="post-header">

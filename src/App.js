@@ -27,9 +27,9 @@ function App() {
   const userName = JSON.parse(sessionStorage.getItem("userInfo"));
   useEffect(() => {
     if (!isLoggedIn) {
-      navigate("/login", { replace: true });
+      navigate("/login");
     }
-  }, []);
+  }, [isLoggedIn]);
 
   return (
     <>
@@ -44,8 +44,8 @@ function App() {
             <Route path="/trypremium" element={<TryPremium />} />
           </>
         )}
-        <Route path="/me" element={<Me />} />
-        <Route path="/forbusiness" element={<ForBusiness />} />
+        {/* <Route path="/me" element={<Me />} />
+        <Route path="/forbusiness" element={<ForBusiness />} /> */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
