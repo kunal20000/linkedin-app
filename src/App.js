@@ -16,6 +16,7 @@ import Feed from "./components/pages/home/Feed";
 import Widget from "./components/pages/home/Widget";
 import Signup from "./components/login/Signup";
 import { Navigate } from "react-router-dom";
+import ForgotPass from "./components/login/ForgotPass";
 function App() {
   const user = null;
 
@@ -25,11 +26,11 @@ function App() {
   const [isSignInPage, setIsSignInPage] = useState(false);
   const isLoggedIn = sessionStorage.getItem("logInStatus");
   const userName = JSON.parse(sessionStorage.getItem("userInfo"));
-  useEffect(() => {
-    if (!isLoggedIn) {
-      navigate("/login");
-    }
-  }, [isLoggedIn]);
+  // useEffect(() => {
+  //   if (!isLoggedIn) {
+  //     navigate("/login");
+  //   }
+  // }, [isLoggedIn]);
 
   return (
     <>
@@ -48,6 +49,7 @@ function App() {
         <Route path="/forbusiness" element={<ForBusiness />} /> */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/forgotpass" element={<ForgotPass />} />
       </Routes>
     </>
   );

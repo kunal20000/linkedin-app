@@ -169,8 +169,13 @@
   margin: 0;
   margin-left: 10px;
 }
-.post-body img {
+.post-body .mainImage {
   height: 400px;
   width: 500px;
   padding: 5px 0px;
+}
+.imageLiker{
+  height: 16px;
+  width: 16px;
+  display: inline-block;
 }

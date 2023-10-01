@@ -1,6 +1,8 @@
 body{
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+   
 }
 
 .app-body{
@@ -10,5 +12,4 @@ body{
     padding: 0px 15%;
     display: flex;
     
-   
 }

@@ -98,14 +98,17 @@ const Login = () => {
             <br />
             {hasError && <p className="errorMsg">{errMessage}!</p>}
             {!hasError && <p className="succesfullMsg">{errMessage}</p>}
-            <a href="">Forgot password?</a>
+
+            <Link to="/ForgotPass">
+              {" "}
+              <a href="./ForgotPass">Forgot password?</a>
+            </Link>
             <br />
             <button className="signIn-button">Sign In</button>
             <hr style={{ width: "70%" }} />
           </form>
 
           <Link to="/Signup">
-         
             <button className="joinNow-button">New to Linedin</button>
           </Link>
         </div>

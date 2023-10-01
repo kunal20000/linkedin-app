@@ -5,52 +5,66 @@ import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import PostAddIcon from "@mui/icons-material/PostAdd";
 import SendIcon from "@mui/icons-material/Send";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { getHeaderWithProjectIDAndBody } from "../../utils/config";
+import { usePost } from "../../Provider/PostInfoProvider";
+const PostBody = ({ likeCount, onLikeClick }) => {
 
-const PostBody = () => {
-  const [count, setCount] = useState(0);
+  // const { setSelectedPost, selectedPost } = usePost();
+  const [openCommentSec, setOpenCommentSec] = useState(false);
+  const [localLikeCount, setLocalLikeCount] = useState(0);
   const loginStatus = sessionStorage.getItem("logInStatus");
+  const[comments, setComments] = useState([]);
   const loggedIn = sessionStorage.getItem("userInfo");
   const navigate = useNavigate(null);
-  const handleLoginModal = ()=>{
-     if(loggedIn){
-      setCount(count+1);;
-     }else{
-      navigate('/login');
-     }
-  }
 
-  const handleComment = ()=>{
-    
-  }
-  const commentClick = async () => {
-    try {
-      const resData = await fetch(
-        "https://academics.newtonschool.co/api/v1/linkedin/post/:postId/comments",
-        {
-          headers: {
-            Authorization: "Bearer YOUR_JWT_TOKEN",
-            projectId: "YOUR_PROJECT_ID",
-          },
-        }
-      );
-      const {data} = resData.json();
-      // console.log("dataComment", data);
-    } catch (error) {
-      console.log(error);
+
+  const handleLoginModal = () => {
+    if (loggedIn) {
+      setLocalLikeCount(localLikeCount + 1);
+      onLikeClick(localLikeCount + 1);
+    } else {
+      navigate("/login");
     }
   };
+
+  // const fetchingCommentPost = async (postId) => {
+  //   const configs = getHeaderWithProjectIDAndBody();
+  //   try {
+  //     const res = await axios.get(
+  //       `https://academics.newtonschool.co/api/v1/reddit/post/${postId}/comments`,
+  //       configs,
+  //       postId
+  //     );
+  //     const childrenData = res.data.data[0].children;
+  //     console.log(childrenData);
+  //     if (res.data.status === "success") {
+  //       setComments([...childrenData, ...res.data.data]);
+  //     }
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
+
+  // const handleCommentSection = ()=>{
+  //   const postId = selectedPost._id;
+  //   setOpenCommentSec((prevState)=> !prevState);
+  //   if(!openCommentSec){
+  //     fetchingCommentPost(postId);
+  //   }
+  // }
   return (
     <div className="page-footer">
       <div className="page-footer-option">
         <div className="forLike" onClick={handleLoginModal}>
           <ThumbUpOffAltIcon />
-          <span>Like {count}</span>
+          <span>Like</span>
         </div>
       </div>
       <div className="page-footer-option">
-        <div className="forComment" onClick={handleComment}>
-        <ChatBubbleOutlineIcon />
-        <span>Comment</span>
+        <div className="forComment" >
+          <ChatBubbleOutlineIcon />
+          <span>Comment</span>
         </div>
       </div>
       <div className="page-footer-option">

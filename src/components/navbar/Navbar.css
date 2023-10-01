@@ -37,14 +37,14 @@ body {
   border: 0 solid #e5e7eb;
 }
 
-input[type="search"]:focus {
+/* input[type="search"]:focus {
   width: 300px;
   background-color: rgb(241 245 249);
   border-radius: 1px;
   height: 2rem;
   padding-left: 0.5rem;
   border: 0 solid #e5e7eb;
-}
+} */
 
 .fa-search {
   color: aqua;
@@ -65,7 +65,7 @@ input[type="search"]:focus {
 }
 .navbar-container2 {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   margin-right: 100px;
 }
 .navbar-container3 {
@@ -73,15 +73,21 @@ input[type="search"]:focus {
   gap: 1rem;
 }
 .homeNav {
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
+  align-items: center;
   line-height: 1.333;
   font-size: smaller;
   color: rgba(0, 0, 0, 0.6);
+  
 }
+
 .mercado-match1 {
   color: rgba(0, 0, 0, 0.6);
 }
 .navbar-container2-home {
+  list-style: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -89,6 +95,9 @@ input[type="search"]:focus {
   gap: -0.4rem;
 }
 .mynetworknav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-decoration: none;
   font-size: smaller;
   color: rgba(0, 0, 0, 0.6);
@@ -104,6 +113,9 @@ input[type="search"]:focus {
   gap: -0.4rem;
 }
 .jobnav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-decoration: none;
   font-size: smaller;
   color: rgba(0, 0, 0, 0.6);
@@ -119,6 +131,9 @@ input[type="search"]:focus {
   gap: -0.4rem;
 }
 .messagenav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-decoration: none;
   font-size: smaller;
   color: rgba(0, 0, 0, 0.6);
@@ -134,6 +149,9 @@ input[type="search"]:focus {
   gap: -0.4rem;
 }
 .notificationnav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-decoration: none;
   font-size: smaller;
   color: rgba(0, 0, 0, 0.6);
@@ -181,9 +199,12 @@ svg[data-supported-dps="16x16"] {
   border-radius: 50%;
 }
 .active {
-  padding-top: 2px;
+  padding: 4.7px;
   color: black;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
+}
+.active svg{
+  color: black;
 }
 .forbusinessnav {
   text-decoration: none;
@@ -213,4 +234,5 @@ svg[data-supported-dps="16x16"] {
   color: #5c3b09;
   text-decoration: underline;
   margin-right: 120px;
+  border: none;
 }

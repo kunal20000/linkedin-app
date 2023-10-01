@@ -4,8 +4,8 @@
     flex-direction: column;
     height: 200px;
     max-width: 240px;
-    position: sticky;
-    margin-left: -40px;
+    position: relative;
+    margin-left: -60px;
 }
 .forCirleIcon{
     color: rgba(0, 0, 0, 0.6);

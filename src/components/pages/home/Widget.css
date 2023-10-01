@@ -1,10 +1,10 @@
+
 .widget{
     display: flex;
     flex-direction: column;
-    /* width: 100%; */
     border-radius: 10px;
     margin-bottom: 20px;
-   
+    
 }
 .widget-header{
    display: flex;
@@ -24,7 +24,7 @@
     margin: 0px;
     padding: 0px;
     padding-left: 15px;
-    /* list-style: circle; */
+    
 
 }
 .widget-options li{
@@ -57,4 +57,10 @@
     padding: 10px;
     border-radius: 10px;
     position: fixed;
+}
+.widegtBottom{
+    background-color: #fff;
+    height: 100px;
+    width: 100px;
+    margin-top: 200px;
 }

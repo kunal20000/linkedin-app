@@ -29,47 +29,51 @@ export const Navbar = () => {
 
       <section className="navbar-container2">
         <div className="navbar-container2-home">
-          <HomeIcon />
           <NavLink className="homeNav" to="/">
-            Home
+            <HomeIcon />
+            <span>Home</span>
           </NavLink>
         </div>
         <div className="navbar-container2-mynetwork">
-          <MyNetworkIcon />
           <NavLink className="mynetworknav" to="/mynetwork">
-            My Network
+            <MyNetworkIcon />
+            <span>My Network</span>
           </NavLink>
         </div>
         <div className="navbar-container2-jobs">
-          <JobsIcon />
           <NavLink className="jobnav" to="/jobs">
-            Jobs
+            <JobsIcon />
+            <span>Jobs</span>
           </NavLink>
         </div>
         <div className="navbar-container2-messaging">
-          <MessagingIcon />
           <NavLink className="messagenav" to="/messaging">
-            Messaging
+            <MessagingIcon />
+            <span>Messaging</span>
           </NavLink>
         </div>
         <div className="navbar-container2-notification">
-          <NotificationIcon />
+          
           <NavLink className="notificationnav" to="/notification">
-            Notification
+          <NotificationIcon />
+            <span>Notification</span>
           </NavLink>
         </div>
         <div className="navbar-container2-me">
-          <MeIcon />
+          
           <div
             style={{
               display: "flex",
+              flexDirection:"column",
               gap: "0px",
               alignItems: "center",
               fontSize: "14px",
             }}
           >
-            Me
+            <MeIcon />
+            <div style={{display:"flex",alignItems:'center'}}><span style={{color:"rgba(0,0,0,0.6)"}}>Me</span>
             <Profile />
+            </div>
           </div>
         </div>
 
@@ -77,9 +81,7 @@ export const Navbar = () => {
           <div className="vl">
             <div className="navbar-container3-forbusiness">
               <BusinessIcon />
-              <NavLink className="forbusinessnav">
-                For Business
-              </NavLink>
+              <span className="forbusinessnav">For Business</span>
             </div>
           </div>
 
@@ -87,7 +89,7 @@ export const Navbar = () => {
             style={{
               paddingTop: "1rem",
               textAlign: "center",
-              position: "relative",
+              
             }}
           >
             <NavLink className="trypremiumnav" to="/trypremium">
@@ -98,6 +100,7 @@ export const Navbar = () => {
                   alignItems: "center",
                   justifyContent: "center",
                   marginRight: "0.8rem",
+                 
                 }}
               >
                 Free

@@ -35,8 +35,8 @@ const handleLogout = ()=>{
       onClick={() => setShowModal(!showModal)}
       ref={profileIconRef}
     >
-      <section>
-        <ArrowDropDownIcon />
+      <section className="arrowIconForDropDown">
+        <ArrowDropDownIcon style={{color:"rgba(0,0,0,0.6)"}}/>
       </section>
       {showModal && (
         <div className="auth-modal">
