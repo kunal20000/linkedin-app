@@ -17,39 +17,47 @@ import Widget from "./components/pages/home/Widget";
 import Signup from "./components/login/Signup";
 import { Navigate } from "react-router-dom";
 import ForgotPass from "./components/login/ForgotPass";
+import MainProfile from "./components/pages/home/MainProfile";
+
 function App() {
-  const user = null;
-
-  const navigate = useNavigate(null);
-
+  const navigate = useNavigate();
   const [setLogin, setLoginComponent] = useState(false);
   const [isSignInPage, setIsSignInPage] = useState(false);
-  const isLoggedIn = sessionStorage.getItem("logInStatus");
-  const userName = JSON.parse(sessionStorage.getItem("userInfo"));
+  const name = JSON.parse(sessionStorage.getItem("userInfo"));
+  // const isLoggedIn = sessionStorage.getItem("logInStatus");
+  // const email = sessionStorage.getItem("email");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   // useEffect(() => {
+  
   //   if (!isLoggedIn) {
   //     navigate("/login");
+    
+  //   } else if (name === "") {
+  //     navigate("/login");
+    
+  //   } else if (isLoggedIn === "true" && name !== "") {
+  //     navigate("/");
+     
   //   }
-  // }, [isLoggedIn]);
-
+  // }, []);
+ 
   return (
     <>
+     
       <Routes>
-        {!isLoggedIn && (
-          <>
-            <Route path="/" element={<Home />} />
-            <Route path="/mynetwork" element={<MyNetwork />} />
-            <Route path="/jobs" element={<Jobs />} />
-            <Route path="/messaging" element={<Messaging />} />
-            <Route path="/notification" element={<Notification />} />
-            <Route path="/trypremium" element={<TryPremium />} />
-          </>
-        )}
-        {/* <Route path="/me" element={<Me />} />
-        <Route path="/forbusiness" element={<ForBusiness />} /> */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/forgotpass" element={<ForgotPass />} />
+        <>
+          <Route path="/" element={<Home />} />
+          <Route path="/mainprofile" element={<MainProfile />} />
+          <Route path="/mynetwork" element={<MyNetwork />} />
+          <Route path="/jobs" element={<Jobs />} />
+          <Route path="/messaging" element={<Messaging />} />
+          <Route path="/notification" element={<Notification />} />
+          <Route path="/trypremium" element={<TryPremium />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/forgotpass" element={<ForgotPass />} />
+        </>
       </Routes>
     </>
   );

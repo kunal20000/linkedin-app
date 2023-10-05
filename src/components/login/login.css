@@ -142,6 +142,10 @@ form a {
   font-weight: 600;
   line-height: 1.25;
 }
-a{
-  margin-left: -11px;
+.forgotLink{
+  margin-left: -6.5px;
+  
+}
+.forgotLink:hover{
+  text-decoration: underline;
 }

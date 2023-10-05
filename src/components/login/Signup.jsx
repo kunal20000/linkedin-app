@@ -92,7 +92,7 @@ const Signup = () => {
             onChange={handleUserInput}
             required
           />
-          {hasError ? <p>{errMessage}</p> : <p>{errMessage}</p>}
+          {hasError ? <p className="errorMesage">{errMessage}</p> : <p className="errorMesage">{errMessage}</p>}
           <p>
             By clicking Agree & Join, you agree to the LinkedIn User Agreement,
             Privacy Policy, and Cookie Policy. Agree & Join

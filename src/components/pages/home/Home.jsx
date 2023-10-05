@@ -51,11 +51,11 @@ const Home = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const handleLikeClick = (index, newLikeCount)=>{
-     const updatedPostDataList = [...postDataList];
-     updatedPostDataList[index].likeCount = newLikeCount;
-     setPostData(updatedPostDataList);
-  }
+  const handleLikeClick = (index, newLikeCount) => {
+    const updatedPostDataList = [...postDataList];
+    updatedPostDataList[index].likeCount = newLikeCount;
+    setPostData(updatedPostDataList);
+  };
   return (
     <main>
       <Navbar />
@@ -94,12 +94,41 @@ const Home = () => {
                     <MoreHorizIcon />
                   </div>
                   <div className="post-body">
-                    <p style={{fontSize: "13px", fontFamily:"Arial", color:"rgba(0,0,0,0.9)"}}>{posts.content}</p>
-                    <img className="mainImage" src={posts.channel.image} alt="feedImage"></img>
-                    <img className="imageLiker" src="https://static.licdn.com/aero-v1/sc/h/8ekq8gho1ruaf8i7f86vd1ftt" alt="likerImage"/>
-                    <span style={{marginLeft:"2px", fontSize:"14px",color:"rgba(0,0,0,.6)"}}>{posts.likeCount}</span>
+                    <p
+                      style={{
+                        fontSize: "13px",
+                        fontFamily: "Arial",
+                        color: "rgba(0,0,0,0.9)",
+                      }}
+                    >
+                      {posts.content}
+                    </p>
+                    <img
+                      className="mainImage"
+                      src={posts.channel.image}
+                      alt="feedImage"
+                    ></img>
+                    <img
+                      className="imageLiker"
+                      src="https://static.licdn.com/aero-v1/sc/h/8ekq8gho1ruaf8i7f86vd1ftt"
+                      alt="likerImage"
+                    />
+                    <span
+                      style={{
+                        marginLeft: "2px",
+                        fontSize: "14px",
+                        color: "rgba(0,0,0,.6)",
+                      }}
+                    >
+                      {posts.likeCount}
+                    </span>
                   </div>
-                  <PostBody likeCount={posts.likeCount} onLikeClick={(newLikeCount)=>handleLikeClick(index,newLikeCount)}/>
+                  <PostBody
+                    likeCount={posts.likeCount}
+                    onLikeClick={(newLikeCount) =>
+                      handleLikeClick(index, newLikeCount)
+                    }
+                  />
                 </div>
               );
             })

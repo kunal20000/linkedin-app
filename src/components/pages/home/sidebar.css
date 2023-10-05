@@ -19,6 +19,10 @@
    overflow: hidden;
 
 }
+.mainProfile{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.8);
+}
 .nameDynamic:hover{
    text-decoration: underline;
    cursor: pointer;

@@ -1,7 +1,11 @@
 import React from "react";
 import { Navbar } from "../navbar/Navbar";
 import "./notification.css";
+import { useNavigate } from "react-router-dom";
+
 const Notification = () => {
+  const navigate = useNavigate(null);
+
   return (
     <main>
       <Navbar />
@@ -19,14 +23,14 @@ const Notification = () => {
             <button className="mentionBtn">Mentions</button>
           </div>
           <div className="dataNoti">
-            <h6 style={{textAlign:"center", alignItems:"center"}}>no notification</h6>
+            <h6 style={{textAlign:"center",fontSize:"20px", margin:"100px auto"}}>comming soon</h6>
           </div>
         </div>
         <div className="noti-3">
           <p className="p1"> Kunal Boost your job search with Premium</p>
           <p className="p2">see whos viewed your in last  90 days</p>
           <div style={{textAlign:"center"}}>
-          <button className="btn-free">Try for free!</button>
+          <button className="btn-free" onClick={()=>navigate ('/trypremium')}>Try for free!</button>
           </div>
         </div>
       </div>

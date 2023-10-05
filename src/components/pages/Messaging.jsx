@@ -6,7 +6,7 @@ const Messaging = () => {
     <main>
       <Navbar />
 
-      <h4 style={{ textAlign: "center", margin: "0 auto" }}>
+      <h4 style={{ textAlign: "center", margin: "30px auto", }}>
         Feature comming soon...
       </h4>
       <img
@@ -15,6 +15,7 @@ const Messaging = () => {
           marginLeft:"auto",
           marginRight: "auto",
           width: "50%",
+          height:"500px"
         }}
         src="https://styles.redditmedia.com/t5_2qioo/styles/communityIcon_qneofzw4kqk51.png"
         alt=""

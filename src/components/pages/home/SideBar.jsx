@@ -2,8 +2,13 @@ import React from "react";
 import "./sidebar.css";
 // import { ReactComponent as AvtarIcon } from "./assets/avtar.svg";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { useNavigate } from "react-router-dom";
 
 const SideBar = () => {
+  const navigate = useNavigate();
+  const handleClick = ()=>{
+   navigate('/MainProfile');
+  }
   const name = JSON.parse(sessionStorage.getItem("userInfo"));
   return (
     <div className="sidebar">
@@ -14,7 +19,7 @@ const SideBar = () => {
         />
         <div className="profile_details">
           <AccountCircleIcon className="forCirleIcon"/>
-          <h4 className="nameDynamic">{name}</h4>
+          <h4 className="nameDynamic" onClick={handleClick}>{name}</h4>
           <p>
             B.Tech Graduate || JAVA || HTML || CSS || Bootstrap || JavaScript ||
             Github || React || Redux

@@ -9,23 +9,19 @@ import axios from "axios";
 import { getHeaderWithProjectIDAndBody } from "../../utils/config";
 import { usePost } from "../../Provider/PostInfoProvider";
 const PostBody = ({ likeCount, onLikeClick }) => {
-
   // const { setSelectedPost, selectedPost } = usePost();
   const [openCommentSec, setOpenCommentSec] = useState(false);
   const [localLikeCount, setLocalLikeCount] = useState(0);
   const loginStatus = sessionStorage.getItem("logInStatus");
-  const[comments, setComments] = useState([]);
+  const [comments, setComments] = useState([]);
   const loggedIn = sessionStorage.getItem("userInfo");
   const navigate = useNavigate(null);
 
-
-  const handleLoginModal = () => {
-    if (loggedIn) {
+  const handleLikeClick = () => {
+     
       setLocalLikeCount(localLikeCount + 1);
       onLikeClick(localLikeCount + 1);
-    } else {
-      navigate("/login");
-    }
+    
   };
 
   // const fetchingCommentPost = async (postId) => {
@@ -56,13 +52,13 @@ const PostBody = ({ likeCount, onLikeClick }) => {
   return (
     <div className="page-footer">
       <div className="page-footer-option">
-        <div className="forLike" onClick={handleLoginModal}>
+        <div className="forLike" onClick={handleLikeClick}>
           <ThumbUpOffAltIcon />
           <span>Like</span>
         </div>
       </div>
       <div className="page-footer-option">
-        <div className="forComment" >
+        <div className="forComment">
           <ChatBubbleOutlineIcon />
           <span>Comment</span>
         </div>

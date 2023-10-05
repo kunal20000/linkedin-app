@@ -1,7 +1,12 @@
 import React from "react";
 import "./tryPremium.css";
 import { Navbar } from "../navbar/Navbar";
+import { useNavigate } from "react-router-dom";
 const TryPremium = () => {
+  const navigate = useNavigate(null);
+  const handlePremium = ()=>{
+     alert("Thank you for buying Premium");
+  }
   return (
     <main>
       <Navbar/>
@@ -35,7 +40,7 @@ const TryPremium = () => {
         </div>
         <hr />
         <div className="premiumBox4">
-          <button className="btn-next">Next</button>
+          <button className="btn-next" onClick={handlePremium}>Next</button>
         </div>
       </main>
      

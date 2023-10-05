@@ -3,19 +3,27 @@ import "./Profile.css";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { Navigate, useNavigate } from "react-router-dom";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Profile = () => {
   const name = JSON.parse(sessionStorage.getItem("userInfo"));
   const [showModal, setShowModal] = useState();
   const profileIconRef = useRef(null);
   const navigate = useNavigate(null);
+ 
+    const handleLogout = () => {
+      sessionStorage.removeItem("userInfo");
+      sessionStorage.removeItem("logInStatus");
+      sessionStorage.removeItem("authToken");
+      navigate("/login");
+      
+      setTimeout(() => {
+        toast.success("Logged Out Succesfully");
+      }, 1000);
+    };
 
-const handleLogout = ()=>{
-  sessionStorage.removeItem("userInfo");
-  sessionStorage.removeItem("logInStatus");
-  sessionStorage.removeItem("authToken");
-  navigate('/login');
-}
+
   useEffect(() => {
     const hideModal = (e) => {
       if (profileIconRef.current.contains(e.target)) {
@@ -36,7 +44,7 @@ const handleLogout = ()=>{
       ref={profileIconRef}
     >
       <section className="arrowIconForDropDown">
-        <ArrowDropDownIcon style={{color:"rgba(0,0,0,0.6)"}}/>
+        <ArrowDropDownIcon style={{ color: "rgba(0,0,0,0.6)" }} />
       </section>
       {showModal && (
         <div className="auth-modal">
@@ -50,9 +58,9 @@ const handleLogout = ()=>{
             }}
           >
             <AccountCircleIcon className="forSvg" />
-            <div style={{display:"flex", flexDirection:"column"}}>
-            <h6>{name}</h6>
-            {/* <p>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <h6>{name}</h6>
+              {/* <p>
               B.Tech Graduate || JAVA || HTML || CSS || Bootstrap || JavaScript
               || Github || React || Redux
             </p> */}
@@ -62,7 +70,9 @@ const handleLogout = ()=>{
           <div className="upper-div-main">
             <div className="upper-div">
               <h4>Account</h4>
-              <p onClick={()=>navigate("/trypremium")}>Try Premium for free</p>
+              <p onClick={() => navigate("/trypremium")}>
+                Try Premium for free
+              </p>
               <p>Setting & Privacy</p>
               <p>Help</p>
               <p>Language</p>
@@ -70,7 +80,7 @@ const handleLogout = ()=>{
             <hr />
             <div className="lower-div">
               <h4>Manage</h4>
-              <p onClick={()=>navigate("/")}>Post & Activity</p>
+              <p onClick={() => navigate("/")}>Post & Activity</p>
               <p>Job Posting Account</p>
             </div>
             <hr />
@@ -85,4 +95,3 @@ const handleLogout = ()=>{
 };
 
 export default Profile;
-

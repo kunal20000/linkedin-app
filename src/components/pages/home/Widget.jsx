@@ -35,9 +35,9 @@ const Widget = () => {
           </ul>
         </div>
       </div>
-      <footer className="widegtBottom">
+      {/* <footer className="widegtBottom">
 
-      </footer>
+      </footer> */}
       
     </div>
   );

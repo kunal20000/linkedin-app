@@ -6,13 +6,17 @@ import { Link } from "react-router-dom";
 import { ReactComponent as LinkedingLogo } from "../assets/linkedinLogo.svg";
 import { getHeaderWithProjectIDAndBody } from "../utils/config";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
+  const notify = () => toast("Successfully Logged In");
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate(null);
   const [errMessage, setErrMessage] = useState("");
   const [hasError, sethasError] = useState(false);
+  
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",
@@ -33,13 +37,15 @@ const Login = () => {
       if (res.data.token) {
         sethasError(false);
         setErrMessage("logged succesfully");
-        navigate("/");
         sessionStorage.setItem("loginStatus", true);
         sessionStorage.setItem("authToken", res.data.token);
         sessionStorage.setItem("userInfo", JSON.stringify(res.data.data.name));
+        navigate("/");
+        
       }
     } catch (err) {
       sethasError(true);
+      toast.error("Login Failed: Invalid Username or Password");
       setErrMessage(err.response.data.message);
       console.log(err);
     }
@@ -47,7 +53,6 @@ const Login = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserInfo({ ...userInfo, [name]: value });
-    // console.log(userInfo);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -99,8 +104,7 @@ const Login = () => {
             {hasError && <p className="errorMsg">{errMessage}!</p>}
             {!hasError && <p className="succesfullMsg">{errMessage}</p>}
 
-            <Link to="/ForgotPass">
-              {" "}
+            <Link className="forgotLink" to="/ForgotPass">
               <a href="./ForgotPass">Forgot password?</a>
             </Link>
             <br />
@@ -118,6 +122,7 @@ const Login = () => {
           alt="image"
         />
       </div>
+      <ToastContainer />
     </div>
   );
 };

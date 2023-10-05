@@ -1,4 +1,4 @@
-.spinner {
+.spinner{
     font-size: 28px;
     position: relative;
     display: inline-block;
@@ -6,7 +6,7 @@
     height: 1em;
   }
   
-  .spinner.center {
+  .spinner .center {
     position: absolute;
     left: 0;
     right: 0;

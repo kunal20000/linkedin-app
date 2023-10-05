@@ -50,10 +50,10 @@ const Jobs = () => {
           <div className="suugestJobSearch">
             <h6>Suggested job searches</h6>
            
-              <input type="search" />
+              {/* <input type="search" />
             
             
-              <input type="search" />
+              <input type="search" /> */}
            
           </div>
           <div className="recommended">
