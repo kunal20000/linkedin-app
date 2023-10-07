@@ -236,3 +236,32 @@ svg[data-supported-dps="16x16"] {
   margin-right: 120px;
   border: none;
 }
+@media only screen and (max-width:767px){
+  .navbar-container{
+    margin: 0;
+  }
+  .navbar-container1{
+    margin-left: 2px;
+  }
+  .header_search{
+   
+    background-color: #fff;
+  }
+  .header_search input{
+    display: none;
+  }
+  .header_search svg{
+   /* margin-left: 0px; */
+   margin-right: 4px;
+   width: fit-content;
+  }
+  .navbar-container2{
+    gap: 1rem;
+  }
+  span{
+    display: none;
+  }
+  svg{
+    width: 20px;
+  }
+}

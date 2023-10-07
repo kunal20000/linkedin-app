@@ -8,8 +8,10 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { getHeaderWithProjectIDAndBody } from "../../utils/config";
 import { usePost } from "../../Provider/PostInfoProvider";
+
 const PostBody = ({ likeCount, onLikeClick }) => {
   // const { setSelectedPost, selectedPost } = usePost();
+  const [isLiked, setIsLiked] = useState(false); // Track whether the post is liked
   const [openCommentSec, setOpenCommentSec] = useState(false);
   const [localLikeCount, setLocalLikeCount] = useState(0);
   const loginStatus = sessionStorage.getItem("logInStatus");
@@ -18,37 +20,20 @@ const PostBody = ({ likeCount, onLikeClick }) => {
   const navigate = useNavigate(null);
 
   const handleLikeClick = () => {
-     
-      setLocalLikeCount(localLikeCount + 1);
-      onLikeClick(localLikeCount + 1);
-    
+ 
+      if (isLiked) {
+        // If already liked, decrease like count
+        setLocalLikeCount(localLikeCount - 1);
+      } else {
+        // If not liked, increase like count
+        setLocalLikeCount(localLikeCount + 1);
+      }
+      // Toggle the liked state
+      setIsLiked(!isLiked);
+      // Callback to update the like count in the parent component
+      onLikeClick(localLikeCount);
   };
 
-  // const fetchingCommentPost = async (postId) => {
-  //   const configs = getHeaderWithProjectIDAndBody();
-  //   try {
-  //     const res = await axios.get(
-  //       `https://academics.newtonschool.co/api/v1/reddit/post/${postId}/comments`,
-  //       configs,
-  //       postId
-  //     );
-  //     const childrenData = res.data.data[0].children;
-  //     console.log(childrenData);
-  //     if (res.data.status === "success") {
-  //       setComments([...childrenData, ...res.data.data]);
-  //     }
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
-
-  // const handleCommentSection = ()=>{
-  //   const postId = selectedPost._id;
-  //   setOpenCommentSec((prevState)=> !prevState);
-  //   if(!openCommentSec){
-  //     fetchingCommentPost(postId);
-  //   }
-  // }
   return (
     <div className="page-footer">
       <div className="page-footer-option">

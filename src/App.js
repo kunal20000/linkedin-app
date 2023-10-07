@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { Navbar } from "./components/navbar/Navbar";
-import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
+
 import Home from "./components/pages/home/Home";
 import MyNetwork from "./components/pages/MyNetwork";
 import Messaging from "./components/pages/Messaging";
@@ -18,46 +19,27 @@ import Signup from "./components/login/Signup";
 import { Navigate } from "react-router-dom";
 import ForgotPass from "./components/login/ForgotPass";
 import MainProfile from "./components/pages/home/MainProfile";
-
+import HomeRoute from "./components/HomeRoute";
 function App() {
-  const navigate = useNavigate();
-  const [setLogin, setLoginComponent] = useState(false);
-  const [isSignInPage, setIsSignInPage] = useState(false);
   const name = JSON.parse(sessionStorage.getItem("userInfo"));
-  // const isLoggedIn = sessionStorage.getItem("logInStatus");
-  // const email = sessionStorage.getItem("email");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const isLoggedIn = sessionStorage.getItem("logInStatus");
 
-  // useEffect(() => {
-  
-  //   if (!isLoggedIn) {
-  //     navigate("/login");
-    
-  //   } else if (name === "") {
-  //     navigate("/login");
-    
-  //   } else if (isLoggedIn === "true" && name !== "") {
-  //     navigate("/");
-     
-  //   }
-  // }, []);
- 
   return (
     <>
-     
       <Routes>
-        <>
-          <Route path="/" element={<Home />} />
-          <Route path="/mainprofile" element={<MainProfile />} />
-          <Route path="/mynetwork" element={<MyNetwork />} />
-          <Route path="/jobs" element={<Jobs />} />
-          <Route path="/messaging" element={<Messaging />} />
-          <Route path="/notification" element={<Notification />} />
-          <Route path="/trypremium" element={<TryPremium />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/forgotpass" element={<ForgotPass />} />
-        </>
+        <Route path="*" element={<HomeRoute />} />
+        <Route
+          path="/login"
+          element={isLoggedIn ? <Navigate to={"/"} /> : <Login />}
+        />
+        <Route
+          path="/signup"
+          element={isLoggedIn ? <Navigate to={"/"} /> : <Signup />}
+        />
+        <Route
+          path="/forgotpass"
+          element={isLoggedIn ? <Navigate to={"/"} /> : <ForgotPass />}
+        />
       </Routes>
     </>
   );

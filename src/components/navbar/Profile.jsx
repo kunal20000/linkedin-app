@@ -7,22 +7,21 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Profile = () => {
-  const name = JSON.parse(sessionStorage.getItem("userInfo"));
+  const userName = JSON.parse(sessionStorage.getItem("userInfo"));
   const [showModal, setShowModal] = useState();
   const profileIconRef = useRef(null);
   const navigate = useNavigate(null);
- 
-    const handleLogout = () => {
-      sessionStorage.removeItem("userInfo");
-      sessionStorage.removeItem("logInStatus");
-      sessionStorage.removeItem("authToken");
-      navigate("/login");
-      
-      setTimeout(() => {
-        toast.success("Logged Out Succesfully");
-      }, 1000);
-    };
 
+  const handleLogout = () => {
+    sessionStorage.removeItem("userInfo");
+    sessionStorage.removeItem("logInStatus");
+    sessionStorage.removeItem("authToken");
+    sessionStorage.setItem("loginStatus", JSON.stringify(false));
+    navigate("/login");
+    setTimeout(() => {
+      toast.success("Logged Out Succesfully");
+    }, 1000);
+  };
 
   useEffect(() => {
     const hideModal = (e) => {
@@ -59,7 +58,7 @@ const Profile = () => {
           >
             <AccountCircleIcon className="forSvg" />
             <div style={{ display: "flex", flexDirection: "column" }}>
-              <h6>{name}</h6>
+              <h6>{userName}</h6>
               {/* <p>
               B.Tech Graduate || JAVA || HTML || CSS || Bootstrap || JavaScript
               || Github || React || Redux

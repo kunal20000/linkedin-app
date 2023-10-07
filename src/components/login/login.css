@@ -1,6 +1,8 @@
+
 .login-main {
   display: flex;
   flex-direction: column;
+ 
 }
 .login-main img {
   width: 500px;
@@ -142,10 +144,55 @@ form a {
   font-weight: 600;
   line-height: 1.25;
 }
-.forgotLink{
+.forgotLink {
   margin-left: -6.5px;
-  
 }
-.forgotLink:hover{
+.forgotLink:hover {
   text-decoration: underline;
+}
+@media only screen and (max-width: 767px) {
+  .login-main{
+    margin-left: 15px;
+  }
+  .linkedinLogin {
+    padding: 12px;
+    align-self: flex-start;
+  }
+  .linkedinLogin svg {
+    width: fit-content;
+    align-items: center;
+    margin-left: -100px;
+  }
+  .second-div {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .second-div .loginForm h1 {
+    font-size: 27px;
+  }
+  form label{
+    font-size: 18px;
+  }
+  .text-input-flex{
+    max-width: 330px;
+    height: 70px;
+  }
+  .forgotLink{
+    margin-left: 2px;
+  }
+  .signIn-button{
+    margin: 20px 50px;
+    
+  }
+  .forHr{
+    width: 100%;
+  }
+  .joinNow-button{
+    margin: 20px 50px;
+  }
+  .second-div img {
+    margin-top: -110px;
+    width: 300px;
+  }
 }

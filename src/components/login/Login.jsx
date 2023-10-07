@@ -16,7 +16,7 @@ const Login = () => {
   const navigate = useNavigate(null);
   const [errMessage, setErrMessage] = useState("");
   const [hasError, sethasError] = useState(false);
-  
+
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",
@@ -41,7 +41,6 @@ const Login = () => {
         sessionStorage.setItem("authToken", res.data.token);
         sessionStorage.setItem("userInfo", JSON.stringify(res.data.data.name));
         navigate("/");
-        
       }
     } catch (err) {
       sethasError(true);
@@ -76,7 +75,7 @@ const Login = () => {
             <div className="text-input-flex">
               <input
                 className="text-color"
-                type="text"
+                type="email"
                 name="email"
                 required
                 id="email"
@@ -109,7 +108,7 @@ const Login = () => {
             </Link>
             <br />
             <button className="signIn-button">Sign In</button>
-            <hr style={{ width: "70%" }} />
+            <hr className="forHr" style={{ width: "70%" }} />
           </form>
 
           <Link to="/Signup">
