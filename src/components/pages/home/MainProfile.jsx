@@ -47,14 +47,14 @@ const MainProfile = () => {
                 <span>1 mutual connection: Adrash Gupta</span>
               </div>
               <div className="profile-btn">
-                <a href="#" className="primary-btn">
+                {/* <a href="#" className="primary-btn">
                   <img src={imageFile3} alt="" />
                   Follow
                 </a>
                 <a href="#" className="sec-btn">
                   <img src={imageFile4} alt="" />
                   Message
-                </a>
+                </a> */}
               </div>
             </div>
           </div>

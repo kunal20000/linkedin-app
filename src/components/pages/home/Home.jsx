@@ -19,6 +19,7 @@ const Home = () => {
 
   const fetchPostData = async () => {
     try {
+      setIsLoading(true);
       const config = getHeaderWithProjectIDAndBody();
       const res = await axios.get(
         `https://academics.newtonschool.co/api/v1/linkedin/post?page=${page}&limit=10`,
@@ -30,6 +31,8 @@ const Home = () => {
       setPostData([...postDataList, ...res.data.data]);
     } catch (err) {
       console.error(err);
+    } finally {
+      setIsLoading(false);
     }
   };
   const handleScroll = () => {
@@ -65,20 +68,7 @@ const Home = () => {
           <Feed />
 
           {isLoading ? (
-            <div className="spinner center">
-              <div class="spinner-blade"></div>
-              <div class="spinner-blade"></div>
-              <div class="spinner-blade"></div>
-              <div class="spinner-blade"></div>
-              <div class="spinner-blade"></div>
-              <div class="spinner-blade"></div>
-              <div class="spinner-blade"></div>
-              <div class="spinner-blade"></div>
-              <div class="spinner-blade"></div>
-              <div class="spinner-blade"></div>
-              <div class="spinner-blade"></div>
-              <div class="spinner-blade"></div>
-            </div>
+            <span class="loader"></span>
           ) : (
             postDataList.map((posts, index) => {
               return (

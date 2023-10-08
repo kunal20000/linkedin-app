@@ -53,17 +53,13 @@ const Profile = () => {
               alignItems: "center",
               marginLeft: "10px",
               gap: "0.5rem",
-              marginTop: "1rem",
             }}
           >
             <AccountCircleIcon className="forSvg" />
             <div style={{ display: "flex", flexDirection: "column" }}>
-              <h6>{userName}</h6>
-              {/* <p>
-              B.Tech Graduate || JAVA || HTML || CSS || Bootstrap || JavaScript
-              || Github || React || Redux
-            </p> */}
+              <h5>{userName}</h5>
             </div>
+            <button className="view-profile">View Profile</button>
           </div>
           <hr />
           <div className="upper-div-main">

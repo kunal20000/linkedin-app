@@ -3,7 +3,7 @@
  }
 
 .auth-modal {
-  margin-top: 0.8rem;
+  
   width: 15rem;
   background-color: #fff;
   height: auto;
@@ -16,11 +16,13 @@
   cursor: pointer;
   color:  rgba(0, 0, 0, 0.6);;
 }
-.forSvg {
-  height: 40px;
-  width: 60px;
+
+.auth-modal svg{
+  height: 35px;
+  width: 35px;
   color: rgba(0, 0, 0, 0.6);
 }
+
 
 .auth-modal >h4{
   margin-top: 1rem;
@@ -68,4 +70,15 @@
   margin-left: -150px;
   text-decoration: underline;
   background: none;
+}
+.view-profile{
+  margin-top: 50px;
+  margin-left: -100px;
+  margin-right: 10px;
+  width: 100%;
+  height: 24px;
+  color: blue;
+  border: 1px solid blue;
+  margin-bottom: -10px;
+  align-items: flex-start;
 }
