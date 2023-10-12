@@ -50,23 +50,25 @@ const Profile = () => {
           <div
             style={{
               display: "flex",
-              alignItems: "center",
+              justifyContent:"flex-start",
+              
               marginLeft: "10px",
               gap: "0.5rem",
             }}
           >
-            <AccountCircleIcon className="forSvg" />
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              <h6 style={{ whiteSpace: "nowrap" }}>{userName}</h6>
+            <div className="for-svg-for-name">
+              <AccountCircleIcon className="forSvg" />
+              <h6 style={{whiteSpace:"nowrap"}}>{userName}</h6>
             </div>
-            <div className="btn-for-name">
+
+            {/* <div className="btn-for-name">
               <button
                 onClick={() => navigate("/MainProfile")}
                 className="view-profile"
               >
-                View Profile
+                Profile
               </button>
-            </div>
+            </div> */}
           </div>
           <hr />
           <div className="upper-div-main">

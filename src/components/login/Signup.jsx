@@ -92,7 +92,11 @@ const Signup = () => {
             onChange={handleUserInput}
             required
           />
-          {hasError ? <p className="errorMesage">{errMessage}</p> : <p className="errorMesage">{errMessage}</p>}
+          {hasError ? (
+            <p className="errorMesage">{errMessage}</p>
+          ) : (
+            <p className="errorMesage">{errMessage}</p>
+          )}
           <p>
             By clicking Agree & Join, you agree to the LinkedIn User Agreement,
             Privacy Policy, and Cookie Policy. Agree & Join
@@ -100,9 +104,9 @@ const Signup = () => {
           <button className="joinBtn">Agree & Join</button>
           <p className="login">
             Already on LinkedIn?
-            <Link to="/login" className="login-Link" >
+            <Link to="/login" className="login-Link">
               {/* <a href=""  > */}
-                Sign in
+              Sign in
               {/* </a> */}
             </Link>
           </p>
@@ -112,4 +116,3 @@ const Signup = () => {
   );
 };
 export default Signup;
-
