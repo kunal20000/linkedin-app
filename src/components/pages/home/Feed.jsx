@@ -161,7 +161,7 @@ const Feed = ({ setPostData }) => {
                 <button
                   style={{
                     marginTop: "-5px",
-                    marginLeft: "280px",
+                    marginLeft: "200px",
                     border: "none",
                     fontSize: "18px",
                   }}
