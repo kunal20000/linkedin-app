@@ -57,9 +57,16 @@ const Profile = () => {
           >
             <AccountCircleIcon className="forSvg" />
             <div style={{ display: "flex", flexDirection: "column" }}>
-              <h5>{userName}</h5>
+              <h6 style={{ whiteSpace: "nowrap" }}>{userName}</h6>
             </div>
-            <button onClick={()=>navigate('/MainProfile')} className="view-profile">View Profile</button>
+            <div className="btn-for-name">
+              <button
+                onClick={() => navigate("/MainProfile")}
+                className="view-profile"
+              >
+                View Profile
+              </button>
+            </div>
           </div>
           <hr />
           <div className="upper-div-main">

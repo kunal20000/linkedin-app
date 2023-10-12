@@ -122,7 +122,7 @@ const Feed = ({ setPostData }) => {
           <AccountCircleIcon />
           <form className="for-creating-post" onSubmit={handleSubmit}>
             <input
-              // type="text"
+              type="text"
               name="text"
               id="newPost"
               placeholder="Start post"
@@ -152,7 +152,7 @@ const Feed = ({ setPostData }) => {
                   }}
                 />
                 <h2
-                  style={{ color: "black", fontSize: "25px" }}
+                  style={{ color: "black", fontSize: "25px", whiteSpace:"nowrap" }}
                   ref={(_subtitle) => (subtitle = _subtitle)}
                 >
                   {name}
