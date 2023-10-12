@@ -8,54 +8,132 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { getHeaderWithProjectIDAndBody } from "../../utils/config";
 import { usePost } from "../../Provider/PostInfoProvider";
+import { Avatar, Divider, Snackbar } from "@mui/material";
+import SingleComments from "./SingleComments,";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const PostBody = ({ likeCount, onLikeClick }) => {
-  // const { setSelectedPost, selectedPost } = usePost();
-  const [isLiked, setIsLiked] = useState(false); // Track whether the post is liked
+const PostBody = ({ likeCount, onLikeClick, liked }) => {
   const [openCommentSec, setOpenCommentSec] = useState(false);
-  const [localLikeCount, setLocalLikeCount] = useState(0);
   const loginStatus = sessionStorage.getItem("logInStatus");
-  const [comments, setComments] = useState([]);
-  const loggedIn = sessionStorage.getItem("userInfo");
+  const [showComments, setShowComments] = useState();
+  const isLoggedIn = sessionStorage.getItem("userInfo");
+  const userName = sessionStorage.getItem("userName");
   const navigate = useNavigate(null);
-
-  const handleLikeClick = () => {
- 
-      if (isLiked) {
-        // If already liked, decrease like count
-        setLocalLikeCount(localLikeCount - 1);
-      } else {
-        // If not liked, increase like count
-        setLocalLikeCount(localLikeCount + 1);
-      }
-      // Toggle the liked state
-      setIsLiked(!isLiked);
-      // Callback to update the like count in the parent component
-      onLikeClick(localLikeCount);
+  const notify = () => {
+    toast("comming soon");
+  };
+  const [postComments, setPostComments] = useState([
+    {
+      name: "Paul David",
+      comment:
+        "There are many variations of passages of Lorem Ipsum available, but the majority have suffered.",
+    },
+    {
+      name: "Jon Alex",
+      comment:
+        "If you are going to use a passage of Lorem Ipsum, you need to be sure there is not anything embarrassing hidden in the middle of text.",
+    },
+    {
+      name: "Brian David",
+      comment:
+        "All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
+    },
+    {
+      name: "Moosa Alexender",
+      comment:
+        "It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.",
+    },
+  ]);
+  const [userCommentinput, setUserCommentInput] = useState({
+    name: "",
+    comment: "",
+  });
+  const saveUserComment = (e) => {
+    const { value } = e.target;
+    setUserCommentInput({
+      name: userName,
+      comment: value,
+    });
   };
 
+  const handleNewComment = (postID) => {
+    if (userCommentinput.comment) {
+      setPostComments((prevState) => [userCommentinput, ...prevState]);
+    }
+    setUserCommentInput({
+      name: "",
+      comment: "",
+    });
+  };
+
+  const handleShowComment = () => {
+    if (isLoggedIn) {
+      if (showComments) {
+        setShowComments(false);
+      } else {
+        setShowComments(true);
+      }
+    }
+  };
+
+  const handleLikeClick = () => {
+    onLikeClick(); // Call the callback function passed from Home.jsx
+  };
   return (
     <div className="page-footer">
-      <div className="page-footer-option">
-        <div className="forLike" onClick={handleLikeClick}>
-          <ThumbUpOffAltIcon />
-          <span>Like</span>
+      <div className="forShowOption">
+        <div className="page-footer-option">
+          <div className="forLike" onClick={handleLikeClick}>
+            <ThumbUpOffAltIcon />
+            <span>Like</span>
+          </div>
+        </div>
+        <div className="page-footer-option">
+          <div onClick={handleShowComment} className="forComment">
+            <ChatBubbleOutlineIcon />
+            <span>Comment</span>
+          </div>
+        </div>
+        <div className="page-footer-option" onClick={notify}>
+          <PostAddIcon />
+          <span>Repost</span>
+        </div>
+        <div className="page-footer-option" onClick={notify}>
+          <SendIcon />
+          <span>Send</span>
         </div>
       </div>
-      <div className="page-footer-option">
-        <div className="forComment">
-          <ChatBubbleOutlineIcon />
-          <span>Comment</span>
-        </div>
+      <div className="forShowComment">
+        {showComments && (
+          <section className="post-comments-section">
+            <div className="compose-comment">
+              <Avatar />
+              <input
+                type="text"
+                value={userCommentinput.comment}
+                onChange={saveUserComment}
+                placeholder="Add a comment..."
+              />
+              <button onClick={handleNewComment}>
+                <SendIcon style={{ color: "rgba(0,0,0,0.8)" }} />
+              </button>
+            </div>
+            {postComments.map((comment, index) => {
+              return <SingleComments key={index} comment={comment} />;
+            })}
+
+            {/* <div className="post-comment">
+          <Avatar/>
+            <div className="post-comment-content">
+              <h4>Paul Janson</h4>
+              <p>This is a sample comment</p>
+            </div>
+        </div> */}
+          </section>
+        )}
       </div>
-      <div className="page-footer-option">
-        <PostAddIcon />
-        <span>Repost</span>
-      </div>
-      <div className="page-footer-option">
-        <SendIcon />
-        <span>Send</span>
-      </div>
+      <ToastContainer />
     </div>
   );
 };

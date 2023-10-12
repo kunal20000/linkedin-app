@@ -54,18 +54,24 @@ const Home = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const handleLikeClick = (index, newLikeCount) => {
-    const updatedPostDataList = [...postDataList];
-    updatedPostDataList[index].likeCount = newLikeCount;
+  const handleLikeClick = (postId)=>{
+    const updatedPostDataList = postDataList.map((post)=>{
+      if(post.id === postId){
+          // Toggle the liked state
+          const newLikeCount = post.liked ? post.likeCount-1: post.likeCount+1;
+          return{...post, likeCount: newLikeCount, liked: !post.liked};
+      }
+      return post;
+    })
     setPostData(updatedPostDataList);
-  };
+  }
   return (
     <main>
       <Navbar />
       <div className="app-body">
         <SideBar />
         <div className="feedPost">
-          <Feed />
+          <Feed setPostData={setPostData}/>
 
           {isLoading ? (
             <span class="loader"></span>
@@ -96,8 +102,8 @@ const Home = () => {
                     <img
                       className="mainImage"
                       src={posts.channel.image}
-                      alt="feedImage"
-                    ></img>
+                      alt="image"
+                    /><br/>
                     <img
                       className="imageLiker"
                       src="https://static.licdn.com/aero-v1/sc/h/8ekq8gho1ruaf8i7f86vd1ftt"
@@ -115,9 +121,8 @@ const Home = () => {
                   </div>
                   <PostBody
                     likeCount={posts.likeCount}
-                    onLikeClick={(newLikeCount) =>
-                      handleLikeClick(index, newLikeCount)
-                    }
+                    onLikeClick={() => handleLikeClick(posts.id)}
+                    liked={posts.liked}
                   />
                 </div>
               );

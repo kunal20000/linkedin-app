@@ -40,7 +40,8 @@ const MainProfile = () => {
                 JavaScript || Github || React || Redux
               </b>
               <p>
-                Satara, Maharashtra, India <a href="#">Contact info</a>
+                Satara, Maharashtra, India 
+                {/* <a href="#">Contact info</a> */}
               </p>
               <div className="mutual-connection">
                 <img src={imageFile2} alt="" />

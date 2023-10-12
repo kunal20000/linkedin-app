@@ -59,7 +59,7 @@ const Profile = () => {
             <div style={{ display: "flex", flexDirection: "column" }}>
               <h5>{userName}</h5>
             </div>
-            <button className="view-profile">View Profile</button>
+            <button onClick={()=>navigate('/MainProfile')} className="view-profile">View Profile</button>
           </div>
           <hr />
           <div className="upper-div-main">

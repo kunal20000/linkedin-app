@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #f3f2ee !important;
+  background-color: #f3f2ee;
 }
 .navbar-container {
   display: flex;
@@ -238,10 +238,12 @@ svg[data-supported-dps="16x16"] {
 }
 @media only screen and (max-width:767px){
   .navbar-container{
+    width: 100%;
+    background: #fff;
     margin: 0;
   }
   .navbar-container1{
-    margin-left: 2px;
+    margin-left: 5px;
   }
   .header_search{
    
@@ -251,17 +253,26 @@ svg[data-supported-dps="16x16"] {
     display: none;
   }
   .header_search svg{
-   /* margin-left: 0px; */
-   margin-right: 4px;
+  
+   margin-right: 6px;
    width: fit-content;
   }
   .navbar-container2{
-    gap: 1rem;
+    gap: 2rem;
   }
   span{
     display: none;
   }
   svg{
     width: 20px;
+  }
+  .forMediaQuery{
+    display: none;
+  }
+  .navbar-container3-forbusiness{
+    display: none;
+  }
+  .trypremiumnav{
+    display: none;
   }
 }

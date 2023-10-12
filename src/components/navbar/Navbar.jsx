@@ -13,14 +13,14 @@ import { ReactComponent as BusinessIcon } from "../assets/business.svg";
 import { ReactComponent as SearchIcon } from "../assets/search.svg";
 import Profile from "./Profile";
 import { Navigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 export const Navbar = () => {
   const navigate = useNavigate(null);
 
   return (
     <header className="navbar-container">
       <section className="navbar-container1">
-        <LinkedinIcon />
+        <Link to={'/'}><LinkedinIcon /></Link>
         <div className="header_search">
           <SearchIcon />
           <input type="search" id="search" placeholder="Search" />
@@ -77,7 +77,7 @@ export const Navbar = () => {
           </div>
         </div>
 
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div className="forMediaQuery" style={{ display: "flex", alignItems: "center" }}>
           <div className="vl">
             <div className="navbar-container3-forbusiness">
               <BusinessIcon />
