@@ -50,15 +50,15 @@ const Profile = () => {
           <div
             style={{
               display: "flex",
-              justifyContent:"flex-start",
-              
+              justifyContent: "flex-start",
+
               marginLeft: "10px",
               gap: "0.5rem",
             }}
           >
             <div className="for-svg-for-name">
               <AccountCircleIcon className="forSvg" />
-              <h6 style={{whiteSpace:"nowrap"}}>{userName}</h6>
+              <h6 style={{ whiteSpace: "nowrap" }}>{userName}</h6>
             </div>
 
             {/* <div className="btn-for-name">
@@ -77,15 +77,17 @@ const Profile = () => {
               <p onClick={() => navigate("/trypremium")}>
                 Try Premium for free
               </p>
-              <p>Setting & Privacy</p>
-              <p>Help</p>
-              <p>Language</p>
+              <p onClick={() => toast.success("Comming Soon")}>
+                Setting & Privacy
+              </p>
+              <p onClick={() => toast.success("Comming Soon")}>Help</p>
+              <p onClick={() => toast.success("Comming Soon")}>Language</p>
             </div>
             <hr />
             <div className="lower-div">
               <h4>Manage</h4>
               <p onClick={() => navigate("/")}>Post & Activity</p>
-              <p>Job Posting Account</p>
+              <p onClick={() => navigate("/")}>Job Posting Account</p>
             </div>
             <hr />
             <button className="sign-out-btn" onClick={handleLogout}>
