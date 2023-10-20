@@ -67,4 +67,13 @@
   .feedPost {
     margin: 0 -70px;
   }
+  .posts{
+    width: 100%;
+  }
+ .posts .post-body .mainImage{
+    width: 100%;
+  }
+  .imageLiker{
+     margin-left: 10px;
+  }
 }

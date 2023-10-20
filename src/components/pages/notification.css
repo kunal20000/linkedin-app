@@ -136,5 +136,29 @@ button:hover{
     display: flex;
     
 }
-
+@media only screen and (max-width: 767px){
+    .noti-1{
+        display: none;
+    }
+    .noti-2{
+        margin-left: 0px;
+    }
+    .content{
+        width: 358px;
+    }
+    .user1{
+        max-width: 40px;
+        max-height: 40px;
+    }
+    .dataNoti{
+        width: 358px;
+        height: auto;
+    }
+    .forNoti-1 p{
+        font-size: 20px;
+    }
+    .noti-3{
+        display: none;
+    }
+}
  

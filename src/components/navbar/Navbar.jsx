@@ -11,17 +11,20 @@ import { ReactComponent as NotificationIcon } from "../assets/notification.svg";
 import { ReactComponent as MeIcon } from "../assets/me.svg";
 import { ReactComponent as BusinessIcon } from "../assets/business.svg";
 import { ReactComponent as SearchIcon } from "../assets/search.svg";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import Profile from "./Profile";
 import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 export const Navbar = () => {
   const navigate = useNavigate(null);
-
+  
   return (
     <header className="navbar-container">
       <section className="navbar-container1">
         <Link to={'/'}><LinkedinIcon /></Link>
-        <div className="header_search">
+        <div className="header_search" onClick={()=>toast("Comming Soon")}>
           <SearchIcon />
           <input type="search" id="search" placeholder="Search" />
         </div>
@@ -109,6 +112,7 @@ export const Navbar = () => {
           </div>
         </div>
       </section>
+      <ToastContainer/>
     </header>
   );
 };

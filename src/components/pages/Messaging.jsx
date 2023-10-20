@@ -9,7 +9,7 @@ const Messaging = () => {
       <h4 style={{ textAlign: "center", margin: "30px auto", }}>
         Feature comming soon...
       </h4>
-      <img
+      <img className="forMedia"
         style={{
           "display": "block",
           marginLeft:"auto",

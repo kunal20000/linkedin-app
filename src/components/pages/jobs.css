@@ -132,3 +132,18 @@ input[type="search"] {
     margin-left: 20px;
     color: rgba(0, 0, 0, 9);
 }
+@media only screen and (max-width: 767px){
+  .main-div-1{
+    display: none;
+  }
+  .main-div-2 .suugestJobSearch{
+    width: 370px;
+  }
+  .recommended{
+    width: 370px;
+  }
+
+  .main-div-3{
+    display: none;
+  }
+}

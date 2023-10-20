@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./mainprofile.css";
 import { Navbar } from "../../navbar/Navbar";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -18,9 +18,27 @@ import imageFile13 from "./images/user-3.png";
 import imageFile14 from "./images/user-4.png";
 import imageFile15 from "./images/user-5.png";
 import imageFile16 from "./images/logo.png";
-
-const MainProfile = () => {
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+const MainProfile = (props) => {
   const name = JSON.parse(sessionStorage.getItem("userInfo"));
+  const [isFollowing, setIsFollowing] = useState(false);
+  const [isFollowing1, setIsFollowing1] = useState(false);
+  const [isFollowing2, setIsFollowing2] = useState(false);
+  const [isFollowing3, setIsFollowing3] = useState(false);
+  const toggleFollow1 = () => {
+    setIsFollowing((prevIsFollowing) => !prevIsFollowing);
+  };
+
+  const toggleFollow2 = () => {
+    setIsFollowing1((prevIsFollowing) => !prevIsFollowing);
+  };
+  const toggleFollow3 = () => {
+    setIsFollowing2((prevIsFollowing) => !prevIsFollowing);
+  };
+  const toggleFollow4 = () => {
+    setIsFollowing3((prevIsFollowing) => !prevIsFollowing);
+  };
   return (
     <div className="profile-container">
       <Navbar />
@@ -40,7 +58,7 @@ const MainProfile = () => {
                 JavaScript || Github || React || Redux
               </b>
               <p>
-                Satara, Maharashtra, India 
+                Satara, Maharashtra, India
                 {/* <a href="#">Contact info</a> */}
               </p>
               <div className="mutual-connection">
@@ -114,7 +132,11 @@ const MainProfile = () => {
               </div>
             </div>
             <hr />
-            <a href="#" className="experience-link">
+            <a
+              href="#"
+              className="experience-link"
+              onClick={() => toast("Comming Soon")}
+            >
               Show all 7 experiences <img src={imageFile8} alt="" />
             </a>
           </div>
@@ -209,7 +231,11 @@ const MainProfile = () => {
             </div>
             <div className="container-image2">
               <b>Brand and Demand in Xiaomi</b>
-              <a href="#" className="learn-more-link">
+              <a
+                href="#"
+                className="learn-more-link"
+                onClick={() => toast("Comming Soon")}
+              >
                 Learn More
               </a>
             </div>
@@ -221,7 +247,9 @@ const MainProfile = () => {
               <div>
                 <h2>Samuel Tony</h2>
                 <p>Head of Marketing at Alibaba</p>
-                <a href="#">Connect</a>
+                <button href="#" onClick={toggleFollow1}>
+                  {isFollowing ? "Following" : "Follow"}
+                </button>
               </div>
             </div>
             <div className="sidebar-people-row">
@@ -229,7 +257,10 @@ const MainProfile = () => {
               <div>
                 <h2>Kajal Gupta</h2>
                 <p>Studied from University of Allahabad</p>
-                <a href="#">Connect</a>
+                <button href="#" onClick={toggleFollow2}>
+                  {" "}
+                  {isFollowing1 ? "Following" : "Follow"}
+                </button>
               </div>
             </div>
             <div className="sidebar-people-row">
@@ -237,7 +268,9 @@ const MainProfile = () => {
               <div>
                 <h2>Adrash Gupta</h2>
                 <p>Studied from Engineering Satara</p>
-                <a href="#">Connect</a>
+                <button href="#" onClick={toggleFollow3}>
+                  {isFollowing2 ? "Following" : "Follow"}
+                </button>
               </div>
             </div>
             <div className="sidebar-people-row">
@@ -245,7 +278,9 @@ const MainProfile = () => {
               <div>
                 <h2>Ujjwal Kumar</h2>
                 <p>Head of BusinessManger at Alibaba</p>
-                <a href="#">Connect</a>
+                <button href="#" onClick={toggleFollow4}>
+                  {isFollowing3 ? "Following" : "Follow"}
+                </button>
               </div>
             </div>
           </div>
@@ -253,26 +288,53 @@ const MainProfile = () => {
       </div>
       <div className="profile-footer">
         <div className="sidebar-useful-links">
-          <a href="#" className="footer-links">About</a>
-          <a href="#" className="footer-links">Accessibility</a>
-          <a href="#" className="footer-links">Talent Solutions</a>
-          <a href="#" className="footer-links">Community Guidelines</a>
-          <a href="#" className="footer-links">Careers</a>
-          <a href="#" className="footer-links">Marketing Solutions</a>
-          <a href="#" className="footer-links">Privacy & Terms </a>
-          <a href="#" className="footer-links">Ad Choices</a>
-          <a href="#" className="footer-links">Advertising</a>
-          <a href="#" className="footer-links">Sales Solutions</a>
-          <a href="#" className="footer-links">Mobile</a>
-          <a href="#" className="footer-links">Small Business</a>
-          <a href="#" className="footer-links">Safety Center</a>
-          
+          <a href="#" className="footer-links">
+            About
+          </a>
+          <a href="#" className="footer-links">
+            Accessibility
+          </a>
+          <a href="#" className="footer-links">
+            Talent Solutions
+          </a>
+          <a href="#" className="footer-links">
+            Community Guidelines
+          </a>
+          <a href="#" className="footer-links">
+            Careers
+          </a>
+          <a href="#" className="footer-links">
+            Marketing Solutions
+          </a>
+          <a href="#" className="footer-links">
+            Privacy & Terms{" "}
+          </a>
+          <a href="#" className="footer-links">
+            Ad Choices
+          </a>
+          <a href="#" className="footer-links">
+            Advertising
+          </a>
+          <a href="#" className="footer-links">
+            Sales Solutions
+          </a>
+          <a href="#" className="footer-links">
+            Mobile
+          </a>
+          <a href="#" className="footer-links">
+            Small Business
+          </a>
+          <a href="#" className="footer-links">
+            Safety Center
+          </a>
+
           <div className="copyright-msg">
             <img src={imageFile16} alt="" />
             <p>Linkedin &#169; 2022. All right reserved</p>
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

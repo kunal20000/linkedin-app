@@ -12,14 +12,16 @@ const Signup = () => {
     email: "",
     password: "",
   });
+
+  
   const navigate = useNavigate(null);
   const [errMessage, setErrMessage] = useState("");
   const [hasError, sethasError] = useState(false);
-  // const { setIsNotLoggedIn } = useContext(CheckLogInStat);
+  
   const handleUserInput = (event) => {
     const { name, value } = event.target;
     setUserInfo({ ...userInfo, [name]: value });
-    // console.log(userInfo);
+    
   };
 
   const signUp = async (userInfo) => {

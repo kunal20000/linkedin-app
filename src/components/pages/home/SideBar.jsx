@@ -18,7 +18,7 @@ const SideBar = () => {
           alt="image"
         />
         <div className="profile_details">
-          <AccountCircleIcon className="forCirleIcon"/>
+          <AccountCircleIcon className="forCirleIcon" onClick={()=>navigate('/mainprofile')}/>
           <h4 className="nameDynamic" onClick={handleClick}>{name}</h4>
           <p>
             B.Tech Graduate || JAVA || HTML || CSS || Bootstrap || JavaScript ||

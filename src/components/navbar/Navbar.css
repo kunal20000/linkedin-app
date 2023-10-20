@@ -243,7 +243,10 @@ svg[data-supported-dps="16x16"] {
     margin: 0;
   }
   .navbar-container1{
-    margin-left: 5px;
+    margin-left: 9px;
+  }
+  .navbar-container1 svg{
+    width: 22px;
   }
   .header_search{
    
@@ -254,11 +257,11 @@ svg[data-supported-dps="16x16"] {
   }
   .header_search svg{
   
-   margin-right: 6px;
+   margin-right: 10px;
    width: fit-content;
   }
   .navbar-container2{
-    gap: 2rem;
+    gap: 2.2rem;
   }
   span{
     display: none;
@@ -273,6 +276,9 @@ svg[data-supported-dps="16x16"] {
     display: none;
   }
   .trypremiumnav{
+    display: none;
+  }
+  .navbar-container2-me{
     display: none;
   }
 }

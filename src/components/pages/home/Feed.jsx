@@ -11,10 +11,12 @@ import Modal from "react-modal";
 import { v4 as uuidv4 } from "uuid";
 import MmsIcon from "@mui/icons-material/Mms";
 import { json } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 const Feed = ({ setPostData }) => {
   const fileInputRef = useRef(null);
   const [post, setPost] = useState("");
-
+  const navigate = useNavigate(null);
   const [userInputs, setuserInputs] = useState({
     imageSrc: "",
     content: "",
@@ -32,7 +34,20 @@ const Feed = ({ setPostData }) => {
       borderRadius: "12px",
       overflowX: "hidden",
     },
+    
   };
+  const mediaQueryStyle = {
+    "@media (max-width:768px)": {
+      content: {
+        width: "40vw",
+      },
+    },
+  };
+  const mergedStyle = { ...customStyles, ...mediaQueryStyle };
+  const ModalContainer = styled(Modal)`
+    ${mergedStyle.content}
+  `;
+
   const name = JSON.parse(sessionStorage.getItem("userInfo"));
 
   let subtitle;
@@ -119,7 +134,7 @@ const Feed = ({ setPostData }) => {
     <div className="feed">
       <div className="feed-input">
         <div className="feed-form">
-          <AccountCircleIcon />
+          <AccountCircleIcon onClick={() => navigate("/mainprofile")} />
           <form className="for-creating-post" onSubmit={handleSubmit}>
             <input
               type="text"
@@ -136,6 +151,7 @@ const Feed = ({ setPostData }) => {
               contentLabel="Example Modal"
             >
               <div
+                className="modalForMedia"
                 style={{
                   display: "flex",
                   justifyContent: "flex-start",
@@ -152,7 +168,11 @@ const Feed = ({ setPostData }) => {
                   }}
                 />
                 <h2
-                  style={{ color: "black", fontSize: "25px", whiteSpace:"nowrap" }}
+                  style={{
+                    color: "black",
+                    fontSize: "25px",
+                    whiteSpace: "nowrap",
+                  }}
                   ref={(_subtitle) => (subtitle = _subtitle)}
                 >
                   {name}

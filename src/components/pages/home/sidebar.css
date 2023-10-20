@@ -44,6 +44,7 @@
     /* color: #ccc; */
     margin: 0px auto;
     object-fit: contain;
+    cursor: pointer;
 }
 .profile_details h4{
     padding-top: 1rem;

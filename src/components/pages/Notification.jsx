@@ -30,7 +30,7 @@ const Notification = () => {
           <div className="dataNoti">
             <a href="#" className="forNoti-1">
               <img className="user1" src={user1} alt="" />
-              <p style={{fontSize:"12px", margin:"15px 0px",fontWeight:"600"}}>
+              <p className="user1ParaMedia" style={{fontSize:"12px", margin:"15px 0px",fontWeight:"600"}}>
                 View Work From Home Fresher & Experience Jobs Work From Home/
                 Fresher & Experience Jobs posted: CGI Is hiring #Fresher and
                 Experience- OCTOBER 2023 Post Name – Multiple Positions. #Apply
