@@ -47,28 +47,20 @@ const Profile = () => {
       </section>
       {showModal && (
         <div className="auth-modal">
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "flex-start",
-
-              marginLeft: "10px",
-              gap: "0.5rem",
-            }}
-          >
+          <div>
             <div className="for-svg-for-name">
               <AccountCircleIcon className="forSvg" />
               <h6 style={{ whiteSpace: "nowrap" }}>{userName}</h6>
             </div>
 
-            {/* <div className="btn-for-name">
+            <div className="btn-for-name">
               <button
                 onClick={() => navigate("/MainProfile")}
                 className="view-profile"
               >
                 Profile
               </button>
-            </div> */}
+            </div>
           </div>
           <hr />
           <div className="upper-div-main">
