@@ -10,27 +10,44 @@ import "./app.css";
 import { Navbar } from "../../navbar/Navbar";
 import axios from "axios";
 import { getHeaderWithProjectIDAndBody } from "../../utils/config";
+import { Link } from "react-router-dom";
+import { useSearch } from "../../SearchContext";
+import { getPosts } from "../../utils/getPostApi";
 
 const Home = () => {
   const [postDataList, setPostData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  let [page, setPage] = useState(1);
+  // let [page, setPage] = useState(1);
   const isLoggedIn = sessionStorage.getItem("logInStatus");
+  const { searchValue, updatePageNo, pageNo } = useSearch();
 
   const fetchPostData = async () => {
     try {
-      setIsLoading(true);
-      const config = getHeaderWithProjectIDAndBody();
-      const res = await axios.get(
-        `https://academics.newtonschool.co/api/v1/linkedin/post?page=${page}&limit=10`,
-        config
-      );
+      if (pageNo == 1) {
+        setIsLoading(true);
+        setPostData([]);
+      }
 
-      const postData = res.data.data;
-      console.log(postData);
-      setPostData([...postDataList, ...res.data.data]);
-    } catch (err) {
-      console.error(err);
+      //   const config = getHeaderWithProjectIDAndBody();
+      //   const res = await axios.get(
+      //     `https://academics.newtonschool.co/api/v1/linkedin/post?page=${page}&limit=10`,
+      //     config
+      //   );
+
+      //   const postData = res.data.data;
+      //   console.log(postData);
+      //   setPostData([...postDataList, ...res.data.data]);
+      // } catch (err) {
+      //   console.error(err);
+      // } finally {
+      //   setIsLoading(false);
+      // }
+      const res = await getPosts(pageNo, searchValue);
+      if (res.success) {
+        setPostData((prevFeedPosts) => [...prevFeedPosts, ...res.data]);
+      }
+    } catch (error) {
+      console.log(error);
     } finally {
       setIsLoading(false);
     }
@@ -40,13 +57,13 @@ const Home = () => {
       window.innerHeight + document.documentElement.scrollTop >=
       document.documentElement.offsetHeight - 100
     ) {
-      setPage((prevPage) => prevPage + 1);
+      updatePageNo((prevPage) => prevPage + 1);
     }
   };
 
   useEffect(() => {
     fetchPostData();
-  }, [page]);
+  }, [pageNo, searchValue]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -54,36 +71,45 @@ const Home = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const handleLikeClick = (postId)=>{
-    const updatedPostDataList = postDataList.map((post)=>{
-      if(post.id === postId){
-          // Toggle the liked state
-          const newLikeCount = post.liked ? post.likeCount-1: post.likeCount+1;
-          return{...post, likeCount: newLikeCount, liked: !post.liked};
+  const handleLikeClick = (postId) => {
+    const updatedPostDataList = postDataList.map((post) => {
+      if (post.id === postId) {
+        // Toggle the liked state
+        const newLikeCount = post.liked
+          ? post.likeCount - 1
+          : post.likeCount + 1;
+        return { ...post, likeCount: newLikeCount, liked: !post.liked };
       }
       return post;
-    })
+    });
     setPostData(updatedPostDataList);
-  }
+  };
   return (
     <main>
       <Navbar />
       <div className="app-body">
         <SideBar />
         <div className="feedPost">
-          <Feed setPostData={setPostData}/>
+          <Feed setPostData={setPostData} />
 
           {isLoading ? (
-            <span class="loader"></span>
+            <span className="loader"></span>
+          ) : postDataList.length === 0 ? (
+            <div>No Post Found</div>
           ) : (
             postDataList.map((posts, index) => {
+              const { _id } = posts;
               return (
                 <div key={index} className="posts">
                   <div className="post-header">
                     <div className="post-header-left">
-                      <Avatar src={posts.author.profileImage} />
+                      <Link  to={`/user/${posts.author._id}`}>
+                        <Avatar src={posts.author.profileImage} />
+                      </Link>
                       <div className="post-profile-details">
-                        <h3>{posts.author.name}</h3>
+                        <Link style={{textDecoration:"none", color:"rgba(0,0,0,0.9)"}} to={`/user/${posts.author._id}`}>
+                          <h3>{posts.author.name}</h3>
+                        </Link>
                         <p>{posts.channel.name}</p>
                       </div>
                     </div>
@@ -103,7 +129,8 @@ const Home = () => {
                       className="mainImage"
                       src={posts.channel.image}
                       alt="image"
-                    /><br/>
+                    />
+                    <br />
                     <img
                       className="imageLiker"
                       src="https://static.licdn.com/aero-v1/sc/h/8ekq8gho1ruaf8i7f86vd1ftt"

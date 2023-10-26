@@ -9,6 +9,7 @@ import TryPremium from "./pages/TryPremium";
 import ProtectedRoute from "../ProtectedRoute";
 import Notification from "./pages/Notification";
 import MainProfile from "./pages/home/MainProfile";
+import UserProfile from "./pages/home/UserProfile";
 
 const HomeRoute = () => {
   return (
@@ -39,6 +40,10 @@ const HomeRoute = () => {
         <Route
           path="/mainprofile"
           element={<ProtectedRoute Component={<MainProfile />} />}
+        />
+        <Route
+          path="/user/:id"
+          element={<ProtectedRoute Component={<UserProfile/>} />}
         />
       </Routes>
     </div>

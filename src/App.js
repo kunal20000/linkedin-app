@@ -20,27 +20,30 @@ import { Navigate } from "react-router-dom";
 import ForgotPass from "./components/login/ForgotPass";
 import MainProfile from "./components/pages/home/MainProfile";
 import HomeRoute from "./components/HomeRoute";
+import { SearchProvider } from "./components/SearchContext";
 function App() {
   const name = JSON.parse(sessionStorage.getItem("userInfo"));
   const isLoggedIn = sessionStorage.getItem("logInStatus");
 
   return (
     <>
-      <Routes>
-        <Route path="*" element={<HomeRoute />} />
-        <Route
-          path="/login"
-          element={isLoggedIn ? <Navigate to={"/"} /> : <Login />}
-        />
-        <Route
-          path="/signup"
-          element={isLoggedIn ? <Navigate to={"/"} /> : <Signup />}
-        />
-        <Route
-          path="/forgotpass"
-          element={isLoggedIn ? <Navigate to={"/"} /> : <ForgotPass />}
-        />
-      </Routes>
+      <SearchProvider>
+        <Routes>
+          <Route path="*" element={<HomeRoute />} />
+          <Route
+            path="/login"
+            element={isLoggedIn ? <Navigate to={"/"} /> : <Login />}
+          />
+          <Route
+            path="/signup"
+            element={isLoggedIn ? <Navigate to={"/"} /> : <Signup />}
+          />
+          <Route
+            path="/forgotpass"
+            element={isLoggedIn ? <Navigate to={"/"} /> : <ForgotPass />}
+          />
+        </Routes>
+      </SearchProvider>
     </>
   );
 }

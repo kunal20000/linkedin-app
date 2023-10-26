@@ -4,7 +4,9 @@
     flex-direction: column;
     border-radius: 10px;
     margin-bottom: 20px;
-    
+    max-width: 300px;
+    margin-right: -80px;
+   
 }
 .widget-header{
    display: flex;
@@ -44,7 +46,7 @@
     margin: 0;
     font-weight: normal;
     font-size: 15px;
-
+   
 }
 .widget-options p{
     margin: 0;
@@ -56,14 +58,31 @@
     background: #fff;
     padding: 10px;
     border-radius: 10px;
-    position: fixed;
+    
 }
 .widegtBottom{
     background-color: #fff;
-    height: 100px;
-    width: 100px;
-    margin-top: 200px;
+    height: 270px;
+    border-radius: 10px;
+    position: sticky;
+   
+    
 }
+.footer{
+    margin-top: 40px;
+    text-align: center;
+}
+.footer-links{
+    text-decoration: none;
+    padding: 10px 10px;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.6);
+}
+.footer-links:hover{
+    text-decoration: underline;
+
+}
+
 @media only screen and (max-width: 767px){
     .widget{
         display: none;

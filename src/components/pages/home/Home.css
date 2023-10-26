@@ -20,7 +20,7 @@
 }
 .feedPost {
   display: flex;
-  flex: 0.6;
+  flex: 1.1;
   flex-direction: column;
   margin: 0px 30px;
 }
@@ -43,10 +43,17 @@
   align-items: center;
   margin-bottom: 10px;
 }
+.post-header-left img{
+  cursor: pointer;
+}
 .post-header-left .post-profile-details h3 {
   font-size: 14px;
   margin: 0;
   margin-left: 10px;
+  cursor: pointer;
+}
+.post-header-left .post-profile-details h3:hover{
+  text-decoration: underline;
 }
 .post-header-left .post-profile-details p {
   font-size: 12px;

@@ -73,6 +73,13 @@
   .headerContent{
     margin-right: -15px;
   }
+  .forgotPass1{
+    margin: 40px 0px 0px 0px;
+  }
+  .forgotPass1 svg{
+    margin-left: 20px;
+    width: 100px;
+  }
   .forgotPass2 {
     width: 350px;
   }
