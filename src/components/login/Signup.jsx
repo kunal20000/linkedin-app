@@ -13,15 +13,13 @@ const Signup = () => {
     password: "",
   });
 
-  
   const navigate = useNavigate(null);
   const [errMessage, setErrMessage] = useState("");
   const [hasError, sethasError] = useState(false);
-  
+
   const handleUserInput = (event) => {
     const { name, value } = event.target;
     setUserInfo({ ...userInfo, [name]: value });
-    
   };
 
   const signUp = async (userInfo) => {
@@ -56,7 +54,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="login-main">
+    <div className="signup-main">
       <div className="linkedinSignup">
         <LinkedingLogo />
       </div>
@@ -107,9 +105,7 @@ const Signup = () => {
           <p className="login">
             Already on LinkedIn?
             <Link to="/login" className="login-Link">
-              {/* <a href=""  > */}
               Sign in
-              {/* </a> */}
             </Link>
           </p>
         </form>

@@ -12,15 +12,17 @@ import { v4 as uuidv4 } from "uuid";
 import MmsIcon from "@mui/icons-material/Mms";
 import { json } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
+
 const Feed = ({ setPostData }) => {
   const fileInputRef = useRef(null);
   const [post, setPost] = useState("");
   const navigate = useNavigate(null);
+
   const [userInputs, setuserInputs] = useState({
     imageSrc: "",
     content: "",
   });
+
   const customStyles = {
     content: {
       top: "50%",
@@ -34,23 +36,11 @@ const Feed = ({ setPostData }) => {
       borderRadius: "12px",
       overflowX: "hidden",
     },
-    
   };
-  const mediaQueryStyle = {
-    "@media (max-width:768px)": {
-      content: {
-        width: "40vw",
-      },
-    },
-  };
-  const mergedStyle = { ...customStyles, ...mediaQueryStyle };
-  const ModalContainer = styled(Modal)`
-    ${mergedStyle.content}
-  `;
 
   const name = JSON.parse(sessionStorage.getItem("userInfo"));
 
-  let subtitle;
+  // let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   function openModal() {
@@ -59,8 +49,7 @@ const Feed = ({ setPostData }) => {
   }
 
   function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = "rgba(0,0,0,0.9)";
+    document.body.style.color = "rgba(0,0,0,0.9)";
   }
 
   function closeModal() {
@@ -72,9 +61,11 @@ const Feed = ({ setPostData }) => {
   const handleInput = (event) => {
     setPost({ ...post, [event.target.name]: event.target.event });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+
   const handleMessage = () => {
     const postid = uuidv4();
     if (userInputs.content) {
@@ -83,20 +74,16 @@ const Feed = ({ setPostData }) => {
           name: name,
         },
         content: userInputs.content,
+        // ...(userInputs.imageSrc && userInputs.imageSrc !== ""
+        //   ? { channel: { image: userInputs.imageSrc } }
+        //   : {}),
         channel: { image: userInputs.imageSrc },
         likeCount: 3,
         _id: postid,
       };
-      // const existingPosts = JSON.parse(localStorage.getItem('posts')) || [];
 
-      // // Add the new post to the existing posts
-      // existingPosts.unshift(newPost);
-
-      // // Save the updated posts back to local storage
-      // localStorage.setItem('posts', JSON.stringify(existingPosts));
-
-      // setPostData(existingPosts);
       setPostData((prevFeedPost) => [newPost, ...prevFeedPost]);
+
       setuserInputs({
         imageSrc: "",
         content: "",
@@ -104,20 +91,9 @@ const Feed = ({ setPostData }) => {
 
       document.body.style.overflowY = "auto";
     }
+
     setIsOpen(false);
   };
-
-  const saveUserContent = (e) => {
-    const { value } = e.target;
-    setuserInputs((prevData) => ({
-      ...prevData,
-      content: value,
-    }));
-  };
-  const triggerImageUpload = () => {
-    fileInputRef.current.click(); // Trigger the file input svg
-  };
-
   const handleFileSelect = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -128,6 +104,16 @@ const Feed = ({ setPostData }) => {
       }));
     }
     console.log(userInputs);
+  };
+  const saveUserContent = (e) => {
+    const { value } = e.target;
+    setuserInputs((prevData) => ({
+      ...prevData,
+      content: value,
+    }));
+  };
+  const triggerImageUpload = () => {
+    fileInputRef.current.click(); // Trigger the file input svg
   };
 
   return (
@@ -173,7 +159,7 @@ const Feed = ({ setPostData }) => {
                     fontSize: "25px",
                     whiteSpace: "nowrap",
                   }}
-                  ref={(_subtitle) => (subtitle = _subtitle)}
+                  // ref={(_subtitle) => (subtitle = _subtitle)}
                 >
                   {name}
                 </h2>
@@ -205,6 +191,7 @@ const Feed = ({ setPostData }) => {
                 style={{ left: "-20px", top: "-6px", background: "#00000000" }}
               >
                 <MmsIcon onClick={triggerImageUpload} />
+                
                 <input
                   type="file"
                   accept="image/*"

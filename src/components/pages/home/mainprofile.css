@@ -268,10 +268,10 @@
   color: rgba(0, 0, 0, 0.6);
   font-size: 12px;
 }
-.sidebar-useful-links .footer-links:hover {
+/* .sidebar-useful-links .footer-links:hover {
   text-decoration: underline;
   color: #045be6;
-}
+} */
 .profile-footer .copyright-msg {
   display: flex;
   justify-content: center;

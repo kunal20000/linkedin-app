@@ -72,6 +72,7 @@ const UserProfile = () => {
     setIsFollowing4((prevIsFollowing) => !prevIsFollowing);
   };
   return (
+    
     <div className="profile-container">
       <Navbar />
   
@@ -128,9 +129,9 @@ const UserProfile = () => {
                organization to do technical and practical project and to enhance
                and apply skills.
              </p>
-             <a href="#" className="see-more-link">
+             {/* <a href="#" className="see-more-link">
                See more...
-             </a>
+             </a> */}
            </div>
            <div className="profile-description">
              <h2>Experience</h2>
@@ -176,13 +177,13 @@ const UserProfile = () => {
                </div>
              </div>
              <hr />
-             <a
+             {/* <a
                href="#"
                className="experience-link"
                onClick={() => toast("Comming Soon")}
              >
                Show all 7 experiences <img src={imageFile8} alt="" />
-             </a>
+             </a> */}
            </div>
            <div className="profile-description">
              <h2>Education</h2>

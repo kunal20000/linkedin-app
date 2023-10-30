@@ -85,7 +85,7 @@ const Home = () => {
     setPostData(updatedPostDataList);
   };
   return (
-    <main>
+    <main style={{backgroundColor:"#f3f2ee"}}>
       <Navbar />
       <div className="app-body">
         <SideBar />
@@ -110,7 +110,7 @@ const Home = () => {
                         <Link style={{textDecoration:"none", color:"rgba(0,0,0,0.9)"}} to={`/user/${posts.author._id}`}>
                           <h3>{posts.author.name}</h3>
                         </Link>
-                        <p>{posts.channel.name}</p>
+                        <p>{posts.channel ? posts.channel.name: "No channel"}</p>
                       </div>
                     </div>
                     <MoreHorizIcon />
@@ -127,8 +127,8 @@ const Home = () => {
                     </p>
                     <img
                       className="mainImage"
-                      src={posts.channel.image}
-                      alt="image"
+                      src={posts.channel ? posts.channel.image : ""}
+                      alt=""
                     />
                     <br />
                     <img

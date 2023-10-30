@@ -19,58 +19,82 @@ const Notification = () => {
           <h5>
             Manage your <br /> Notifications
           </h5>
-          <p>View Settings</p>
+          {/* <p>View Settings</p> */}
         </div>
         <div className="noti-2">
           <div className="content">
             <button className="allBtn">All Notification</button>
-            {/* <button className="postBtn">My posts</button>
-            <button className="mentionBtn">Mentions</button> */}
           </div>
           <div className="dataNoti">
             <a href="#" className="forNoti-1">
               <img className="user1" src={user1} alt="" />
-              <p className="user1ParaMedia" style={{fontSize:"12px", margin:"15px 0px",fontWeight:"600"}}>
+              <p
+                className="user1ParaMedia"
+                style={{
+                  fontSize: "12px",
+                  margin: "15px 0px",
+                  fontWeight: "600",
+                }}
+              >
                 View Work From Home Fresher & Experience Jobs Work From Home/
                 Fresher & Experience Jobs posted: CGI Is hiring #Fresher and
                 Experience- OCTOBER 2023 Post Name – Multiple Positions. #Apply
-                
               </p>
             </a>
             <a href="#" className="forNoti-1">
               <img className="user1" src={user2} alt="" />
-              <p style={{fontSize:"12px", margin:"15px 0px",fontWeight:"600"}}>
+              <p
+                style={{
+                  fontSize: "12px",
+                  margin: "15px 0px",
+                  fontWeight: "600",
+                }}
+              >
                 View Work From Home Fresher & Experience Jobs Work From Home/
                 Fresher & Experience Jobs posted: CGI Is hiring #Fresher and
                 Experience- OCTOBER 2023 Post Name – Multiple Positions. #Apply
-                
               </p>
             </a>
             <a href="#" className="forNoti-1">
               <img className="user1" src={user3} alt="" />
-              <p style={{fontSize:"12px", margin:"15px 0px",fontWeight:"600"}}>
+              <p
+                style={{
+                  fontSize: "12px",
+                  margin: "15px 0px",
+                  fontWeight: "600",
+                }}
+              >
                 View Work From Home Fresher & Experience Jobs Work From Home/
                 Fresher & Experience Jobs posted: CGI Is hiring #Fresher and
                 Experience- OCTOBER 2023 Post Name – Multiple Positions. #Apply
-                
               </p>
             </a>
             <a href="#" className="forNoti-1">
               <img className="user1" src={user4} alt="" />
-              <p style={{fontSize:"12px", margin:"15px 0px",fontWeight:"600"}}>
+              <p
+                style={{
+                  fontSize: "12px",
+                  margin: "15px 0px",
+                  fontWeight: "600",
+                }}
+              >
                 View Work From Home Fresher & Experience Jobs Work From Home/
                 Fresher & Experience Jobs posted: CGI Is hiring #Fresher and
                 Experience- OCTOBER 2023 Post Name – Multiple Positions. #Apply
-                
               </p>
             </a>
             <a href="#" className="forNoti-1">
               <img className="user1" src={user5} alt="" />
-              <p style={{fontSize:"12px", margin:"15px 0px",fontWeight:"600"}}>
+              <p
+                style={{
+                  fontSize: "12px",
+                  margin: "15px 0px",
+                  fontWeight: "600",
+                }}
+              >
                 View Work From Home Fresher & Experience Jobs Work From Home/
                 Fresher & Experience Jobs posted: CGI Is hiring #Fresher and
                 Experience- OCTOBER 2023 Post Name – Multiple Positions. #Apply
-                
               </p>
             </a>
           </div>

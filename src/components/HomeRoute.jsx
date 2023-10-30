@@ -15,6 +15,7 @@ const HomeRoute = () => {
   return (
     <div>
       <Routes>
+        
         <Route path="/" element={<ProtectedRoute Component={<Home />} />} />
         <Route
           path="/mynetwork"

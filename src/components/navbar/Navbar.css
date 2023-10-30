@@ -4,9 +4,6 @@
   
 }
 
-body {
-  background-color: #f3f2ee;
-}
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -17,6 +14,7 @@ body {
   width: 100vw;
   border: 1px solid #e5e7eb;
   z-index: 100;
+  
 }
 .header_search {
   display: flex;

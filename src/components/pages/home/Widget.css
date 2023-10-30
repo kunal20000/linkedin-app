@@ -1,90 +1,75 @@
-
-.widget{
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    max-width: 300px;
-    margin-right: -80px;
-   
+.widget {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  max-width: 300px;
+  margin-right: -80px;
 }
-.widget-header{
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-
-}
-.widget-header > h4{
-    margin: 0;
-    font-size: 16px;
-}
-.widget-header svg{
-    font-size: 18px;
-    cursor: pointer;
-}
-.widget-options{
-    margin: 0px;
-    padding: 0px;
-    padding-left: 15px;
-    
-
-}
-.widget-options li{
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-.widget-options li:hover{
-    text-decoration: underline;
+.widget-header {
+  display: flex;
+  align-items: center;
+  gap: 9rem;
+  margin-bottom: -15px;
+  padding: 0;
 }
 
-
-.widget-body{
-    margin-top: 10px;
+.widget-header > h4 {
+ font-size: 18px;
+}
+.widget-header svg {
+  
+  font-size: 18px;
+  margin: 0;
+  cursor: pointer;
+}
+.widget-options {
+  margin: 0px;
+  padding: 0px;
+  padding-left: 15px;
+}
+.widget-options li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  
 }
 
-.widget-options h4{
-    margin: 0;
-    font-weight: normal;
-    font-size: 15px;
-   
+.widget-options h4 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 15px;
 }
-.widget-options p{
-    margin: 0;
-    font-size: 12px;
-    color: #959595;
+.widget-options p {
+  margin: 0;
+  font-size: 12px;
+  color: #959595;
 }
-.widget-top{
-    margin-bottom: 10px;
-    background: #fff;
-    padding: 10px;
-    border-radius: 10px;
-    
+.widget-top {
+  margin-bottom: 10px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
 }
-.widegtBottom{
-    background-color: #fff;
-    height: 270px;
-    border-radius: 10px;
-    position: sticky;
-   
-    
+.widegtBottom {
+  background-color: #fff;
+  height: 270px;
+  border-radius: 10px;
+  position: sticky;
 }
-.footer{
-    margin-top: 40px;
-    text-align: center;
+.footer {
+  margin-top: 40px;
+  text-align: center;
 }
-.footer-links{
-    text-decoration: none;
-    padding: 10px 10px;
-    font-size: 13px;
-    color: rgba(0, 0, 0, 0.6);
-}
-.footer-links:hover{
-    text-decoration: underline;
-
+.footer-links {
+  text-decoration: none;
+  padding: 10px 10px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.6);
 }
 
-@media only screen and (max-width: 767px){
-    .widget{
-        display: none;
-    }
+
+@media only screen and (max-width: 767px) {
+  .widget {
+    display: none;
+  }
 }

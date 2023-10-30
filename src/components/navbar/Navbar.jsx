@@ -107,7 +107,7 @@ export const Navbar = () => {
         >
           <div className="vl">
             <div className="navbar-container3-forbusiness">
-              <BusinessIcon />
+              <BusinessIcon onClick={() => toast("Comming soon")} />
               <span className="forbusinessnav">For Business</span>
             </div>
           </div>

@@ -12,7 +12,7 @@ import TagIcon from "@mui/icons-material/Tag";
 import { Navbar } from "../navbar/Navbar";
 const MyNetwork = () => {
   return (
-    <main>
+    <main >
       <Navbar />
       <div className="maindiv">
         <div className="network-div">
