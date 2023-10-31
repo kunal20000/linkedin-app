@@ -280,3 +280,14 @@ svg[data-supported-dps="16x16"] {
     display: none;
   }
 }
+@media only screen 
+    and (width: 390px) 
+    and (height: 844px) 
+    and (-webkit-device-pixel-ratio: 3) { 
+      .navbar-container{
+        width: 100%;
+      }
+      .navbar-container1 svg{
+        width: 25px;
+      }
+    }

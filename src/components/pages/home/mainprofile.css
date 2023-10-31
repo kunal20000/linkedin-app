@@ -21,13 +21,24 @@
 }
 .profile-container-inner {
   padding: 0 4% 10px;
+  
 }
-.profile-pic {
-  width: 150px;
+.profile-pic-container {
+  position: relative;
+  width: 150px; /* Set the width of the container */
+  height: 150px; /* Set the height of the container */
   border-radius: 50%;
   margin-top: -75px;
   padding: 5px;
   background: #fff;
+  overflow: hidden; /* Hide overflow to maintain aspect ratio */
+}
+.profile-pic-container img {
+  width: 100%; /* Make the image fill the container width */
+  height: 100%; /* Make the image fill the container height */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  border-radius: 50%;
+  cursor: pointer;
 }
 .profile-container h1 {
   font-size: 28px;

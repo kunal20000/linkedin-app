@@ -1,4 +1,4 @@
-import "./mainprofile.css";
+import "./UserProfile.css";
 import { Navbar } from "../../navbar/Navbar";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import imageFile from "./images/user-1.png";
@@ -84,10 +84,10 @@ const UserProfile = () => {
                className="main-background-image"
                alt="backgroundImage"
              />
-             <div className="profile-container-inner">
+             <div className="profile-container-user">
                <img
                  src={profile.profileImage}
-                 className="profile-pic"
+                 className="profile-pic-user"
                  alt="userProfile"
                />
                <h1>{profile.name}</h1>

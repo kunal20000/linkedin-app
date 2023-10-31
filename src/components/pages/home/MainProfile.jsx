@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./mainprofile.css";
 import { Navbar } from "../../navbar/Navbar";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -22,6 +22,16 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const MainProfile = (props) => {
   const name = JSON.parse(sessionStorage.getItem("userInfo"));
+  const imageInputRef = useRef(null);
+  const [selectedImage, setSelectdImage] = useState(null);
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setSelectdImage(file);
+  };
+  const handleProfileImageClick = () => {
+    imageInputRef.current.click(); // Trigger the hidden input element
+  };
   const [isFollowing, setIsFollowing] = useState(false);
   const [isFollowing1, setIsFollowing1] = useState(false);
   const [isFollowing2, setIsFollowing2] = useState(false);
@@ -51,7 +61,30 @@ const MainProfile = (props) => {
               alt="backgroundImage"
             />
             <div className="profile-container-inner">
-              <img src={imageFile} className="profile-pic" alt="userProfile" />
+              <div className="profile-pic-container">
+                {selectedImage ? (
+                  <img
+                    src={URL.createObjectURL(selectedImage)}
+                    className="profile-pic"
+                    alt="userProfile"
+                    onClick={handleProfileImageClick}
+                  />
+                ) : (
+                  <img
+                    src={imageFile}
+                    className="profile-pic"
+                    alt="userProfile"
+                    onClick={handleProfileImageClick}
+                  />
+                )}
+              </div>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange}
+                ref={imageInputRef}
+                style={{ display: "none" }} // Hide the input element
+              />
               <h1>{name}</h1>
               <b>
                 B.Tech Graduate || JAVA || HTML || CSS || Bootstrap ||

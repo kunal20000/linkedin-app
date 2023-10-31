@@ -74,9 +74,6 @@ const Feed = ({ setPostData }) => {
           name: name,
         },
         content: userInputs.content,
-        // ...(userInputs.imageSrc && userInputs.imageSrc !== ""
-        //   ? { channel: { image: userInputs.imageSrc } }
-        //   : {}),
         channel: { image: userInputs.imageSrc },
         likeCount: 3,
         _id: postid,
