@@ -104,7 +104,7 @@ const Login = () => {
             {!hasError && <p className="succesfullMsg">{errMessage}</p>}
 
             <Link className="forgotLink" to="/ForgotPass">
-              <a href="./ForgotPass">Forgot password?</a>
+              <a href="./ForgotPass">Forgot Password?</a>
             </Link>
             <br />
             <button className="signIn-button">Sign In</button>

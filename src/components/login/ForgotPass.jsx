@@ -44,7 +44,7 @@ const ForgotPass = () => {
   return (
     <div className="forgotPass">
       <div className="forgotPass1">
-        <LinkedingLogo />
+        <LinkedingLogo  />
       </div>
       <div className="forgotPass2">
         <div className="headerContent">

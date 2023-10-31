@@ -110,15 +110,6 @@ const UserProfile = () => {
                    <AdditionIcon  style={{marginRight:'4px', width:"19px"}}/>
                    {isFollowing4 ? "Following" : "Follow"}
                  </a>
-
-
-
-
-
-                 {/* <a href="#" className="sec-btn">
-                   <img src={imageFile4} alt="" />
-                   Message
-                 </a>  */}
                </div>
              </div>
            </div>
@@ -129,9 +120,7 @@ const UserProfile = () => {
                organization to do technical and practical project and to enhance
                and apply skills.
              </p>
-             {/* <a href="#" className="see-more-link">
-               See more...
-             </a> */}
+          
            </div>
            <div className="profile-description">
              <h2>Experience</h2>

@@ -10,16 +10,17 @@
   margin-left: 100px;
 }
 .linkedinSignup svg{
-  width: 250px;
+  width: 130px;
+  height: 130px;
 }
 .form-login-container {
-  margin: 50px auto;
+  margin: 10px auto;
 }
 .form-login-container h1 {
+  margin: 0;
   text-align: center;
   padding-left: 16px;
   padding-right: 16px;
-  padding-top: 24px;
   padding-bottom: 24px;
   color: rgba(0, 0, 0, 0.9);
   font-size: 32px;
