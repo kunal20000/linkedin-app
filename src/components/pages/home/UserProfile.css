@@ -292,7 +292,13 @@
     .profile-sidebar {
       display: none;
     }
-    
+    .profile-pic-user {
+      width: 75px;
+      border-radius: 50%;
+      margin-top: -40px;
+      padding: 5px;
+      background: #fff;
+    }
     .profile-main {
       width: 700px;
       margin-left: 0px;

@@ -18,6 +18,7 @@ import imageFile13 from "./images/user-3.png";
 import imageFile14 from "./images/user-4.png";
 import imageFile15 from "./images/user-5.png";
 import imageFile16 from "./images/logo.png";
+import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const MainProfile = (props) => {
@@ -74,17 +75,19 @@ const MainProfile = (props) => {
                     src={imageFile}
                     className="profile-pic"
                     alt="userProfile"
-                    onClick={handleProfileImageClick}
                   />
                 )}
               </div>
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleImageChange}
-                ref={imageInputRef}
-                style={{ display: "none" }} // Hide the input element
-              />
+              <div className="forImageUpload">
+                <AddAPhotoIcon onClick={handleProfileImageClick} />
+                <input
+                  type="file"
+                  accept="image/*"
+                  ref={imageInputRef}
+                  onChange={handleImageChange}
+                  style={{ display: "none" }} // Hide the input element
+                />
+              </div>
               <h1>{name}</h1>
               <b>
                 B.Tech Graduate || JAVA || HTML || CSS || Bootstrap ||
@@ -267,7 +270,7 @@ const MainProfile = (props) => {
               <a
                 href="#"
                 className="learn-more-link"
-                onClick={() => toast("Comming Soon")}
+                onClick={() => toast.success("Comming Soon")}
               >
                 Learn More
               </a>

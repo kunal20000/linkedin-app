@@ -298,6 +298,10 @@
   font-size: 13px;
   margin-top: 6px;
 }
+.forImageUpload{
+  margin-left: 110px;
+  margin-top: -14px;
+}
 @media screen and (max-width: 768px) {
   .profile-sidebar {
     display: none;
@@ -323,5 +327,35 @@
   .footer-links{
     display: inline;
     
+  }
+  .profile-pic-container {
+    position: relative;
+    width: 80px; /* Set the width of the container */
+    height: 80px; /* Set the height of the container */
+    border-radius: 50%;
+    margin-top: -40px;
+    padding: 5px;
+    background: none;
+    overflow: hidden;/* Hide overflow to maintain aspect ratio */
+    
+  }
+  .profile-pic-container img {
+    width: 60px; /* Make the image fill the container width */
+    height: 60px; /* Make the image fill the container height */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .profile-container-inner {
+    padding: 0px;
+    
+  }
+  .forImageUpload{
+    margin-left: 60px;
+    margin-top: -24px;
+  }
+  .forImageUpload svg{
+    width: 22px;
+    height: 22px;
   }
 }
