@@ -22,6 +22,7 @@ export function SearchProvider({ children }) {
 
 export function useSearch() {
   const context = useContext(SearchContext);
+  console.log("context", context);
   return {
     searchValue: context.searchValue,
     pageNo: context.pageNo,

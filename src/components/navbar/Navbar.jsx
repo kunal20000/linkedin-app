@@ -31,6 +31,7 @@ export const Navbar = () => {
     const { value } = e.target;
     updateSearch(value);
     updatePageNo(1);
+    console.log(value);
   };
 
   return (

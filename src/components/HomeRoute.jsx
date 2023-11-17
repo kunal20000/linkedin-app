@@ -10,6 +10,7 @@ import ProtectedRoute from "../ProtectedRoute";
 import Notification from "./pages/Notification";
 import MainProfile from "./pages/home/MainProfile";
 import UserProfile from "./pages/home/UserProfile";
+import { ToastContainer } from "react-toastify";
 
 const HomeRoute = () => {
   return (
@@ -46,7 +47,9 @@ const HomeRoute = () => {
           path="/user/:id"
           element={<ProtectedRoute Component={<UserProfile/>} />}
         />
+        
       </Routes>
+      <ToastContainer/>
     </div>
   );
 };

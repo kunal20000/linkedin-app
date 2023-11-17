@@ -12,6 +12,7 @@ import { v4 as uuidv4 } from "uuid";
 import MmsIcon from "@mui/icons-material/Mms";
 import { json } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Feed = ({ setPostData }) => {
   const fileInputRef = useRef(null);
@@ -228,7 +229,7 @@ const Feed = ({ setPostData }) => {
             />
             <span>Design</span>
           </div>
-          <div className="option" onClick={openModal}>
+          <div className="option" onClick={()=>toast("Comming Soon")}>
             <ArticleIcon
               style={{ color: "#e16745", height: "25px", width: "25px" }}
             />
