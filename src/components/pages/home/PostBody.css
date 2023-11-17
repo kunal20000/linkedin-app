@@ -1,3 +1,6 @@
+.forLike.liked {
+  color: blue; /* Change the color to your desired liked color */
+}
 .page-footer {
   
   display: flex;
@@ -20,12 +23,11 @@
 
 .page-footer-option svg {
   margin-right: 8px;
-  color: #333;
+ 
 }
 .page-footer-option span {
   font-size: 15px;
-  color: rgb(90, 90, 90);
-  font-weight: 450;
+  font-weight: 490;
 }
 .post-comments-section{
   display: flex;

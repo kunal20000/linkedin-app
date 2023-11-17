@@ -12,6 +12,7 @@ import { Avatar, Divider, Snackbar } from "@mui/material";
 import SingleComments from "./SingleComments,";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ReactComponent as LikeIcon } from "../../assets/like.svg";
 
 const PostBody = ({ likeCount, onLikeClick, liked }) => {
   const [openCommentSec, setOpenCommentSec] = useState(false);
@@ -20,9 +21,11 @@ const PostBody = ({ likeCount, onLikeClick, liked }) => {
   const isLoggedIn = sessionStorage.getItem("userInfo");
   const userName = sessionStorage.getItem("userName");
   const navigate = useNavigate(null);
+
   const notify = () => {
     toast("comming soon");
   };
+  const [isLiked, setIsLiked] = useState(liked);
   const [postComments, setPostComments] = useState([
     {
       name: "Paul David",
@@ -45,10 +48,12 @@ const PostBody = ({ likeCount, onLikeClick, liked }) => {
         "It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.",
     },
   ]);
+
   const [userCommentinput, setUserCommentInput] = useState({
     name: "",
     comment: "",
   });
+
   const saveUserComment = (e) => {
     const { value } = e.target;
     setUserCommentInput({
@@ -79,12 +84,16 @@ const PostBody = ({ likeCount, onLikeClick, liked }) => {
 
   const handleLikeClick = () => {
     onLikeClick(); // Call the callback function passed from Home.jsx
+    setIsLiked(!isLiked);
   };
   return (
     <div className="page-footer">
       <div className="forShowOption">
         <div className="page-footer-option">
-          <div className="forLike" onClick={handleLikeClick}>
+          <div
+            className={`forLike ${isLiked ? "liked" : ""}`}
+            onClick={handleLikeClick}
+          >
             <ThumbUpOffAltIcon />
             <span>Like</span>
           </div>

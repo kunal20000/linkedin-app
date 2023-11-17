@@ -102,14 +102,7 @@ const MainProfile = (props) => {
                 <span>1 mutual connection: Adrash Gupta</span>
               </div>
               <div className="profile-btn">
-                {/* <a href="#" className="primary-btn">
-                  <img src={imageFile3} alt="" />
-                  Follow
-                </a>
-                <a href="#" className="sec-btn">
-                  <img src={imageFile4} alt="" />
-                  Message
-                </a> */}
+               
               </div>
             </div>
           </div>
@@ -120,9 +113,7 @@ const MainProfile = (props) => {
               organization to do technical and practical project and to enhance
               and apply skills.
             </p>
-            {/* <a href="#" className="see-more-link">
-              See more...
-            </a> */}
+          
           </div>
           <div className="profile-description">
             <h2>Experience</h2>

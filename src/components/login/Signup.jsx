@@ -12,16 +12,48 @@ const Signup = () => {
     email: "",
     password: "",
   });
+  const [nameErr, setNameErr] = useState(false);
+  const [emailErr, setEmailErr] = useState(false);
+  const [passwordErr, setPasswordErr] = useState(false);
 
   const navigate = useNavigate(null);
+
   const [errMessage, setErrMessage] = useState("");
   const [hasError, sethasError] = useState(false);
 
   const handleUserInput = (event) => {
     const { name, value } = event.target;
+    if (name === "name" && value.length > 4) {
+      setNameErr("Name must be at least 4 characters long.");
+    }else{
+      setNameErr(false);
+    }
+    if (name === "email" && !isValidEmail(value)) {
+      setEmailErr("Please enter a valid email address.");
+    } else {
+      setEmailErr(false);
+    }
+    if (name === "password") {
+      const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(value);
+      const hasUpperCase = /[A-Z]/.test(value);
+      const hasLowerCase = /[a-z]/.test(value);
+      const hasDigit = /\d/.test(value);
+      if (!hasSpecialChar || !hasUpperCase || !hasLowerCase || !hasDigit) {
+        setPasswordErr(
+          "Password must 8 characters,uppercase letter, one lowercase, one digit,one special character."
+        );
+      } else {
+        setPasswordErr(false);
+      }
+    }
+
     setUserInfo({ ...userInfo, [name]: value });
   };
 
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
   const signUp = async (userInfo) => {
     userInfo.appType = "linkedin";
     try {
@@ -72,7 +104,20 @@ const Signup = () => {
             onChange={handleUserInput}
             required
           />
-          <br />
+          {nameErr && (
+            <p
+              style={{
+                color: "red",
+                fontSize: "15px",
+                textAlign: "center",
+                margin: "0px",
+                padding: "0px",
+              }}
+            >
+              {nameErr}
+            </p>
+          )}
+
           <label htmlFor="email">Email</label>
           <input
             id="email"
@@ -82,7 +127,18 @@ const Signup = () => {
             onChange={handleUserInput}
             required
           />
-          <br />
+          {emailErr && (
+            <p
+              style={{
+                color: "red",
+                fontSize: "15px",
+                textAlign: "center",
+                margin: "0px",
+              }}
+            >
+              {emailErr}
+            </p>
+          )}
           <label htmlFor="password">Password</label>
           <input
             id="password"
@@ -92,6 +148,18 @@ const Signup = () => {
             onChange={handleUserInput}
             required
           />
+          {passwordErr && (
+            <p
+              style={{
+                color: "red",
+                fontSize: "15px",
+                textAlign: "center",
+                margin: "0px",
+              }}
+            >
+              {passwordErr}
+            </p>
+          )}
           {hasError ? (
             <p className="errorMesage">{errMessage}</p>
           ) : (

@@ -13,7 +13,8 @@ import { getHeaderWithProjectIDAndBody } from "../../utils/config";
 import { Link } from "react-router-dom";
 import { useSearch } from "../../SearchContext";
 import { getPosts } from "../../utils/getPostApi";
-
+import { emptyImage } from "./images/emptyPost.jpg";
+import { ReactComponent as emptyPost } from "../../assets/emptyResult.svg";
 const Home = () => {
   const [postDataList, setPostData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -95,7 +96,13 @@ const Home = () => {
           {isLoading ? (
             <span className="loader"></span>
           ) : postDataList.length === 0 ? (
-            <div>No Post Found</div>
+            <div className="emptyPost-container">
+              <img
+                src="https://depository.authoredup.com/images/IMG_FKca2diatUgcenrhCidjZBVFC61wgH.png"
+                alt=""
+              />
+             
+            </div>
           ) : (
             postDataList.map((posts, index) => {
               const { _id } = posts;

@@ -14,7 +14,7 @@ export function SearchProvider({ children }) {
   }
 
   return (
-    <SearchContext.Provider value={{ searchValue,pageNo, updateSearch,updatePageNo }}>
+    <SearchContext.Provider value={{ searchValue, pageNo, updateSearch, updatePageNo }}>
       {children}
     </SearchContext.Provider>
   );

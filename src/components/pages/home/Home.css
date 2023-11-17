@@ -21,6 +21,9 @@ body{
     transform: rotate(360deg);
   }
 }
+.emptyPost-container{
+   text-align: center;
+}
 .feedPost {
   display: flex;
   flex: 1.1;

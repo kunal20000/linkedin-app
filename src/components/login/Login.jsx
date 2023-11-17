@@ -16,6 +16,9 @@ const Login = () => {
   const [errMessage, setErrMessage] = useState("");
   const [hasError, sethasError] = useState(false);
 
+  const [emailErr, setEmailErr] = useState(false);
+  const [passwordErr, setPasswordErr] = useState(false);
+
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",
@@ -48,14 +51,36 @@ const Login = () => {
       console.log(err);
     }
   };
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
   const handleChange = (e) => {
     const { name, value } = e.target;
+    if (name === "email" && !isValidEmail(value)) {
+      setEmailErr("Please enter a valid email address.");
+    } else {
+      setEmailErr(false);
+    }
+    if (name === "password") {
+      const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(value);
+      const hasUpperCase = /[A-Z]/.test(value);
+      const hasLowerCase = /[a-z]/.test(value);
+      const hasDigit = /\d/.test(value);
+      if (!hasSpecialChar || !hasUpperCase || !hasLowerCase || !hasDigit) {
+        setPasswordErr(
+          "Password must 8 characters,uppercase letter, one lowercase, one digit,one special character."
+        );
+      } else {
+        setPasswordErr(false);
+      }
+    }
     setUserInfo({ ...userInfo, [name]: value });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     signIn(userInfo);
-    
   };
 
   return (
@@ -84,6 +109,16 @@ const Login = () => {
                 onChange={handleChange}
               />
             </div>
+            {emailErr && (
+              <p
+                style={{
+                  color: "red",
+                  fontSize: "15px",
+                }}
+              >
+                {emailErr}
+              </p>
+            )}
             <br />
             <label htmlFor="password">Password</label>
             <br />
@@ -99,9 +134,19 @@ const Login = () => {
                 onChange={handleChange}
               />
             </div>
+            {passwordErr && (
+              <p
+                style={{
+                  color: "red",
+                  fontSize: "15px",
+                  textAlign: "center",
+                }}
+              >
+                {passwordErr}
+              </p>
+            )}
             <br />
-            {hasError && <p className="errorMsg">{errMessage}!</p>}
-            {!hasError && <p className="succesfullMsg">{errMessage}</p>}
+            {hasError && <p>{hasError}</p>}
 
             <Link className="forgotLink" to="/ForgotPass">
               <a href="./ForgotPass">Forgot Password?</a>

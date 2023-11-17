@@ -9,7 +9,7 @@
   margin-top: 30px;
   margin-left: 100px;
 }
-.linkedinSignup svg{
+.linkedinSignup svg {
   width: 130px;
   height: 130px;
 }
@@ -46,7 +46,7 @@
 .form-login input {
   margin-left: 20px;
   width: 90%;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   height: 32px;
 }
 .form-login p {

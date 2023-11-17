@@ -13,7 +13,6 @@ import { ReactComponent as BusinessIcon } from "../assets/business.svg";
 import { ReactComponent as SearchIcon } from "../assets/search.svg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 import Profile from "./Profile";
 import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -24,7 +23,7 @@ export const Navbar = () => {
   const searchbarRef = useRef(null);
   const { updateSearch, updatePageNo } = useSearch();
   const focusSearchBar = () => {
-    if (searchbarRef.current) {
+    if(searchbarRef.current) {
       searchbarRef.current.focus();
     }
   };
