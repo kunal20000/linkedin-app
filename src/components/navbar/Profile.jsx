@@ -50,7 +50,7 @@ const Profile = () => {
           <div>
             <div className="for-svg-for-name">
               <AccountCircleIcon className="forSvg" />
-              <h6 style={{ whiteSpace: "nowrap" }}>{userName}</h6>
+              <h6 style={{ whiteSpace: "nowrap" }}>{userName.charAt(0).toUpperCase() + userName.slice(1)}</h6>
             </div>
 
             <div className="btn-for-name">

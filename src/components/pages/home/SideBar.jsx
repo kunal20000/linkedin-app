@@ -14,12 +14,12 @@ const SideBar = () => {
     <div className="sidebar">
       <div className="sidebar_profile">
         <img
-          src="https://media.licdn.com/dms/image/D5616AQFBP6BFA3N_9g/profile-displaybackgroundimage-shrink_200_800/0/1682500067234?e=1700697600&v=beta&t=Z1KIGzn_hiVd55Ugs8ItaMfDbkQ-FV5VoBqBYeA7SUM"
+          src="https://media.licdn.com/dms/image/D5616AQFBP6BFA3N_9g/profile-displaybackgroundimage-shrink_350_1400/0/1682500067234?e=1706140800&v=beta&t=XnBasCqPIFSnBlLbuQodKnjMruYt3m6Ok_UeZNFs7D0"
           alt="image"
         />
         <div className="profile_details">
           <AccountCircleIcon className="forCirleIcon" onClick={()=>navigate('/mainprofile')}/>
-          <h4 className="nameDynamic" onClick={handleClick}>{name}</h4>
+          <h4 className="nameDynamic" onClick={handleClick}>{name.charAt(0).toUpperCase()+ name.slice(1)}</h4>
           <p>
             B.Tech Graduate || JAVA || HTML || CSS || Bootstrap || JavaScript ||
             Github || React || Redux
