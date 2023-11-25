@@ -153,7 +153,7 @@ const Login = () => {
             </Link>
             <br />
             <button className="signIn-button">Sign In</button>
-            <hr className="forHr" style={{ width: "70%" }} />
+            {/* <hr className="forHr" style={{ width: "75%" }} /> */}
           </form>
 
           <Link to="/Signup">

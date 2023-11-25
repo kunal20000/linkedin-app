@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import "./mainprofile.css";
 import { Navbar } from "../../navbar/Navbar";
+import { Avatar } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import imageFile from "./images/user-1.png";
 import imageFile2 from "./images/user-2.png";
@@ -64,15 +65,16 @@ const MainProfile = (props) => {
             <div className="profile-container-inner">
               <div className="profile-pic-container">
                 {selectedImage ? (
-                  <img
+                  <Avatar
                     src={URL.createObjectURL(selectedImage)}
+                    sx={{width: 150, height: 150}}
                     className="profile-pic"
                     alt="userProfile"
                     onClick={handleProfileImageClick}
                   />
                 ) : (
-                  <img
-                    src={imageFile}
+                  <Avatar
+                    sx={{ width: 150, height: 150 }}
                     className="profile-pic"
                     alt="userProfile"
                   />
@@ -88,22 +90,17 @@ const MainProfile = (props) => {
                   style={{ display: "none" }} // Hide the input element
                 />
               </div>
-              <h1>{name}</h1>
+              <h1>{name.charAt(0).toUpperCase() + name.slice(1)}</h1>
               <b>
                 B.Tech Graduate || JAVA || HTML || CSS || Bootstrap ||
                 JavaScript || Github || React || Redux
               </b>
-              <p>
-                Satara, Maharashtra, India
-                {/* <a href="#">Contact info</a> */}
-              </p>
+              <p>Satara, Maharashtra, India</p>
               <div className="mutual-connection">
                 <img src={imageFile2} alt="" />
                 <span>1 mutual connection: Adrash Gupta</span>
               </div>
-              <div className="profile-btn">
-               
-              </div>
+              <div className="profile-btn"></div>
             </div>
           </div>
           <div className="profile-description">
@@ -113,7 +110,6 @@ const MainProfile = (props) => {
               organization to do technical and practical project and to enhance
               and apply skills.
             </p>
-          
           </div>
           <div className="profile-description">
             <h2>Experience</h2>
@@ -159,13 +155,6 @@ const MainProfile = (props) => {
               </div>
             </div>
             <hr />
-            {/* <a
-              href="#"
-              className="experience-link"
-              onClick={() => toast("Comming Soon")}
-            >
-              Show all 7 experiences <img src={imageFile8} alt="" />
-            </a> */}
           </div>
           <div className="profile-description">
             <h2>Education</h2>

@@ -5,9 +5,9 @@ export const getPosts = async (pageNumber,filter) => {
   const headers = getHeaderWithProjectId();
   let apiURL;
     if (filter?.length>0) {
-        apiURL = `https://academics.newtonschool.co/api/v1/linkedin/post?limit=20&page=${pageNumber}&search={"content":"${filter}"}`
+        apiURL = `https://academics.newtonschool.co/api/v1/linkedin/post?limit=10&page=${pageNumber}&search={"content":"${filter}"}`
     }else{
-        apiURL = `https://academics.newtonschool.co/api/v1/linkedin/post?limit=20&page=${pageNumber}`
+        apiURL = `https://academics.newtonschool.co/api/v1/linkedin/post?limit=10&page=${pageNumber}`
         console.log('trigger');
         
     }

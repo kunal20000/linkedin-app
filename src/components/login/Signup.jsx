@@ -23,7 +23,7 @@ const Signup = () => {
 
   const handleUserInput = (event) => {
     const { name, value } = event.target;
-    if (name === "name" && value.length > 4) {
+    if (name === "name" && value.length < 4) {
       setNameErr("Name must be at least 4 characters long.");
     }else{
       setNameErr(false);

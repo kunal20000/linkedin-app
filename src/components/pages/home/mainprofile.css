@@ -30,7 +30,6 @@
   border-radius: 50%;
   margin-top: -75px;
   padding: 5px;
-  background: #fff;
   overflow: hidden; /* Hide overflow to maintain aspect ratio */
 }
 .profile-pic-container img {
@@ -317,7 +316,6 @@
     width: 700px;
   }
   .profile-container-inner .profile-pic {
-    
     width: 60px;
     
   }
@@ -326,28 +324,6 @@
   }
   .footer-links{
     display: inline;
-    
-  }
-  .profile-pic-container {
-    position: relative;
-    width: 80px; /* Set the width of the container */
-    height: 80px; /* Set the height of the container */
-    border-radius: 50%;
-    margin-top: -40px;
-    padding: 5px;
-    background: none;
-    overflow: hidden;/* Hide overflow to maintain aspect ratio */
-    
-  }
-  .profile-pic-container img {
-    width: 60px; /* Make the image fill the container width */
-    height: 60px; /* Make the image fill the container height */
-    object-fit: cover; /* Maintain aspect ratio and cover the container */
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  .profile-container-inner {
-    padding: 0px;
     
   }
   .forImageUpload{

@@ -107,8 +107,6 @@ form a {
     "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 .signIn-button {
-  margin-top: 20px;
-  margin-bottom: 20px;
   cursor: pointer;
   width: 70%;
   border: 1px solid #00000000;
@@ -125,8 +123,10 @@ form a {
   font-weight: 600;
   line-height: 1.25;
   background-color: #0a66c2;
+  margin-bottom: -8px;
 }
 .joinNow-button {
+  
   width: 70%;
   cursor: pointer;
   text-decoration-line: none;
