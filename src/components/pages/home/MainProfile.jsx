@@ -81,7 +81,7 @@ const MainProfile = (props) => {
                 )}
               </div>
               <div className="forImageUpload">
-                <AddAPhotoIcon onClick={handleProfileImageClick} />
+                {/* <AddAPhotoIcon onClick={handleProfileImageClick} /> */}
                 <input
                   type="file"
                   accept="image/*"
@@ -90,7 +90,7 @@ const MainProfile = (props) => {
                   style={{ display: "none" }} // Hide the input element
                 />
               </div>
-              <h1>{name.charAt(0).toUpperCase() + name.slice(1)}</h1>
+              <h1 style={{marginTop:"15px"}}>{name.charAt(0).toUpperCase() + name.slice(1)}</h1>
               <b>
                 B.Tech Graduate || JAVA || HTML || CSS || Bootstrap ||
                 JavaScript || Github || React || Redux

@@ -31,16 +31,19 @@ import {
 import { useParams } from "react-router-dom";
 
 const UserProfile = () => {
-  const [profile, setProfile] = useState([]);
+  const [userInfo, setUserInfo] = useState([]);
+  const [loading, setLoading] = useState(false);
   const { id } = useParams();
-
+  const [userNotFound, setUserNotFound] = useState(false);
   const fetchById = async () => {
     try {
       const res = await getProfileById(id);
-      setProfile(res);
       console.log(res);
+      setUserInfo(res);
     } catch (err) {
       console.log(err);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -54,7 +57,7 @@ const UserProfile = () => {
   const [isFollowing2, setIsFollowing2] = useState(false);
   const [isFollowing3, setIsFollowing3] = useState(false);
   const [isFollowing4, setIsFollowing4] = useState(false);
- 
+
   const toggleFollow1 = () => {
     setIsFollowing((prevIsFollowing) => !prevIsFollowing);
   };
@@ -72,257 +75,189 @@ const UserProfile = () => {
     setIsFollowing4((prevIsFollowing) => !prevIsFollowing);
   };
   return (
-    
     <div className="profile-container">
       <Navbar />
-  
-         <div className="profile-main-background">
-         <div className="profile-main">
-           <div className="profile-container1">
-             <img
-               src="https://media.licdn.com/dms/image/D5616AQFBP6BFA3N_9g/profile-displaybackgroundimage-shrink_350_1400/0/1682500067234?e=1706140800&v=beta&t=XnBasCqPIFSnBlLbuQodKnjMruYt3m6Ok_UeZNFs7D0"
-               className="main-background-image"
-               alt="backgroundImage"
-             />
-             <div className="profile-container-user">
-               <img
-                 src={profile.profileImage}
-                 className="profile-pic-user"
-                 alt="userProfile"
-               />
-               <h1>{profile.name}</h1>
-               <b>
-                 B.Tech Graduate || JAVA || HTML || CSS || Bootstrap ||
-                 JavaScript || Github || React || Redux
-               </b>
-               <p>
-                
-                 <a style={{ listStyle: "none" }}>
-                   Contact info {profile.phone}
-                 </a>
-               </p>
-               <div className="mutual-connection">
-                 <img src={imageFile2} alt="" />
-                 <span>1 mutual connection: Adrash Gupta</span>
-               </div>
-               <div className="profile-btn" style={{borderRadius:"13px"}}>
-                  <a  className="primary-btn" onClick={toggleFollow5}>
-                   <AdditionIcon  style={{marginRight:'4px', width:"19px"}}/>
-                   {isFollowing4 ? "Following" : "Follow"}
-                 </a>
-               </div>
-             </div>
-           </div>
-           <div className="profile-description">
-             <h2>About</h2>
-             <p>
-               Eager to learn new tech skills. Seeking a position in a dynamic
-               organization to do technical and practical project and to enhance
-               and apply skills.
-             </p>
-          
-           </div>
-           <div className="profile-description">
-             <h2>Experience</h2>
-             <div className="profile-dec-row">
-               <img src={imageFile5} alt="" />
-               <div>
-                 <h3>Lead Front-End Developer</h3>
-                 <b>Microsoft &middot; full-time</b>
-                 <b>Feb 2021 - Present &middot; 1.5 years</b>
-                 <p>
-                   Computer programming is the process of performing a particular
-                   computation, usually by designing and building an executable
-                   computer program.
-                 </p>
-                 <hr />
-               </div>
-             </div>
-             <div className="profile-dec-row">
-               <img src={imageFile6} alt="" />
-               <div>
-                 <h3>Full Stack Developer</h3>
-                 <b>Slack &middot; full-time</b>
-                 <b>June 2018 - Jan 2021 &middot; 2.5 years</b>
-                 <p>
-                   Computer programming is the process of performing a particular
-                   computation, usually by designing and building an executable
-                   computer program.
-                 </p>
-                 <hr />
-               </div>
-             </div>
-             <div className="profile-dec-row">
-               <img src={imageFile7} alt="" />
-               <div>
-                 <h3>Web Developer</h3>
-                 <b>Google Inc &middot; full-time</b>
-                 <b>Sep 2015 - May 2018 &middot; 2.8 years</b>
-                 <p>
-                   Computer programming is the process of performing a particular
-                   computation, usually by designing and building an executable
-                   computer program.
-                 </p>
-               </div>
-             </div>
-             <hr />
-             {/* <a
-               href="#"
-               className="experience-link"
-               onClick={() => toast("Comming Soon")}
-             >
-               Show all 7 experiences <img src={imageFile8} alt="" />
-             </a> */}
-           </div>
-           <div className="profile-description">
-             <h2>Education</h2>
-             <div className="profile-dec-row">
-               <img src={imageFile9} alt="" />
-               <div>
-                 <h3>Stanford University</h3>
-                 <b>BSEE, Electrical Enginerring</b>
-                 <b>2018 - 2022</b>
-                 <hr />
-               </div>
-             </div>
-             <div className="profile-dec-row">
-               <img src={imageFile10} alt="" />
-               <div>
-                 <h3>Northwestern University</h3>
-                 <b>Computer Science</b>
-                 <b>2015 - 2018</b>
-                 <hr />
-               </div>
-             </div>
-             <div className="profile-dec-row">
-               <img src={imageFile11} alt="" />
-               <div>
-                 <h3>Harvard University</h3>
-                 <b>Senior High School</b>
-                 <b>2005 - 2015</b>
-               </div>
-             </div>
-           </div>
-           <div className="profile-description">
-             <h2>Skills</h2>
-             <a href="#" className="skills-btn">
-              Leadership
-            </a>
-            <a href="#" className="skills-btn">
-              Web Design
-            </a>
-            <a href="#" className="skills-btn">
-              Development
-            </a>
-            <a href="#" className="skills-btn">
-              Communication
-            </a>
-            <a href="#" className="skills-btn">
-              UI/UX
-            </a>
-            <a href="#" className="skills-btn">
-              Planning
-            </a>
-            <a href="#" className="skills-btn">
-              Javascriptp
-            </a>
-            <a href="#" className="skills-btn">
-              HTML
-            </a>
-            <a href="#" className="skills-btn">
-              CSS
-            </a>
-            <a href="#" className="skills-btn">
-              React
-            </a>
-            <a href="#" className="skills-btn">
-              MangoDB
-            </a>
-            
-             
-           </div>
-           <div className="profile-description">
-             <h2>Languages</h2>
-             <a href="#" className="language-btn">
-               English
-             </a>
-             <a href="#" className="language-btn">
-               Hindi
-             </a>
-             <a href="#" className="language-btn">
-               Marathi
-             </a>
-           </div>
-         </div>
- 
-         {/* profilesidbar */}
- 
-         <div className="profile-sidebar">
-           <div className="sidebar-ad">
-             <small className="small">Ad &middot; &middot; &middot; </small>
-             <p>Master the 5 principles of web design</p>
-             <div className="container-image">
-               <img src={imageFile} alt="" />
-               <img src={imageFile12} alt="" />
-             </div>
-             <div className="container-image2">
-               <b>Brand and Demand in Xiaomi</b>
-               <a
-                 href="#"
-                 className="learn-more-link"
-                 onClick={() => toast("Comming Soon")}
-               >
-                 Learn More
-               </a>
-             </div>
-           </div>
-           <div className="sidebar-people">
-             <h3>People you may know</h3>
-             <div className="sidebar-people-row">
-               <img src={imageFile13} alt="" />
-               <div>
-                 <h2>Samuel Tony</h2>
-                 <p>Head of Marketing at Alibaba</p>
-                 <button href="#" onClick={toggleFollow1}>
-                   {isFollowing ? "Following" : "Follow"}
-                 </button>
-               </div>
-             </div>
-             <div className="sidebar-people-row">
-               <img src={imageFile14} alt="" />
-               <div>
-                 <h2>Kajal Gupta</h2>
-                 <p>Studied from University of Allahabad</p>
-                 <button href="#" onClick={toggleFollow2}>
-                   {" "}
-                   {isFollowing1 ? "Following" : "Follow"}
-                 </button>
-               </div>
-             </div>
-             <div className="sidebar-people-row">
-               <img src={imageFile15} alt="" />
-               <div>
-                 <h2>Adrash Gupta</h2>
-                 <p>Studied from Engineering Satara</p>
-                 <button href="#" onClick={toggleFollow3}>
-                   {isFollowing2 ? "Following" : "Follow"}
-                 </button>
-               </div>
-             </div>
-             <div className="sidebar-people-row">
-               <img src={imageFile2} alt="" />
-               <div>
-                 <h2>Ujjwal Kumar</h2>
-                 <p>Head of BusinessManger at Alibaba</p>
-                 <button href="#" onClick={toggleFollow4}>
-                   {isFollowing3 ? "Following" : "Follow"}
-                 </button>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>
-   
+
+      <div className="profile-main-background">
+        <div className="profile-main">
+          <div className="profile-container1">
+            <img
+              src="https://media.licdn.com/dms/image/D5616AQFBP6BFA3N_9g/profile-displaybackgroundimage-shrink_350_1400/0/1682500067234?e=1706140800&v=beta&t=XnBasCqPIFSnBlLbuQodKnjMruYt3m6Ok_UeZNFs7D0"
+              className="main-background-image"
+              alt="backgroundImage"
+            />
+            <div className="profile-container-user">
+              <img
+                src={userInfo?.profileImage}
+                className="profile-pic-user"
+                alt="userProfile"
+              />
+              <h1>{userInfo?.name}</h1>
+              <b>
+                B.Tech Graduate || JAVA || HTML || CSS || Bootstrap ||
+                JavaScript || Github || React || Redux
+              </b>
+              <p>
+              <a style={{ listStyle: "none"}}>
+                  Email- {userInfo?.email}
+                </a><br />
+                <a style={{ listStyle: "none" }}>
+                  Contact info- {userInfo?.phone}
+                </a>
+              </p>
+              <div className="mutual-connection">
+                <img src={imageFile2} alt="" />
+                <span>1 mutual connection: Adrash Gupta</span>
+              </div>
+              <div className="profile-btn" style={{ borderRadius: "13px" }}>
+                <a className="primary-btn" onClick={toggleFollow5}>
+                  <AdditionIcon style={{ marginRight: "4px", width: "19px" }} />
+                  {isFollowing4 ? "Following" : "Follow"}
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="profile-description">
+            <h2>About</h2>
+            <p>
+              Eager to learn new tech skills. Seeking a position in a dynamic
+              organization to do technical and practical project and to enhance
+              and apply skills.
+            </p>
+          </div>
+          <div className="profile-description">
+            <h2>Experience</h2>
+            {userInfo?.workExperience?.map((info, i) => (
+              <div className="profile-dec-row" key={i}>
+                <img src={imageFile5} alt="" />
+                <div>
+                  <h3>{info.companyName}</h3>
+                  <b>{info.designation} &middot; full-time</b>
+                  <b>
+                    {new Date(info.startDate).toLocaleDateString("en-US", {
+                      month: "2-digit",
+                      year: "numeric",
+                    })}
+                    &nbsp;-&nbsp;
+                    {new Date(info.endDate).toLocaleDateString("en-US", {
+                      month: "2-digit",
+                      year: "numeric",
+                    })}{" "}
+                  </b>
+                  <p>
+                    {userInfo.description}
+                    Computer programming is the process of performing a
+                    particular computation, usually by designing and building an
+                    executable computer program.
+                  </p>
+                  <hr />
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="profile-description">
+            <h2>Education</h2>
+            {userInfo?.education?.map((info, i) => (
+              <div className="profile-dec-row" key={i}>
+                <img src={imageFile9} alt="" />
+                <div>
+                  <h3>{info.schoolName}</h3>
+                  <b>{info.degree}</b>
+                  <b>
+                    {new Date(info.startDate).toLocaleDateString("en-US", {
+                      month: "2-digit",
+                      year: "numeric",
+                    })}
+                    &nbsp;-&nbsp;
+                    {new Date(info.endDate).toLocaleDateString("en-US", {
+                      month: "2-digit",
+                      year: "numeric",
+                    })}{" "}
+                  </b>
+                  <hr />
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="profile-description">
+            <h2>Skills</h2>
+
+            {userInfo?.skills?.map((info, i) => (
+              <a href="#" className="skills-btn" key={i}>
+                {info}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* profilesidbar */}
+
+        <div className="profile-sidebar">
+          <div className="sidebar-ad">
+            <small className="small">Ad &middot; &middot; &middot; </small>
+            <p>Master the 5 principles of web design</p>
+            <div className="container-image">
+              <img src={imageFile} alt="" />
+              <img src={imageFile12} alt="" />
+            </div>
+            <div className="container-image2">
+              <b>Brand and Demand in Xiaomi</b>
+              <a
+                href="#"
+                className="learn-more-link"
+                onClick={() => toast("Comming Soon")}
+              >
+                Learn More
+              </a>
+            </div>
+          </div>
+          <div className="sidebar-people">
+            <h3>People you may know</h3>
+            <div className="sidebar-people-row">
+              <img src={imageFile13} alt="" />
+              <div>
+                <h2>Samuel Tony</h2>
+                <p>Head of Marketing at Alibaba</p>
+                <button href="#" onClick={toggleFollow1}>
+                  {isFollowing ? "Following" : "Follow"}
+                </button>
+              </div>
+            </div>
+            <div className="sidebar-people-row">
+              <img src={imageFile14} alt="" />
+              <div>
+                <h2>Kajal Gupta</h2>
+                <p>Studied from University of Allahabad</p>
+                <button href="#" onClick={toggleFollow2}>
+                  {" "}
+                  {isFollowing1 ? "Following" : "Follow"}
+                </button>
+              </div>
+            </div>
+            <div className="sidebar-people-row">
+              <img src={imageFile15} alt="" />
+              <div>
+                <h2>Adrash Gupta</h2>
+                <p>Studied from Engineering Satara</p>
+                <button href="#" onClick={toggleFollow3}>
+                  {isFollowing2 ? "Following" : "Follow"}
+                </button>
+              </div>
+            </div>
+            <div className="sidebar-people-row">
+              <img src={imageFile2} alt="" />
+              <div>
+                <h2>Ujjwal Kumar</h2>
+                <p>Head of BusinessManger at Alibaba</p>
+                <button href="#" onClick={toggleFollow4}>
+                  {isFollowing3 ? "Following" : "Follow"}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="profile-footer">
         <div className="sidebar-useful-links">
           <a href="#" className="footer-links">
