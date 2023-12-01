@@ -44,18 +44,20 @@ const Jobs = () => {
               <span>Application settings</span>
             </li>
           </ul>
-          <button className="postJob" onClick={()=>toast("Comming Soon")}> Post a free a job</button>
+          <button className="postJob" onClick={() => toast("Comming Soon")}>
+            {" "}
+            Post a free a job
+          </button>
         </div>
 
         <div className="main-div-2">
           <div className="suugestJobSearch">
             <h6>Suggested job searches</h6>
-           
-              {/* <input type="search" />
+
+            {/* <input type="search" />
             
             
               <input type="search" /> */}
-           
           </div>
           <div className="recommended">
             <h5>Recommended for you</h5>
@@ -78,7 +80,7 @@ const Jobs = () => {
           </div>
         </div>
       </div>
-      <ToastContainer/>
+      <ToastContainer />
     </main>
   );
 };

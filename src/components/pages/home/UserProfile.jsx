@@ -1,6 +1,9 @@
 import "./UserProfile.css";
 import { Navbar } from "../../navbar/Navbar";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { Avatar, Button, CircularProgress, Divider } from "@mui/material";
+import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import DoneIcon from "@mui/icons-material/Done";
 import imageFile from "./images/user-1.png";
 import imageFile2 from "./images/user-2.png";
 import imageFile3 from "./images/connect.png";
@@ -29,10 +32,12 @@ import {
   getProfileById,
 } from "../../utils/config";
 import { useParams } from "react-router-dom";
+import { followUser, unfollowUser } from "../../utils/getFollow";
 
 const UserProfile = () => {
   const [userInfo, setUserInfo] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [followLoading, setFollowLoading] = useState(false);
   const { id } = useParams();
   const [userNotFound, setUserNotFound] = useState(false);
   const fetchById = async () => {
@@ -74,6 +79,29 @@ const UserProfile = () => {
   const toggleFollow5 = () => {
     setIsFollowing4((prevIsFollowing) => !prevIsFollowing);
   };
+
+  const handleFollowUser = async () => {
+    try {
+      setFollowLoading(true);
+      let res;
+      if (userInfo.isFollowed) {
+        res = await unfollowUser(id);
+      } else {
+        res = await followUser(id);
+      }
+
+      if (res.status === "success") {
+        setUserInfo((prevInfo) => ({
+          ...prevInfo,
+          isFollowed: !prevInfo.isFollowed,
+        }));
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setFollowLoading(false);
+    }
+  };
   return (
     <div className="profile-container">
       <Navbar />
@@ -98,9 +126,8 @@ const UserProfile = () => {
                 JavaScript || Github || React || Redux
               </b>
               <p>
-              <a style={{ listStyle: "none"}}>
-                  Email- {userInfo?.email}
-                </a><br />
+                <a style={{ listStyle: "none" }}>Email- {userInfo?.email}</a>
+                <br />
                 <a style={{ listStyle: "none" }}>
                   Contact info- {userInfo?.phone}
                 </a>
@@ -110,10 +137,30 @@ const UserProfile = () => {
                 <span>1 mutual connection: Adrash Gupta</span>
               </div>
               <div className="profile-btn" style={{ borderRadius: "13px" }}>
-                <a className="primary-btn" onClick={toggleFollow5}>
-                  <AdditionIcon style={{ marginRight: "4px", width: "19px" }} />
-                  {isFollowing4 ? "Following" : "Follow"}
-                </a>
+                <Button
+                  variant={userInfo?.isFollowed ? "outlined" : "contained"}
+                  sx={{
+                    borderRadius: "25px",
+                    textTransform: "capitalize",
+                    fontWeight: "600",
+                  }}
+                  onClick={handleFollowUser}
+                >
+                  {followLoading ? (
+                    <CircularProgress
+                      style={{ width: "24px", height: "24px" }}
+                      color="inherit"
+                    />
+                  ) : !userInfo?.isFollowed ? (
+                    <>
+                      <PersonAddIcon />&nbsp; Follow
+                    </>
+                  ) : (
+                    <>
+                      <DoneIcon />&nbsp; Following{" "}
+                    </>
+                  )}
+                </Button>
               </div>
             </div>
           </div>

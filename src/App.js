@@ -21,6 +21,7 @@ import ForgotPass from "./components/login/ForgotPass";
 import MainProfile from "./components/pages/home/MainProfile";
 import HomeRoute from "./components/HomeRoute";
 import { SearchProvider } from "./components/SearchContext";
+import { ToastContainer } from "react-toastify";
 function App() {
   const name = JSON.parse(sessionStorage.getItem("userInfo"));
   const isLoggedIn = sessionStorage.getItem("logInStatus");
@@ -44,6 +45,7 @@ function App() {
           />
         </Routes>
       </SearchProvider>
+      
     </>
   );
 }
