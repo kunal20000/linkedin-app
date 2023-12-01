@@ -1,23 +1,24 @@
 import React from "react";
 import "./messaging.css";
 import { Navbar } from "../navbar/Navbar";
+import emptyMessage from "../pages/home/images/page-not-found.eaac395a788a6b5f0347 (1).png";
+
 const Messaging = () => {
   return (
     <main>
       <Navbar />
 
-      <h4 style={{ textAlign: "center", margin: "30px auto", }}>
+      <h4 style={{ textAlign: "center", margin: "30px auto" }}>
         Feature comming soon...
       </h4>
-      <img className="forMedia"
+      <img
+        className="forMedia"
         style={{
-          "display": "block",
-          marginLeft:"auto",
+          display: "block",
+          marginLeft: "auto",
           marginRight: "auto",
-          width: "50%",
-          height:"500px"
         }}
-        src="https://styles.redditmedia.com/t5_2qioo/styles/communityIcon_qneofzw4kqk51.png"
+        src={emptyMessage}
         alt=""
       />
     </main>
