@@ -22,8 +22,7 @@ import imageFile15 from "./images/user-5.png";
 import imageFile16 from "./images/logo.png";
 import imageFile17 from "./images/otherProfileback.webp";
 import { ReactComponent as AdditionIcon } from "../../assets/addition.svg";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
@@ -353,7 +352,7 @@ const UserProfile = () => {
           </div>
         </div>
       </div>
-      <ToastContainer />
+      
     </div>
   );
 };

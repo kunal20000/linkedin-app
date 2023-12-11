@@ -11,8 +11,7 @@ import { ReactComponent as RESUME } from "../assets/resume.svg";
 import { ReactComponent as JOBSEEKER } from "../assets/jobseeker.svg";
 import { ReactComponent as SETTING } from "../assets/setting.svg";
 import { ReactComponent as POSTFREEJOB } from "../assets/postfreejob.svg";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 const Jobs = () => {
   return (
     <main>
@@ -80,7 +79,7 @@ const Jobs = () => {
           </div>
         </div>
       </div>
-      <ToastContainer />
+   
     </main>
   );
 };

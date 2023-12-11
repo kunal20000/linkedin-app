@@ -2,8 +2,7 @@ import React from "react";
 import "./tryPremium.css";
 import { Navbar } from "../navbar/Navbar";
 import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 const TryPremium = () => {
   const navigate = useNavigate(null);
   const handlePremium = ()=>{
@@ -45,7 +44,7 @@ const TryPremium = () => {
           <button className="btn-next" onClick={handlePremium}>Next</button>
         </div>
       </main>
-      <ToastContainer/>
+      
     </main>
   );
 };

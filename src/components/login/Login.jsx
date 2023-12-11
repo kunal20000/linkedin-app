@@ -6,8 +6,7 @@ import { Link } from "react-router-dom";
 import { ReactComponent as LinkedingLogo } from "../assets/linkedinLogo.svg";
 import { getHeaderWithProjectIDAndBody } from "../utils/config";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [email, setEmail] = useState();
@@ -43,6 +42,7 @@ const Login = () => {
         sessionStorage.setItem("authToken", res.data.token);
         sessionStorage.setItem("userInfo", JSON.stringify(res.data.data.name));
         navigate("/");
+        toast("Log in successfully");
       }
     } catch (err) {
       sethasError(true);
@@ -137,6 +137,7 @@ const Login = () => {
             {passwordErr && (
               <p
                 style={{
+                  width:"400px",
                   color: "red",
                   fontSize: "15px",
                   textAlign: "center",
@@ -166,7 +167,7 @@ const Login = () => {
           alt="image"
         />
       </div>
-      <ToastContainer />
+     
     </div>
   );
 };

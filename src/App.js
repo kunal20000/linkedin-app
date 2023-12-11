@@ -22,6 +22,8 @@ import MainProfile from "./components/pages/home/MainProfile";
 import HomeRoute from "./components/HomeRoute";
 import { SearchProvider } from "./components/SearchContext";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   const name = JSON.parse(sessionStorage.getItem("userInfo"));
   const isLoggedIn = sessionStorage.getItem("logInStatus");
@@ -44,8 +46,8 @@ function App() {
             element={isLoggedIn ? <Navigate to={"/"} /> : <ForgotPass />}
           />
         </Routes>
+        <ToastContainer autoClose={3000} />
       </SearchProvider>
-      
     </>
   );
 }

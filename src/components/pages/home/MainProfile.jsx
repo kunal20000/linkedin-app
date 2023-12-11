@@ -20,8 +20,7 @@ import imageFile14 from "./images/user-4.png";
 import imageFile15 from "./images/user-5.png";
 import imageFile16 from "./images/logo.png";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 const MainProfile = (props) => {
   const name = JSON.parse(sessionStorage.getItem("userInfo"));
   const imageInputRef = useRef(null);
@@ -350,7 +349,7 @@ const MainProfile = (props) => {
           </div>
         </div>
       </div>
-      <ToastContainer />
+      
     </div>
   );
 };

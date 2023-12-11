@@ -10,9 +10,9 @@ import { getHeaderWithProjectIDAndBody } from "../../utils/config";
 import { usePost } from "../../Provider/PostInfoProvider";
 import { Avatar, Divider, Snackbar } from "@mui/material";
 import SingleComments from "./SingleComments,";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 import { ReactComponent as LikeIcon } from "../../assets/like.svg";
+import { toast } from "react-toastify";
 
 const PostBody = ({ likeCount, onLikeClick, liked }) => {
   const [openCommentSec, setOpenCommentSec] = useState(false);
@@ -22,9 +22,6 @@ const PostBody = ({ likeCount, onLikeClick, liked }) => {
   const userName = sessionStorage.getItem("userName");
   const navigate = useNavigate(null);
 
-  const notify = () => {
-    toast("comming soon");
-  };
   const [isLiked, setIsLiked] = useState(liked);
   const [postComments, setPostComments] = useState([
     {
@@ -104,11 +101,17 @@ const PostBody = ({ likeCount, onLikeClick, liked }) => {
             <span>Comment</span>
           </div>
         </div>
-        <div className="page-footer-option" onClick={notify}>
+        <div
+          className="page-footer-option"
+          onClick={() => toast("Comming Soon")}
+        >
           <PostAddIcon />
           <span>Repost</span>
         </div>
-        <div className="page-footer-option" onClick={notify}>
+        <div
+          className="page-footer-option"
+          onClick={() => toast("Comming Soon")}
+        >
           <SendIcon />
           <span>Send</span>
         </div>
@@ -131,18 +134,9 @@ const PostBody = ({ likeCount, onLikeClick, liked }) => {
             {postComments.map((comment, index) => {
               return <SingleComments key={index} comment={comment} />;
             })}
-
-            {/* <div className="post-comment">
-          <Avatar/>
-            <div className="post-comment-content">
-              <h4>Paul Janson</h4>
-              <p>This is a sample comment</p>
-            </div>
-        </div> */}
           </section>
         )}
       </div>
-      <ToastContainer />
     </div>
   );
 };

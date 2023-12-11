@@ -3,9 +3,7 @@ import "./Profile.css";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { Navigate, useNavigate } from "react-router-dom";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
+import { toast } from "react-toastify";
 const Profile = () => {
   const userName = JSON.parse(sessionStorage.getItem("userInfo"));
   const [showModal, setShowModal] = useState();

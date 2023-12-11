@@ -11,8 +11,7 @@ import { ReactComponent as NotificationIcon } from "../assets/notification.svg";
 import { ReactComponent as MeIcon } from "../assets/me.svg";
 import { ReactComponent as BusinessIcon } from "../assets/business.svg";
 import { ReactComponent as SearchIcon } from "../assets/search.svg";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import Profile from "./Profile";
 import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -134,7 +133,7 @@ export const Navbar = () => {
           </div>
         </div>
       </section>
-      <ToastContainer />
+      
     </header>
   );
 };

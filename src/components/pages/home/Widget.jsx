@@ -1,8 +1,7 @@
 import React from "react";
 import "./Widget.css";
 import InfoIcon from "@mui/icons-material/Info";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import imageFile from "./images/user-1.png";
 import imageFile12 from "./images/keyPremium.jpg";
 import imageFile16 from "./images/logo.png";
@@ -114,7 +113,7 @@ const Widget = () => {
               Try for free
             </a>
           </div>
-          <ToastContainer />
+          
         </div>
         <div className="footer">
           <a href="#" className="footer-links">

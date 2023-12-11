@@ -5,6 +5,7 @@ import axios from "axios";
 import { getHeaderWithProjectIDAndBody } from "../utils/config";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Signup = () => {
   const [userInfo, setUserInfo] = useState({
@@ -25,7 +26,7 @@ const Signup = () => {
     const { name, value } = event.target;
     if (name === "name" && value.length < 4) {
       setNameErr("Name must be at least 4 characters long.");
-    }else{
+    } else {
       setNameErr(false);
     }
     if (name === "email" && !isValidEmail(value)) {
@@ -69,9 +70,10 @@ const Signup = () => {
         sethasError(false);
         setErrMessage("Account created succesffuly!");
         // setIsNotLoggedIn(true);
-        navigate("/login");
         sessionStorage.setItem("authToken", res.data.token);
         sessionStorage.setItem("userInfo", JSON.stringify(res.data.data.user));
+        navigate("/login");
+        toast("Account Created Successfully");
       }
     } catch (err) {
       sethasError(true);
