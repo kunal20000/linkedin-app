@@ -261,7 +261,7 @@ svg[data-supported-dps="16x16"] {
   .navbar-container2{
     gap: 2.2rem;
   }
-  span{
+  .navbar-container2 span{
     display: none;
   }
   svg{

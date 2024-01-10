@@ -1,6 +1,9 @@
 body{
   background-color:#f3f2ee;
 }
+@media screen and (max-width:768px){
+  
+}
 .loader {
   margin: 20px auto;
   width: 48px;
@@ -82,7 +85,7 @@ body{
     margin: 0 -70px;
   }
   .posts{
-    width: 100%;
+    width: 95%;
   }
  .posts .post-body .mainImage{
     width: 100%;

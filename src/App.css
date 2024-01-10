@@ -13,3 +13,15 @@ body{
     display: flex;
     
 }
+@media screen and (max-width:767px){
+    .app-body{
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+        padding: 0px 0px;
+    }
+
+    html, body {
+        overflow-x: hidden;
+    }
+}

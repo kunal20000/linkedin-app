@@ -120,12 +120,14 @@
 }
 @media only screen and (max-width:768px){
   .feed{
-    width: 380px;
+    width: 350px;
    
   }
   .feed-input{
    width: 100%;
   }
-  
+  .feed-option .option{
+    padding: 20px 0px 0px 0px
+  }
 
 }
