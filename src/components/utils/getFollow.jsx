@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getAuthHeaderConfig, getHeaderWithProjectId } from "./config";
+import { getAuthHeaderConfig} from "./config";
 
 export const followUser = async (id) => {
   const headers = getAuthHeaderConfig();
@@ -24,7 +24,7 @@ export const unfollowUser = async (id) => {
     const res = await axios.delete(
       `https://academics.newtonschool.co/api/v1/linkedin/follow/${id}`,
      
-      getAuthHeaderConfig()
+      headers
     );
     return res.data;
   } catch (err) {

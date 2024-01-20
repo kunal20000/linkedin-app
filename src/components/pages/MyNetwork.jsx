@@ -62,7 +62,10 @@ const MyNetwork = () => {
           <h6>Invitations</h6>
           <hr />
           <div className="invitationDivMain">
-            <h5>No invitations...</h5>
+            
+            <div className="network-cards">
+             
+            </div>
           </div>
         </div>
       </div>
