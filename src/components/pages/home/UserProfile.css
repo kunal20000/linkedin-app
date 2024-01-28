@@ -191,7 +191,7 @@
   }
   .small {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     margin-right: 9px;
   }
   .profile-sidebar p {
