@@ -137,7 +137,7 @@ const Login = () => {
             {passwordErr && (
               <p
                 style={{
-                  width:"400px",
+                  width: "400px",
                   color: "red",
                   fontSize: "15px",
                   textAlign: "center",
@@ -150,7 +150,7 @@ const Login = () => {
             {hasError && <p>{hasError}</p>}
 
             <Link className="forgotLink" to="/ForgotPass">
-              <a href="./ForgotPass">Forgot Password?</a>
+              Forgot Password?
             </Link>
             <br />
             <button className="signIn-button">Sign In</button>
@@ -167,7 +167,6 @@ const Login = () => {
           alt="image"
         />
       </div>
-     
     </div>
   );
 };
