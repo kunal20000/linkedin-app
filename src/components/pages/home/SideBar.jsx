@@ -14,7 +14,7 @@ const SideBar = () => {
     <div className="sidebar">
       <div className="sidebar_profile">
         <img
-          src="https://media.licdn.com/dms/image/D5616AQFBP6BFA3N_9g/profile-displaybackgroundimage-shrink_350_1400/0/1682500067234?e=1706140800&v=beta&t=XnBasCqPIFSnBlLbuQodKnjMruYt3m6Ok_UeZNFs7D0"
+          src="./images/profileBackgroundImage.jpg"
           alt="image"
         />
         <div className="profile_details">

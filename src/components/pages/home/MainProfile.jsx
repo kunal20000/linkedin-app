@@ -57,7 +57,7 @@ const MainProfile = (props) => {
         <div className="profile-main">
           <div className="profile-container1">
             <img
-              src="https://media.licdn.com/dms/image/D5616AQFBP6BFA3N_9g/profile-displaybackgroundimage-shrink_350_1400/0/1682500067234?e=1706140800&v=beta&t=XnBasCqPIFSnBlLbuQodKnjMruYt3m6Ok_UeZNFs7D0"
+              src="./images/profileBackgroundImage.jpg"
               className="main-background-image"
               alt="backgroundImage"
             />
