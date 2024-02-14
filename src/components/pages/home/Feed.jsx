@@ -114,6 +114,10 @@ const Feed = ({ setPostData }) => {
     fileInputRef.current.click(); // Trigger the file input svg
   };
 
+  // Adjust styles based on screen width
+  if (window.innerWidth < 768) {
+    customStyles.content.width = "350px";
+  }
   return (
     <div className="feed">
       <div className="feed-input">
@@ -189,7 +193,7 @@ const Feed = ({ setPostData }) => {
                 style={{ left: "-20px", top: "-6px", background: "#00000000" }}
               >
                 <MmsIcon onClick={triggerImageUpload} />
-                
+
                 <input
                   type="file"
                   accept="image/*"
@@ -229,7 +233,7 @@ const Feed = ({ setPostData }) => {
             />
             <span>Design</span>
           </div>
-          <div className="option" onClick={()=>toast("Comming Soon")}>
+          <div className="option" onClick={() => toast("Comming Soon")}>
             <ArticleIcon
               style={{ color: "#e16745", height: "25px", width: "25px" }}
             />

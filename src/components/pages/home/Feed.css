@@ -129,5 +129,7 @@
   .feed-option .option{
     padding: 20px 0px 0px 0px
   }
-
+  .modalForMedia{
+    width: 350px;
+  }
 }
